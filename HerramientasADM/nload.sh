@@ -27,12 +27,12 @@ echo -e " \033[1;33m[\033[1;31m####################\033[1;33m] - \033[1;32m100%\
 sleep 1s
 }
 
-echo -e "${cor[3]} $(fun_trans "PROCESOS DEL SISTEMA HTOP") ${cor[4]}[NEW-ADM]"
+echo -e "${cor[3]} $(fun_trans "TRAFICO DE RED NLOAD") ${cor[4]}[NEW-ADM]"
 echo -e "$barra"
 echo -e "${cor[0]}PARA SALIR DEL PANEL PRESIONE ${cor[3]}CTLR+C \e[0m"
 echo -e " "
-echo -e "${cor[0]} $(fun_trans "Iniciando Aguarde")" && fun_bar "apt-get install htop -y"
+echo -e "${cor[0]} $(fun_trans "Iniciando Aguarde")" && fun_bar "apt-get install nload -y"
 echo -e "$barra"
 sleep 1s
 
-htop
+nload

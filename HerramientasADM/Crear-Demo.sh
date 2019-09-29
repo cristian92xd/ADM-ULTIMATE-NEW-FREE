@@ -1,8 +1,8 @@
 #!/bin/bash
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;32m" [3]="\033[1;36m" [4]="\033[1;31m" [5]="\033[1;33m" )
 barra="\033[0m\e[34m======================================================\033[1;37m"
-mkdir /etc/adm
-mkdir /etc/adm/usuarios
+mkdir /etc/adm > /dev/null 2> /dev/null
+mkdir /etc/adm/usuarios > /dev/null 2> /dev/null
 SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit 1
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
