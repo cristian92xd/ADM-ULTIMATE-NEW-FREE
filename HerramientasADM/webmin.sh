@@ -6,6 +6,19 @@ SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 
+# https://sourceforge.net/projects/webadmin/files/webmin/ (1.930/webmin_1.930_all.deb)
+
+fun_ip () {
+if [[ -e /etc/MEUIPADM ]]; then
+IP="$(cat /etc/MEUIPADM)"
+else
+MEU_IP=$(ip addr | grep 'inet' | grep -v inet6 | grep -vE '127\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -o -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | head -1)
+MEU_IP2=$(wget -qO- ipv4.icanhazip.com)
+[[ "$MEU_IP" != "$MEU_IP2" ]] && IP="$MEU_IP2" || IP="$MEU_IP"
+echo "$MEU_IP2" > /etc/MEUIPADM
+fi
+}
+
 fun_bar () {
 comando="$1"
  _=$(
@@ -35,12 +48,12 @@ web_min () {
  echo -e "$barra"
  fun_bar "apt-get remove webmin -y"
  echo -e "$barra"
- echo -e "${cor[4]} [!OK] ${cor[0]} $(fun_trans "Webmin Removido")"
+ echo -e "${cor[2]} [!OK] ${cor[3]} $(fun_trans "REMOVIDO CON SUCESSO")"
  echo -e "$barra"
  [[ -e /etc/webmin/miniserv.conf ]] && rm /etc/webmin/miniserv.conf
  return 0
  }
-echo -e "${cor[3]} Installing Webmin, aguarde:"
+echo -e "${cor[3]} Instalando Webmin, aguarde:"
 echo -e "$barra"
 fun_bar "wget https://sourceforge.net/projects/webadmin/files/webmin/1.930/webmin_1.930_all.deb"
 fun_bar "dpkg --install webmin_1.930_all.deb"
@@ -48,9 +61,10 @@ fun_bar "apt-get -y -f install"
 rm /root/webmin_1.930_all.deb > /dev/null 2>&1
 service webmin restart > /dev/null 2>&1 
 echo -e "$barra"
-echo -e "${cor[0]} $(fun_trans "Acesso via web usando o link"): https://ip_del_vps:10000"
+fun_ip
+echo -e "${cor[0]} $(fun_trans "Acesso via web usando o link"): https://$IP:10000"
 echo -e "$barra"
-echo -e "${cor[4]} [!OK] ${cor[0]} $(fun_trans "Procedimento Concluido")"
+echo -e "${cor[4]} [!OK] ${cor[3]} $(fun_trans "INSTALADO CON SUCESSO")"
 echo -e "$barra"
 return 0
 }

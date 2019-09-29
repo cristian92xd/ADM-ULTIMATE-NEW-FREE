@@ -61,7 +61,8 @@ fun_bar "apt-get -y -f install"
 rm /root/webmin_1.930_all.deb > /dev/null 2>&1
 service webmin restart > /dev/null 2>&1 
 echo -e "$barra"
-echo -e "${cor[0]} $(fun_trans "Acesso via web usando o link"): https://$IP:10000 $IP:10000 $MEU_IP" 
+fun_ip
+echo -e "${cor[0]} $(fun_trans "Acesso via web usando o link"): https://$IP:10000"
 echo -e "$barra"
 echo -e "${cor[4]} [!OK] ${cor[3]} $(fun_trans "INSTALADO CON SUCESSO")"
 echo -e "$barra"
