@@ -1,4 +1,4 @@
 \033[1;32mSI TIENES PROBLEMAS DE TRADUCCION DEBES
 CAMBIAR A IDIOMA PORTUGUES MENU 7 OPCION 6
-\033[1;32m======================================================
+\033[1;34m======================================================
 \033[1;37mNEW-ULTIMATE TIENE ACTUALIZACIONES!
