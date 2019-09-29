@@ -518,7 +518,7 @@ case $1 in
 "nettools")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "NET TOOLS TARGET*") $dev";;
 "htop.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "PROCESOS DEL SISTEMA HTOP*") $dev";;
 "nload.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "TRAFICO DE RED NLOAD*") $dev";;
-"htop.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "OPTIMIZAR SERVIDOR*") $dev";;
+"optimizar.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "OPTIMIZAR SERVIDOR*") $dev";;
 "panelsshplus.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "PANEL DE VENTAS SSHPLUS*") $dev";;
 "socks_manager.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "ADMINISTRADOR BETA-TESTER*") $dev";;
 "mega.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "MEGA DOWNLOAD*") $dev";;
