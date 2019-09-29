@@ -48,7 +48,7 @@ web_min () {
  echo -e "$barra"
  fun_bar "apt-get remove webmin -y"
  echo -e "$barra"
- echo -e "${cor[2]} [!OK] ${cor[3]} $(fun_trans "REMOVIDO CON SUCESSO")"
+ echo -e "${cor[3]} $(fun_trans "REMOVIDO CON SUCESSO") ${cor[2]} [!OK]"
  echo -e "$barra"
  [[ -e /etc/webmin/miniserv.conf ]] && rm /etc/webmin/miniserv.conf
  return 0
@@ -64,7 +64,7 @@ echo -e "$barra"
 fun_ip
 echo -e "${cor[0]} $(fun_trans "Acesso via web usando o link"): https://$IP:10000"
 echo -e "$barra"
-echo -e "${cor[4]} [!OK] ${cor[3]} $(fun_trans "INSTALADO CON SUCESSO")"
+echo -e "${cor[3]} $(fun_trans "INSTALADO CON SUCESSO") ${cor[4]} [!OK] "
 echo -e "$barra"
 return 0
 }
