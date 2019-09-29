@@ -1,33 +1,11 @@
 #!/bin/bash
-declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;32m" [3]="\033[1;36m" [4]="\033[1;31m" [5]="\033[1;33m" )
+declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
 barra="\033[0m\e[34m======================================================\033[1;37m"
-SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit
+SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit 1
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
-fun_trans () { 
-local texto
-local retorno
-declare -A texto
-SCPidioma="${SCPdir}/idioma"
-[[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
-local LINGUAGE=$(cat ${SCPidioma})
-[[ -z $LINGUAGE ]] && LINGUAGE=pt
-[[ ! -e /etc/texto-adm ]] && touch /etc/texto-adm
-source /etc/texto-adm
-if [[ -z "$(echo ${texto[$@]})" ]]; then
- retorno="$(source trans -e google -b pt:${LINGUAGE} "$@"|sed -e 's/[^a-z0-9 -]//ig' 2>/dev/null)"
- if [[ $retorno = "" ]];then
- retorno="$(source trans -e bing -b pt:${LINGUAGE} "$@"|sed -e 's/[^a-z0-9 -]//ig' 2>/dev/null)"
- fi
- if [[ $retorno = "" ]];then 
- retorno="$(source trans -e yandex -b pt:${LINGUAGE} "$@"|sed -e 's/[^a-z0-9 -]//ig' 2>/dev/null)"
- fi
-echo "texto[$@]='$retorno'"  >> /etc/texto-adm
-echo "$retorno"
-else
-echo "${texto[$@]}"
-fi
-}
+SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
+
 update_pak () {
 echo -ne " \033[1;31m[ ! ] apt-get update"
 apt-get update -y > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
@@ -36,6 +14,7 @@ apt-get upgrade -y > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\03
 echo -e "$barra"
 return
 }
+
 reiniciar_ser () {
 echo -ne " \033[1;31m[ ! ] Services stunnel4 restart"
 service stunnel4 restart > /dev/null 2>&1
@@ -64,6 +43,7 @@ fail2ban-client -x stop && fail2ban-client -x start
 echo -e "$barra"
 return
 }
+
 reiniciar_vps () {
 echo -ne " \033[1;31m[ ! ] Sudo Reboot"
 sleep 3s
@@ -74,6 +54,7 @@ sudo reboot
 echo -e "$barra"
 return
 }
+
 host_name () {
 unset name
 while [[ ${name} = "" ]]; do
@@ -89,6 +70,7 @@ fi
 echo -e "$barra"
 return
 }
+
 act_hora () {
 echo -ne " \033[1;31m[ ! ] timedatectl"
 timedatectl > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
@@ -101,6 +83,7 @@ timedatectl set-timezone America/Santiago > /dev/null 2>&1 && echo -e "\033[1;32
 echo -e "$barra"
 return
 }
+
 cambiopass () {
 echo -e "${cor[5]} $(fun_trans "Esta herramienta cambia la contraseña de su servidor vps")"
 echo -e "${cor[5]} $(fun_trans "Esta contraseña es utilizada como usuario") root"
@@ -117,10 +100,10 @@ return
 }
 
 rootpass () {
-echo -e "${cor[5]} $(fun_trans "Esta herramienta cambia a usuario root las vps de ")"
-echo -e "${cor[5]} $(fun_trans "Googlecloud y Amazon esta configuracion solo")"
-echo -e "${cor[5]} $(fun_trans "funcionan en Googlecloud y Amazon Puede causar")"
-echo -e "${cor[5]} $(fun_trans "error en otras VPS agenas a Googlecloud y Amazon ")"
+echo -e "${cor[3]} $(fun_trans "Esta herramienta cambia a usuario root las vps de ")"
+echo -e "${cor[3]} $(fun_trans "Googlecloud y Amazon esta configuracion solo")"
+echo -e "${cor[3]} $(fun_trans "funcionan en Googlecloud y Amazon Puede causar")"
+echo -e "${cor[3]} $(fun_trans "error en otras VPS agenas a Googlecloud y Amazon ")"
 echo -e "$barra"
 echo -e " $(fun_trans "Desea Seguir?")"
 read -p " [S/N]: " -e -i n PROS
@@ -141,24 +124,25 @@ sleep 1s
 echo -e "$barra"
 echo -e "${cor[0]} $(fun_trans "Contraseña cambiada con exito!")"
 echo -e "${cor[0]} $(fun_trans "Su contraseña ahora es"): ${cor[2]}$pass\n${barra}"
-echo -e "${cor[5]} $(fun_trans "Configuracoes adicionadas")"
-echo -e "${cor[5]} $(fun_trans "La vps estar totalmente configurada")"
+echo -e "${cor[3]} $(fun_trans "Configuracoes adicionadas")"
+echo -e "${cor[3]} $(fun_trans "La vps estar totalmente configurada")"
 echo -e "$barra"
 service ssh restart > /dev/null 2>&1
 return
 }
+
 gestor_fun () {
-echo -e " ${cor[3]} $(fun_trans "Administrador VPS") ${cor[2]}[NEW-ADM]"
+echo -e " ${cor[3]} $(fun_trans "Administrador VPS") ${cor[4]}[NEW-ADM]"
 echo -e "$barra"
 while true; do
-echo -e "${cor[2]} [1] > ${cor[3]}$(fun_trans "Atualizar pacotes")"
-echo -e "${cor[2]} [2] > ${cor[3]}$(fun_trans "Alterar o nome do VPS")"
-echo -e "${cor[2]} [3] > ${cor[3]}$(fun_trans "Reiniciar os Servi�os")"
-echo -e "${cor[2]} [4] > ${cor[3]}$(fun_trans "Reiniciar VPS")"
-echo -e "${cor[2]} [5] > ${cor[3]}$(fun_trans "Atualizar Hora America-Santiago")"
-echo -e "${cor[2]} [6] > ${cor[3]}$(fun_trans "Cambiar contraseña ROOT del VPS")"
-echo -e "${cor[2]} [7] > ${cor[3]}$(fun_trans "Permiso ROOT para Googlecloud y Amazon")"
-echo -e "${cor[2]} [0] > ${cor[0]}$(fun_trans "VOLTAR")\n${barra}"
+echo -e "${cor[4]} [1] > \033[1;36m$(fun_trans "Atualizar pacotes")"
+echo -e "${cor[4]} [2] > \033[1;36m$(fun_trans "Alterar o nome do VPS")"
+echo -e "${cor[4]} [3] > \033[1;36m$(fun_trans "Reiniciar os serviço")"
+echo -e "${cor[4]} [4] > \033[1;36m$(fun_trans "Reiniciar VPS")"
+echo -e "${cor[4]} [5] > \033[1;36m$(fun_trans "Atualizar hora America-Santiago")"
+echo -e "${cor[4]} [6] > \033[1;36m$(fun_trans "Cambiar contraseña ROOT del VPS")"
+echo -e "${cor[4]} [7] > \033[1;36m$(fun_trans "Serviço ROOT para Googlecloud e Amazon")"
+echo -e "${cor[4]} [0] > ${cor[0]}$(fun_trans "VOLTAR")\n${barra}"
 while [[ ${opx} != @(0|[1-7]) ]]; do
 echo -ne "${cor[0]}$(fun_trans "Digite a Opcao"): \033[1;37m" && read opx
 tput cuu1 && tput dl1

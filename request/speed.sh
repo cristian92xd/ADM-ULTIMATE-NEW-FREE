@@ -4,7 +4,8 @@ SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit 1
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
-echo -e "${cor[4]} $(fun_trans "Speed Test") [NEW-ADM]"
+
+echo -e "${cor[3]} $(fun_trans "Speed Test") ${cor[4]}[NEW-ADM]"
 msg -bar
 ping=$(ping -c1 google.com |awk '{print $8 $9}' |grep -v loss |cut -d = -f2 |sed ':a;N;s/\n//g;ta')
 # PROGRESS - BAR

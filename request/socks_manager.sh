@@ -1,34 +1,10 @@
 #!/bin/bash
-declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;32m" [3]="\033[1;36m" [4]="\033[1;31m" [5]="\033[1;33m" )
+declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
 barra="\033[0m\e[34m======================================================\033[1;37m"
-SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit
+SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit 1
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
-
-fun_trans () { 
-local texto
-local retorno
-declare -A texto
-SCPidioma="${SCPdir}/idioma"
-[[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
-local LINGUAGE=$(cat ${SCPidioma})
-[[ -z $LINGUAGE ]] && LINGUAGE=pt
-[[ ! -e /etc/texto-adm ]] && touch /etc/texto-adm
-source /etc/texto-adm
-if [[ -z "$(echo ${texto[$@]})" ]]; then
- retorno="$(source trans -e google -b pt:${LINGUAGE} "$@"|sed -e 's/[^a-z0-9 -]//ig' 2>/dev/null)"
- if [[ $retorno = "" ]];then
- retorno="$(source trans -e bing -b pt:${LINGUAGE} "$@"|sed -e 's/[^a-z0-9 -]//ig' 2>/dev/null)"
- fi
- if [[ $retorno = "" ]];then 
- retorno="$(source trans -e yandex -b pt:${LINGUAGE} "$@"|sed -e 's/[^a-z0-9 -]//ig' 2>/dev/null)"
- fi
-echo "texto[$@]='$retorno'"  >> /etc/texto-adm
-echo "$retorno"
-else
-echo "${texto[$@]}"
-fi
-}
+SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 
 mportas () {
 unset portas
@@ -118,22 +94,23 @@ fi
  }
 
 gestor_fun () {
-echo -e " ${cor[3]} $(fun_trans "ADMINISTRADOR BETA-TESTER") ${cor[2]}[NEW-ADM]"
+echo -e " ${cor[3]} $(fun_trans "ADMINISTRADOR BETA-TESTER") ${cor[4]}[NEW-ADM]"
 echo -e "$barra"
 while true; do
-echo -e "${cor[2]} [1] > ${cor[3]}$(fun_trans "TCP-Client para TCP-OVER")"
-echo -e "${cor[2]} [2] > ${cor[3]}$(fun_trans "Proxy Python Color Publico")"
-echo -e "${cor[2]} [3] > ${cor[3]}$(fun_trans "Proxy Python Color Privado")"
-echo -e "${cor[2]} [4] > ${cor[3]}$(fun_trans "ShadowSocks Libev Server")"
-echo -e "${cor[2]} [5] > ${cor[3]}$(fun_trans "ShadowSocks Manager RRMU")"
+echo -e "${cor[4]} [1] > \033[1;36m$(fun_trans "TCP-Client para TCP-OVER")"
+echo -e "${cor[4]} [2] > \033[1;36m$(fun_trans "Proxy Python Color Publico")"
+echo -e "${cor[4]} [3] > \033[1;36m$(fun_trans "Proxy Python Color Privado")"
+echo -e "${cor[4]} [4] > \033[1;36m$(fun_trans "ShadowSocks Libev Server")"
+echo -e "${cor[4]} [5] > \033[1;36m$(fun_trans "ShadowSocks Manager RRMU")"
 echo -e "$barra"
-echo -e "${cor[2]} [6] > ${cor[3]}$(fun_trans "Detenga todos los Sockts de python")"
+echo -e "${cor[4]} [6] > \033[1;36m$(fun_trans "Detenga todos los Sockts de python")"
 echo -e "$barra"
-echo -e "${cor[2]} [7] > ${cor[3]}$(fun_trans "Eliminar Registro del Limitador")"
-echo -e "${cor[2]} [8] > ${cor[3]}$(fun_trans "Eliminar todos los usuarios del VPS")"
-echo -e "${cor[2]} [9] > ${cor[3]}$(fun_trans "Multi portos SSL")"
-echo -e "${cor[2]} [0] > ${cor[0]}$(fun_trans "VOLTAR")\n${barra}"
-while [[ ${opx} != @(0|[1-9]) ]]; do
+echo -e "${cor[4]} [7] > \033[1;36m$(fun_trans "Eliminar Registro del Limitador")"
+echo -e "${cor[4]} [8] > \033[1;36m$(fun_trans "Eliminar todos los usuarios del VPS")"
+echo -e "${cor[4]} [9] > \033[1;36m$(fun_trans "Multi portos SSL")"
+echo -e "${cor[4]} [10] > \033[1;36m$(fun_trans "Usuario Temporal")"
+echo -e "${cor[4]} [0] > ${cor[0]}$(fun_trans "VOLTAR")\n${barra}"
+while [[ ${opx} != @(0|[1-10]) ]]; do
 echo -ne "${cor[0]}$(fun_trans "Digite a Opcao"): \033[1;37m" && read opx
 tput cuu1 && tput dl1
 done
@@ -165,7 +142,11 @@ case $opx in
 	userdell
 	break;;
         9)
-	ssl_redir
+	userdell
+	break;;
+        10)
+	wget -O /bin/Crear-Demo.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/Crear-Demo.sh > /dev/null 2>&1; chmod +x /bin/Crear-Demo.sh; Crear-Demo.sh
+
 	break;;
 esac
 done
