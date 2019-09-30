@@ -74,7 +74,7 @@ echo -e "${cor[3]}$(fun_trans "ANTIDDOS INSTALACAO CON SUCESSO")"
 
 [[ -e /usr/local/ddos/ddos.conf ]] && ddos=$(echo -e "\033[1;32mon ") || ddos=$(echo -e "\033[1;31moff ")
 
-msg -ama "$(fun_trans "ANTI DDOS INSTALACAO") ${cor[4]}[NEW-ADM]"
+msg -ama "$(fun_trans "ANTI DDOS") ${cor[4]}[NEW-ADM]"
 echo -e "$barra"
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "Anti-DDOS") $ddos"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
