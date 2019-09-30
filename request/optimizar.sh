@@ -96,4 +96,3 @@ echo -e "\033[1;37mMemória \033[1;32mRAM \033[1;37mahora en la Otimizacion:\033
 echo ""
 echo -e "\033[1;37m ECONOMIA DE :\033[1;36m `expr $MEM1 - $MEM2`%\033[0m"
 echo -e "$barra"
-

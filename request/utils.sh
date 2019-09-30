@@ -180,6 +180,7 @@ iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
 iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP' >> ./torrent-adm
 ./torrent-adm && rm ./torrent-adm
+echo "#TORRENT-ADM" > /etc/torrent-adm
 msg -bar
 echo -e " $(fun_trans "Aplicado!")"
 }
@@ -190,13 +191,14 @@ if [ -e /etc/squid/squid.conf ]; then
 [[ `grep -c "^#CACHE DO SQUID" /etc/squid/squid.conf` -gt 0 ]] && squid=$on || squid=$off
 elif [ -e /etc/squid3/squid.conf ]; then
 [[ `grep -c "^#CACHE DO SQUID" /etc/squid3/squid.conf` -gt 0 ]] && squid=$on || squid=$off
+[[ -e /etc/torrent-adm ]] && torrent=$(echo -e "\033[1;32mon ") || torrent=$(echo -e "\033[1;31moff ")
 fi
 msg -ama "$(fun_trans "MENU DE UTILITARIOS")"
 msg -bar
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "BADVPN") $badvpn"
 echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "TCPSPEED") $tcp"
 echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "CACHE DO SQUID") $squid"
-echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "TORRENT")"
+echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "TORRENT") $torrent"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 msg -bar
 while [[ ${arquivoonlineadm} != @(0|[1-4]) ]]; do
