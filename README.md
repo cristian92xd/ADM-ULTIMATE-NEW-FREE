@@ -1,4 +1,4 @@
-﻿# ADM-ULTIMATE-NEW (FREE)
+﻿# NEW-ULTIMATE (ADM-FREE)
 
 **ESTE SCRIPTS ESTA EN PROCESO DE RECONTRUCION**
 
@@ -20,7 +20,7 @@ SI TIENES PROBLEMAS DE TRADUCCION DEBES CAMBIAR A IDIOMA PORTUGUES MENU 7 OPCION
 
 ## Installation
 ```
-**ADM-ULTIMATE-NEW (las dependencias faltantes se instalarán automáticamente)**
+**NEW-ULTIMATE (las dependencias faltantes se instalarán automáticamente)**
 ```
 
 
@@ -29,7 +29,7 @@ apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AA
 
 ## :scroll: Registro de cambios
 ```
-**ADM-ULTIMATE Recibe actualizaciones periodicamente con nuevas características, mejoras 
+**NEW-ULTIMATE Recibe actualizaciones periodicamente con nuevas características, mejoras 
 y correcciones de errores. Asegúrese de no 
 realizar cambios al scripts o borrar algun archivo.**
 

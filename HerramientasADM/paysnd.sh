@@ -5,7 +5,6 @@ SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 esquelet="/tmp/payload"
-
 fun_trans () { 
 local texto
 local retorno
@@ -30,7 +29,6 @@ else
 echo "${texto[$@]}"
 fi
 }
-
 fun_res () {
 pay="$3"
 exec 5<>/dev/tcp/$1/$2
