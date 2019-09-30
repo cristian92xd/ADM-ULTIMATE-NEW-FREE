@@ -448,6 +448,8 @@ rm -rf ${SCPinst} &>/dev/null
 [[ -e /usr/bin/adm ]] && rm /usr/bin/adm
 [[ -e /bin/menu ]] && rm /bin/menu
 [[ -e /usr/bin/menu ]] && rm /usr/bin/menu
+[[ -e /bin/trans ]] && rm /bin/trans
+[[ -e /usr/bin/trans ]] && rm /usr/bin/trans
 cd $HOME
 msg -ama "$(fun_trans "SCRIPT REMOVIDO COM SUCESSO")?"
 msg -bar
