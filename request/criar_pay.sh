@@ -1,12 +1,14 @@
 #!/bin/bash
-declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;32m" [3]="\033[1;36m" [4]="\033[1;31m" [5]="\033[1;33m" )
+declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
 barra="\033[0m\e[34m======================================================\033[1;37m"
-link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/payloads"
-[[ ! -e /bin/payloads ]] && wget -O /bin/payloads ${link_bin} > /dev/null 2>&1 && chmod +x /bin/payloads
 SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit 1
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
+
+#PAYYLOADS
+link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/payloads"
+[[ ! -e /bin/payloads ]] && wget -O /bin/payloads ${link_bin} > /dev/null 2>&1 && chmod +x /bin/payloads
 
 #PREENXE A VARIAVEL $IP
 meu_ip () {
@@ -17,8 +19,8 @@ MEU_IP2=$(wget -qO- ipv4.icanhazip.com)
 
 echo -e "${cor[3]} $(fun_trans "GERADOR DE PAYLOAD") ${cor[2]}[NEW-ADM]"
 echo -e "$barra"
-echo -e "${cor[5]} $(fun_trans "DIGITE UM HOST PARA CRIAR PAYLOADS GENERICAS!")"
-echo -e "${cor[5]} $(fun_trans "CRIADOR DE PAYLOADS DIGITE THE HOST")"
+echo -e "${cor[0]} $(fun_trans "DIGITE UM HOST PARA CRIAR PAYLOADS GENERICAS!")"
+echo -e "${cor[0]} $(fun_trans "CRIADOR DE PAYLOADS DIGITE THE HOST")"
 echo -e "$barra"
 read -p "$(fun_trans "HOST"): " valor1
 if [ "$valor1" = "" ]; then
@@ -31,7 +33,7 @@ if [ "$valor2" = "" ]; then
 valor2="127.0.0.1"
 fi
 echo -e "$barra"
-echo -e "${cor[5]} $(fun_trans "ESCOLHA O METODO DE REQUISIÇÃO") ${cor[3]}"
+echo -e "${cor[3]} $(fun_trans "ESCOLHA O METODO DE REQUISICAO") ${cor[3]}"
 echo -e "$barra"
 echo -e " 1-GET"
 echo -e " 2-CONNECT"
@@ -77,8 +79,8 @@ req="GET"
 ;;
 esac
 echo -e "$barra"
-echo -e "${cor[5]} $(fun_trans "E POR ULTIMO, ESCOLHA")"
-echo -e "${cor[5]} $(fun_trans "METODO DE INJEÇÃO!") ${cor[3]}"
+echo -e "${cor[3]} $(fun_trans "E POR ULTIMO, ESCOLHA")"
+echo -e "${cor[3]} $(fun_trans "METODO DE INJECAO!") ${cor[3]}"
 echo -e "$barra"
 echo -e " 1-realData"
 echo -e " 2-netData"
@@ -118,6 +120,6 @@ echo -e "${cor[3]} $(fun_trans "ALGO DEU") \033[1;36m$(fun_trans "ERRADO!")"
 rm $HOME/$name.txt
 return
 fi
-echo -e "${cor[3]} $(fun_trans "SUCESSO, PAYLOADS GERADAS")"
-echo -e "${cor[3]} $(fun_trans "DIRETÓRIO:") \033[1;31m$HOME/$name.txt"
+echo -e "\033[1;36m $(fun_trans "SUCESSO, PAYLOADS GERADAS")"
+echo -e "\033[1;36m $(fun_trans "DIRETORIO:") \033[1;31m$HOME/$name.txt"
 echo -e "$barra"
