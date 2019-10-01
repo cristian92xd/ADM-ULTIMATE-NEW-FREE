@@ -515,20 +515,21 @@ case $1 in
 "vnc.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "VNC SERVER*") $dev";;
 # Menu Instalação Ger-Frm DEV
 "GENERADOR_BIN.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "GERADOR DE BIN*") $dev";;
+"ddos.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "ANTI DDOS*") $dev";;
+"statusdesistema.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "(nload/htop/statusVPS) $dev";;
+"optimizar.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "OPTIMIZAR SERVIDOR*") $dev";;
+"panelsshplus.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "PANEL DE VENTAS SSHPLUS*") $dev";;
 "gestor.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "ADMINISTRADOR VPS*") $dev";;
+"socks_manager.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "ADMINISTRADOR BETA-TESTER*") $dev";;
+"mega.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "MEGA DOWNLOAD*") $dev";;
 "Crear-Demo.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "USUARIO TEMPORAL*") $dev";;
 "real-host.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "HOST EXTRACTOR*") $dev";;
-"ddos.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "ANTI DDOS*") $dev";;
 "squidpass.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "PROTECAO SQUID PASS*") $dev";;
-"statusdesistema.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "(nload/htop/statusVPS) $dev";;
-"nettools")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "NET TOOLS TARGET*") $dev";;
+# Menu Instalação Ger-tools DEV
 "nload.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "TRAFICO DE RED NLOAD*") $dev";;
 "htop.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "PROCESOS DEL SISTEMA HTOP*") $dev";;
 "visorpuertos.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "STATUS DE SISTEMA*") $dev";;
-"optimizar.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "OPTIMIZAR SERVIDOR*") $dev";;
-"panelsshplus.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "PANEL DE VENTAS SSHPLUS*") $dev";;
-"socks_manager.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "ADMINISTRADOR BETA-TESTER*") $dev";;
-"mega.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "MEGA DOWNLOAD*") $dev";;
+"nettools")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "NET TOOLS TARGET*") $dev";;
 # Menu Instalação Ger-Inst OFC
 "openssh.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "OPENSSH $(pid_inst sshd)";;
 "dropbear.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "DROPBEAR $(pid_inst dropbear)";;
