@@ -80,14 +80,14 @@ return
 host_name () {
 unset name
 while [[ ${name} = "" ]]; do
-echo -ne "\033[1;37m $(fun_trans "Digite o nome do host"): " && read name
+echo -ne "\033[1;37m $(fun_trans "Nuevo nombre del host"): " && read name
 tput cuu1 && tput dl1
 done
 hostnamectl set-hostname $name 
 if [ $(hostnamectl status | head -1  | awk '{print $3}') = "${name}" ]; then 
-echo -e "\033[1;32m $(fun_trans "Nome de host alterado corretamente")!, $(fun_trans "reiniciar VPS")"
+echo -e "\033[1;33m $(fun_trans "Host alterado corretamente")!, $(fun_trans "reiniciar VPS")"
 else
-echo -e "\033[1;31m $(fun_trans "Nome de host não modificado")!"
+echo -e "\033[1;33m $(fun_trans "Host no modificado")!"
 fi
 echo -e "$barra"
 return
