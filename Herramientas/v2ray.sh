@@ -1,5 +1,4 @@
 #!/bin/bash
-
 SCPdir="/etc/newadm"
 SCPusr="${SCPdir}/ger-user"
 SCPfrm="/etc/ger-frm"
@@ -208,7 +207,7 @@ echo -e "${blan}Acceso al panel: http://$IP:${uport}${plain}"
 echo -e "${blan}O use la direccion de su dominio mas el puerto${plain}"
 echo -e "$BARRA1"
 echo ''
-echo "Gracias por utilizar v2ray OFC BY DANKELTHAHER"
+echo "Gracias por utilizar v2ray"
  
 #LIMPIAR ARCHIVOS BASURA
 rm -rf /root/config.json
