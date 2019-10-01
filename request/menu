@@ -115,6 +115,7 @@ if [[ $Key = @(s|S|y|Y) ]]; then
 msg -verm "$(fun_trans "Perfeito Iniciando Procedimento"): "
 [[ -e $HOME/instalar.sh ]] && rm $HOME/instalar.sh
 [[ -e $HOME/lista-arq ]] && rm $HOME/lista-arq
+[[ ! -d /etc/ger-tools ]] && rm -rf /etc/ger-tools
 wget -O $HOME/instalar.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/instalar.sh &>/dev/null
 chmod +x $HOME/instalar.s*
 local LINGUAGE=$(cat ${SCPidioma})
@@ -445,6 +446,7 @@ rm -rf ${SCPdir} &>/dev/null
 rm -rf ${SCPusr} &>/dev/null
 rm -rf ${SCPfrm} &>/dev/null
 rm -rf ${SCPinst} &>/dev/null
+[[ ! -d /etc/ger-tools ]] && rm -rf /etc/ger-tools
 [[ -e /bin/adm ]] && rm /bin/adm
 [[ -e /usr/bin/adm ]] && rm /usr/bin/adm
 [[ -e /bin/menu ]] && rm /bin/menu
