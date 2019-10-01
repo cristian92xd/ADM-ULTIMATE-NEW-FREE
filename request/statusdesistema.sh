@@ -8,11 +8,11 @@ SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 
 #Repositorio-GITHUB
 mkdir /etc/ger-tools > /dev/null 2>&1
-link_bin="https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/blob/master/Install/ger-tools/htop.sh"
+link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/ger-tools/htop.sh"
 [[ ! -e /etc/ger-tools/htop.sh ]] && wget -O /etc/ger-tools/htop.sh ${link_bin} > /dev/null 2>&1 && chmod +x /etc/ger-tools/htop.sh
-link_bin="https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/blob/master/Install/ger-tools/"
+link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/ger-tools/nload.sh"
 [[ ! -e /etc/ger-tools/nload.sh ]] && wget -O /etc/ger-tools/nload.sh ${link_bin} > /dev/null 2>&1 && chmod +x /etc/ger-tools/nload.sh
-link_bin="https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/blob/master/Install/ger-tools/visorpuertos.sh"
+link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/ger-tools//visorpuertos.sh"
 [[ ! -e /etc/ger-tools/visorpuertos.sh ]] && wget -O /etc/ger-tools/visorpuertos.sh ${link_bin} > /dev/null 2>&1 && chmod +x /etc/ger-tools/visorpuertos.sh
 
 fun_bar () {
