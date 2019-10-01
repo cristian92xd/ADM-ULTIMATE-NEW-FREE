@@ -40,34 +40,87 @@ sleep 1s
 }
 
 GENERADOR_BIN () {
-echo -ne " \033[1;31m[ ! ] Descargando"
-wget -O /etc/ger-frm/GENERADOR_BIN.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/HerramientasADM/GENERADOR_BIN.shh > /dev/null 2>&1; chmod +x /etc/ger-frm/GENERADOR_BIN.sh
-fun_bar "chmod -R 777 /etc/ger-frm/"
-chmod -R 777 /etc/ger-frm/ > /dev/null 2>&1
+wget -O /etc/ger-frm/GENERADOR_BIN.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/HerramientasADM/GENERADOR_BIN.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/GENERADOR_BIN.sh
+fun_bar "chmod -R 777 /etc/ger-frm/GENERADOR_BIN.sh"
+chmod -R 777 /etc/ger-frm/GENERADOR_BIN.sh > /dev/null 2>&1
 echo -e "$barra"
-echo -e "${cor[3]} DESCARGADO CON SUCCESO"
-echo -e "$barra"
+echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
-# fun_bar "service ssh restart" "service squid3 restart"
+MasterBin () {
+wget -O /etc/ger-frm/MasterBin.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/HerramientasADM/MasterBin.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/MasterBin.sh
+fun_bar "chmod -R 777 /etc/ger-frm/MasterBin.sh"
+chmod -R 777 /etc/ger-frm/MasterBin.sh > /dev/null 2>&1
+echo -e "$barra"
+echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
 
-msg -ama "$(fun_trans "STATUS DE SISTEMA") ${cor[4]}[NEW-ADM]"
+real-host () {
+wget -O /etc/ger-frm/real-host.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/HerramientasADM/real-host.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/real-host.sh
+fun_bar "chmod -R 777 /etc/ger-frm/real-host.sh"
+chmod -R 777 /etc/ger-frm/real-host.sh > /dev/null 2>&1
+echo -e "$barra"
+echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
+
+dados () {
+wget -O /etc/ger-frm/dados.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/HerramientasADM/dados.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/dados.sh
+fun_bar "chmod -R 777 /etc/ger-frm/dados.sh"
+chmod -R 777 /etc/ger-frm/dados.sh > /dev/null 2>&1
+echo -e "$barra"
+echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
+
+Crear-Demo () {
+wget -O /etc/ger-frm/Crear-Demo.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/HerramientasADM/Crear-Demo.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/Crear-Demo.sh
+fun_bar "chmod -R 777 /etc/ger-frm/Crear-Demo.sh"
+chmod -R 777 /etc/ger-frm/Crear-Demo.sh > /dev/null 2>&1
+echo -e "$barra"
+echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
+
+squidpass () {
+wget -O /etc/ger-frm/squidpass.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/HerramientasADM/squidpass.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/squidpass.sh
+fun_bar "chmod -R 777 /etc/ger-frm/squidpass.sh"
+chmod -R 777 /etc/ger-frm/squidpass.sh > /dev/null 2>&1
+echo -e "$barra"
+echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
+
+insta_painel () {
+wget -O /etc/ger-frm/insta_painel https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/HerramientasADM/insta_painel > /dev/null 2>&1; chmod +x /etc/ger-frm/insta_painel
+fun_bar "chmod -R 777 /etc/ger-frm/insta_painel"
+chmod -R 777 /etc/ger-frm/insta_painel > /dev/null 2>&1
+echo -e "$barra"
+echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
+
+vnc () {
+wget -O /etc/ger-frm/vnc.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/HerramientasADM/vnc.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/vnc.sh
+fun_bar "chmod -R 777 /etc/ger-frm/vnc.sh"
+chmod -R 777 /etc/ger-frm/vnc.sh > /dev/null 2>&1
+echo -e "$barra"
+echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
+
+msg -ama "$(fun_trans "TOOLS DOWNLOAD MANAGER*") ${cor[4]}[NEW-ADM]"
 echo -e "$barra"
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "GERADOR DE BIN")"
 echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "CONSULTAR UN BIN")"
-echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "XXXXXXXXXXXXX")"
-echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "XXXXXXXXXXXXXX")"
-echo -ne "\033[1;32m [5] > " && msg -azu "$(fun_trans "XXXXXXXXXXXXXX")"
-echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "XXXXXXXXXXXXXXXXXX") $ddos"
-echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "XXXXXXXXXXXXXXXXXX") $ddos"
-echo -ne "\033[1;32m [8] > " && msg -azu "$(fun_trans "XXXXXXXXXXXXXXXXXX") $ddos"
-echo -ne "\033[1;32m [9] > " && msg -azu "$(fun_trans "XXXXXXXXXXXXXXXXXX") $ddos"
-echo -ne "\033[1;32m [10] > " && msg -azu "$(fun_trans "XXXXXXXXXXXXXXXXXX") $ddos"
-echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "XXXXXXXXXXXXXXXXXX") $ddos"
-echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "XXXXXXXXXXXXXXXXXX") $ddos"
-echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "XXXXXXXXXXXXXXXXXX") $ddos"
-echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "XXXXXXXXXXXXXXXXXX") $ddos"
+echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "HOST EXTRACTOR")"
+echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "MONITOR DE CONSUMO")"
+echo -ne "\033[1;32m [5] > " && msg -azu "$(fun_trans "USUARIO TEMPORAL")"
+echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "PROTECAO SQUID PASS") $ddos"
+echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "PAINEL DE UPLOAD DE EHI") $ddos"
+echo -ne "\033[1;32m [8] > " && msg -azu "$(fun_trans "VNC SERVER") $ddos"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 echo -e "$barra"
 while [[ ${arquivoonlineadm} != @(0|[1-9]) ]]; do
@@ -78,14 +131,11 @@ case $arquivoonlineadm in
 0)exit;;
 1)GENERADOR_BIN;;
 2)MasterBin;;
-3)/etc/ger-tools/visorpuertos.sh;;
-4)/etc/ger-tools/optimizar.sh;;
-5)/etc/ger-tools/netstat.sh;;
-6)/etc/frm/nload.sh;;
-7)/etc/frm/nload.sh;;
-8)/etc/frm/nload.sh;;
-9)/etc/frm/nload.sh;;
-10)/etc/frm/nload.sh;;
-11)/etc/frm/nload.sh;;
+3)real-host;;
+4)dados;;
+5)Crear-Demo;;
+6)squidpass;;
+7)insta_painel;;
+8)vnc;;
 esac
 msg -bar
