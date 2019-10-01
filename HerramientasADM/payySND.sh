@@ -218,7 +218,7 @@ echo -e "$reto $ech_ret"
 unset reto
 fi
 done
-echo -ne "Escola o Metodo de Requisiçao: " && read valor3 #Metodo Requisicao
+echo -ne "Escola o Metodo de Requisicao: " && read valor3 #Metodo Requisicao
 echo -e "[1] realData
 [2] netData
 [3] raw"
@@ -250,7 +250,7 @@ sed -i "s;get;$req;g" $HOME/Payloads.txt
 sed -i "s;mhost;$valor1;g" $HOME/Payloads.txt
 sed -i "s;mip;$valor2;g" $HOME/Payloads.txt
 echo -e "Payloads Geradas... Testando..."
-barra="\033[1;36m====================================================================================="
+barra="\033[0;34m================================================================================"
 echo -e "$barra"
 while read payload; do
 #echo -e "\033[1;31mTestando Payload:\033[1;33m$payload"
