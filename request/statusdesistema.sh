@@ -12,8 +12,10 @@ link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-
 [[ ! -e /etc/ger-tools/htop.sh ]] && wget -O /etc/ger-tools/htop.sh ${link_bin} > /dev/null 2>&1 && chmod +x /etc/ger-tools/htop.sh
 link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/ger-tools/nload.sh"
 [[ ! -e /etc/ger-tools/nload.sh ]] && wget -O /etc/ger-tools/nload.sh ${link_bin} > /dev/null 2>&1 && chmod +x /etc/ger-tools/nload.sh
-link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/ger-tools//visorpuertos.sh"
+link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/ger-tools/visorpuertos.sh"
 [[ ! -e /etc/ger-tools/visorpuertos.sh ]] && wget -O /etc/ger-tools/visorpuertos.sh ${link_bin} > /dev/null 2>&1 && chmod +x /etc/ger-tools/visorpuertos.sh
+link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/ger-tools/nettools"
+[[ ! -e /etc/ger-tools/nettools ]] && wget -O /etc/ger-tools/nettools ${link_bin} > /dev/null 2>&1 && chmod +x /etc/ger-tools/nettools
 
 fun_bar () {
 comando="$1"
@@ -42,9 +44,10 @@ echo -e "$barra"
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "TRAFICO DE RED NLOAD")"
 echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "PROCESOS DEL SISTEMA HTOP")"
 echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "INFORMACION DE SISTEMAS Y PUERTOS")"
+echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "NET TOOLS TARGET")"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 echo -e "$barra"
-while [[ ${arquivoonlineadm} != @(0|[1-3]) ]]; do
+while [[ ${arquivoonlineadm} != @(0|[1-4]) ]]; do
 read -p "Selecione a Opcao: " arquivoonlineadm
 tput cuu1 && tput dl1
 done
@@ -53,5 +56,6 @@ case $arquivoonlineadm in
 1)/etc/ger-tools/nload.sh;;
 2)/etc/ger-tools/htop.sh;;
 3)/etc/ger-tools/visorpuertos.sh;;
+4)/etc/ger-tools/nettools;;
 esac
 msg -bar
