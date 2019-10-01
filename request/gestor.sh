@@ -110,9 +110,8 @@ cambiopass () {
 echo -e "${cor[3]} $(fun_trans "Esta herramienta cambia la contraseña de su servidor vps")"
 echo -e "${cor[3]} $(fun_trans "Esta contraseña es utilizada como usuario") root"
 echo -e "$barra"
-echo -e " $(fun_trans "Desea Seguir?")"
-read -p " [S/N]: " -e -i n PROS
-[[ $PROS = @(s|S|y|Y) ]] || return 1
+echo -ne " $(fun_trans "Desea Seguir?") [S/N]: "; read x
+[[ $x = @(n|N) ]] && echo -e "$barra" && return
 echo -e "$barra"
 #Inicia Procedimentos
 echo -e "${cor[0]} $(fun_trans "Escriba su nueva contraseña")"
@@ -133,9 +132,8 @@ echo -e "${cor[3]} $(fun_trans "Googlecloud y Amazon esta configuracion solo")"
 echo -e "${cor[3]} $(fun_trans "funcionan en Googlecloud y Amazon Puede causar")"
 echo -e "${cor[3]} $(fun_trans "error en otras VPS agenas a Googlecloud y Amazon ")"
 echo -e "$barra"
-echo -e " $(fun_trans "Desea Seguir?")"
-read -p " [S/N]: " -e -i n PROS
-[[ $PROS = @(s|S|y|Y) ]] || return 1
+echo -ne " $(fun_trans "Desea Seguir?") [S/N]: "; read x
+[[ $x = @(n|N) ]] && echo -e "$barra" && return
 echo -e "$barra"
 #Inicia Procedimentos
 echo -e "${cor[0]} $(fun_trans "Aplicando Configuracoes")"
