@@ -260,4 +260,5 @@ echo -e "\033[1;33m $(echo -e $retorn|grep -v Status)"
 echo -e "\033[1;32m$(echo -e $retorn|grep Status)"
 echo -e "$barra"
 done < $HOME/Payloads.txt
-echo -e "SUCESSO!\033[0m"
+echo -e "\033[1;33m PAYLOADS TESTADO CON SUCESSO!\033[0m"
+echo -e "$barra"
