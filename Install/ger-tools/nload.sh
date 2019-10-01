@@ -28,8 +28,8 @@ sleep 1s
 }
 
 
-echo -e "${cor[3]} $(fun_trans "Con nload puedes ver todos el")"
-echo -e "${cor[3]} $(fun_trans "trafico de red tu sistema")"
+echo -e "${cor[3]} $(fun_trans "Con nload puedes ver todos el trafico")"
+echo -e "${cor[3]} $(fun_trans "de red generado en tu sistema")"
 
 echo -e "$barra"
 echo -e "${cor[0]}PARA SALIR DEL PANEL PRESIONE ${cor[3]}CTLR+C \e[0m"
