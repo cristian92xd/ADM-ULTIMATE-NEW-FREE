@@ -19,11 +19,12 @@ ports.sh
 speed.sh
 speedtest.py
 utils.sh
+payySND.sh
+paysnd.sh
 gestor.sh
 optimizar.sh
 criar_pay.sh
 ultrahost
-paysnd.sh
 panelsshplus.sh
 ddos.sh
 fai2ban.sh

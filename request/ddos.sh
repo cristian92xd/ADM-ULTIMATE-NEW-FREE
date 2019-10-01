@@ -72,19 +72,42 @@ echo -e "$barra"
 echo -e "${cor[3]}$(fun_trans "ANTIDDOS INSTALACAO CON SUCESSO")"
 }
 
+backup (){
+#BACKUP ANTI-DDOS
+fun_bar "mkdir /root/scripts"
+wget -O /root/scripts/listcron.sh http://www.inetbase.com/scripts/listcron.sh -o /dev/null
+fun_bar "mkdir /root/scripts/ddos"
+wget -O /root/scripts/ddos/LICENSE http://www.inetbase.com/scripts/ddos/LICENS -o /dev/null
+wget -O /root/scripts/ddos/ddos.conf http://www.inetbase.com/scripts/ddos/ddos.conf -o /dev/null
+wget -O /root/scripts/ddos/ddos.sh http://www.inetbase.com/scripts/ddos/ddos.sh -o /dev/null
+wget -O /root/scripts/ddos/ignore.ip.list http://www.inetbase.com/scripts/ddos/ignore.ip.list -o /dev/null
+echo "#BACKUP DE SCRIPT ANTIDDOS" > /root/scripts/Inportante.txt
+wget -O /root/scripts/ddos/install.ddos http://www.inetbase.com/scripts/ddos/install.ddos -o /dev/null
+wget -O /root/scripts/ddos/install.sh http://www.inetbase.com/scripts/ddos/install.sh -o /dev/null
+wget -O /root/scripts/ddos/uninstall.ddos http://www.inetbase.com/scripts/ddos/uninstall.ddos -o /dev/null
+wget -O /root/scripts/ddos/uninstall.sh http://www.inetbase.com/scripts/ddos/uninstall.sh -o /dev/null
+fun_bar "service ssh restart" "service squid3 restart"
+echo -e "$barra"
+echo -e "${cor[3]}$(fun_trans "BACKUP ANTIDDOS CON SUCESSO")"
+echo -e "$barra"
+echo -e "${cor[4]}$(fun_trans "Ruta del backup:") ${cor[2]}/root/scripts"
+}
+
 [[ -e /usr/local/ddos/ddos.conf ]] && ddos=$(echo -e "\033[1;32mon ") || ddos=$(echo -e "\033[1;31moff ")
 
 msg -ama "$(fun_trans "ANTI DDOS") ${cor[4]}[NEW-ADM]"
 echo -e "$barra"
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "Anti DDOS") $ddos"
+echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "BACKUP Anti DDOS")"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 echo -e "$barra"
-while [[ ${arquivoonlineadm} != @(0|[1-]) ]]; do
+while [[ ${arquivoonlineadm} != @(0|[1-2]) ]]; do
 read -p "Selecione a Opcao: " arquivoonlineadm
 tput cuu1 && tput dl1
 done
 case $arquivoonlineadm in
 0)exit;;
 1)antiddos;;
+2)backup;;
 esac
 msg -bar

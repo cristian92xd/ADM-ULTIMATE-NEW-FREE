@@ -367,7 +367,7 @@ done
 proxy_fun
 }
 paysnd_fun () {
-echo -e " \033[1;32m Payload $(fun_trans ${id} "forÃ§a bruta") [NEW-ADM]"
+echo -e "\033[1;33m PAYLOAD $(fun_trans ${id} "FORCA BRUTA") \033[1;32m[NEW-ADM]"
 echo -e "$barra"
 while true; do
 echo -e "${cor[4]} [1] > \033[1;37m$(fun_trans ${id} "Tente um PAYLOAD")"
