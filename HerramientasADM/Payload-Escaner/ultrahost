@@ -48,12 +48,12 @@ randomize="$RANDOM"
 }
 
 scan_funtion () {
-echo -e " \033[1;36m$(fun_trans "Scanner de subdominio") \033[1;32m[NEW-ADM]"
+echo -e "\033[1;33m$(fun_trans "SCANNER DE SUBDOMINIO") \033[1;32m[NEW-ADM]"
 echo -e "$barra"
 #INICIA SCRIPT
 unset hostcaptura
 while [[ ${hostcaptura} = "" ]]; do
-echo -ne "\033[1;37m $(fun_trans "Digite o domi­nio"): " && read hostcaptura
+echo -ne "\033[1;37m $(fun_trans "Digite o dominio"): " && read hostcaptura
 tput cuu1 && tput dl1
 done
 unset limitecaptura

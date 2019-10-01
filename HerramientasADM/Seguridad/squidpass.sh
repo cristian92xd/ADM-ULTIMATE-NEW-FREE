@@ -147,12 +147,8 @@ echo -e "$barra"
 echo -ne "\033[1;37m$(fun_trans "Digite a Opcao"): "
 read optons
 case $optons in
-0)
-exit
-;;
-1)
-squidpass
-;;
+0)exit;;
+1)squidpass;;
 esac
 #Reinicia ADM
 

@@ -5,9 +5,7 @@ SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 
-echo -e "${cor[5]} $(fun_trans "ADM-ULTIMATE VISOR") ${cor[4]}[NEW-ADM]"
-echo -e "$barra"
-echo -e "${cor[3]} $(fun_trans "INFORMACION DE SISTEMAS Y PUERTOS")"
+echo -e "${cor[3]} $(fun_trans "INFORMACION DE SISTEMAS Y PUERTOS") ${cor[4]}[NEW-ADM]"
 echo -e "$barra"
 
 #HORA SISTEMA

@@ -151,7 +151,7 @@ read  -p " Nuevo passwd: " pass
 (echo $pass; echo $pass)|passwd 2>/dev/null
 sleep 1s
 echo -e "$barra"
-echo -e "${cor[3]} $(fun_trans "Contraseña cambiada con exito!")"
+echo -e "${cor[3]} $(fun_trans "Configuraciones aplicadas con exito!")"
 echo -e "${cor[2]} $(fun_trans "Su contraseña ahora es"): ${cor[4]}$pass"
 service ssh restart > /dev/null 2>&1
 echo -e "$barra"

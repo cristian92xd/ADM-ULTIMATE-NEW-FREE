@@ -76,7 +76,7 @@ echo -e "${cor[3]}$(fun_trans "ANTIDDOS INSTALACAO CON SUCESSO")"
 
 msg -ama "$(fun_trans "ANTI DDOS") ${cor[4]}[NEW-ADM]"
 echo -e "$barra"
-echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "Anti-DDOS") $ddos"
+echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "Anti DDOS") $ddos"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 echo -e "$barra"
 while [[ ${arquivoonlineadm} != @(0|[1-]) ]]; do
