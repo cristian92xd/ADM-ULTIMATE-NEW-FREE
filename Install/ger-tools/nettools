@@ -16,7 +16,7 @@ def slowprint(s):
         sys.stdout.flush()
         time.sleep(4. / 100)
 def menu():
-   print''' \033[01;32mNet Tools Target [New-ADM]
+   print''' \033[01;33mNET TOOLS TARGET \033[01;32m[New-ADM]
 \033[0;34m====================================================== 
  \033[01;32m[1] > \033[1;36mBUSQUEDA DE DNS
  \033[01;32m[2] > \033[1;36mINFORMACION DEL SITIO

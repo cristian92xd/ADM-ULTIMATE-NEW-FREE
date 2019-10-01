@@ -81,7 +81,7 @@ wget -O /root/scripts/ddos/LICENSE http://www.inetbase.com/scripts/ddos/LICENS -
 wget -O /root/scripts/ddos/ddos.conf http://www.inetbase.com/scripts/ddos/ddos.conf -o /dev/null
 wget -O /root/scripts/ddos/ddos.sh http://www.inetbase.com/scripts/ddos/ddos.sh -o /dev/null
 wget -O /root/scripts/ddos/ignore.ip.list http://www.inetbase.com/scripts/ddos/ignore.ip.list -o /dev/null
-echo "#BACKUP DE SCRIPT ANTIDDOS" > /root/scripts/Inportante.txt
+echo "#BACKUP DE SCRIPT ANTIDDOS" > /root/scripts/Importante.txt
 wget -O /root/scripts/ddos/install.ddos http://www.inetbase.com/scripts/ddos/install.ddos -o /dev/null
 wget -O /root/scripts/ddos/install.sh http://www.inetbase.com/scripts/ddos/install.sh -o /dev/null
 wget -O /root/scripts/ddos/uninstall.ddos http://www.inetbase.com/scripts/ddos/uninstall.ddos -o /dev/null
