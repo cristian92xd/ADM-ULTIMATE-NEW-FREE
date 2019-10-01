@@ -30,6 +30,7 @@ sleep 1s
 echo -e "${cor[3]} $(fun_trans "Con htop puedes ver todos los procesos")"
 echo -e "${cor[3]} $(fun_trans "que se ejecutan en tu sistema")"
 echo -e "${cor[3]} $(fun_trans "PARA SALIR DEL PANEL PRESIONE") ${cor[3]}CTLR+C"
+echo -e "$barra"
 fun_bar "apt-get install htop -y"
 sleep 1s
 
