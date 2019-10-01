@@ -84,8 +84,8 @@ vncserver -kill :3 > /dev/null 2>&1
 fi
 echo -e "$barra" 
 }
-unset vnc
-[[ -e /usr/bin/vnc_log1 ]] && vnc_log1="\033[1;32m$(source trans -b pt:${id} "Online")"
+
+[[ -e /usr/bin/vnc_log1 ]] && vnc_log1=$(echo -e "\033[1;32mon ") || vnc_log1=$(echo -e "\033[1;31moff ")
 
 echo -e "${cor[3]} $(fun_trans " VNC SERVER") ${cor[2]}[NEW-ADM]"
 echo -e "${cor[3]} $(fun_trans "   Conexão Remota")"
