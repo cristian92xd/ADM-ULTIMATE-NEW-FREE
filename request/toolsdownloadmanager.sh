@@ -111,7 +111,7 @@ echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
-msg -ama "$(fun_trans "TOOLS DOWNLOAD MANAGER*") ${cor[4]}[NEW-ADM]"
+msg -ama "$(fun_trans "TOOLS DOWNLOAD MANAGER") ${cor[4]}[NEW-ADM]"
 echo -e "$barra"
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "GERADOR DE BIN")"
 echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "CONSULTAR UN BIN")"
