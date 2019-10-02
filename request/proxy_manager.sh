@@ -6,6 +6,16 @@ SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 
+#LIPIAR SCRIPTS
+rm -rf /bin/tcp-client.py
+rm -rf /bin/Proxy-Publico.py
+rm -rf /bin/Proxy-Privado.py
+rm -rf /bin/shadown.sh
+rm -rf /bin/shadowsocks.sh
+rm -rf /bin/shadowsock.sh
+rm -rf /bin/ssrrmu.sh
+rm -rf /bin/v2ray.sh
+rm -rf /bin/vdoray.sh
 
 gestor_fun () {
 echo -e " ${cor[3]} $(fun_trans "PROXY MANAGER BETA-TESTER") ${cor[4]}[NEW-ADM]"
