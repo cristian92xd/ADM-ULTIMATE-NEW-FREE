@@ -84,7 +84,7 @@ vncserver -kill :3 > /dev/null 2>&1
 fi
 echo -e "$barra" 
 }
-unset ddos
+unset vnc
 [[ -e /usr/bin/vnc_log1 ]] && vnc_log1="\033[1;32m$(source trans -b pt:${id} "Online")"
 
 echo -e "${cor[3]} $(fun_trans " VNC SERVER") ${cor[2]}[NEW-ADM]"

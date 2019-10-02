@@ -19,8 +19,7 @@ echo "$MEU_IP2" > /etc/MEUIPADM
 fi
 }
 IP="$(meu_ip)"
-Block="/etc/crondbl" && [[ ! -d ${Block} ]] && exit
-Block > /dev/null 2>&1
+
 BARRA1="\e[1;30m➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖\e[0m"
 BARRA="\e[0;31m--------------------------------------------------------------------\e[0m"
 blan='\033[1;37m'
