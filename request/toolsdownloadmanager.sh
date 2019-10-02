@@ -111,6 +111,15 @@ echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
+nettools () {
+wget -O /etc/ger-frm/nettools https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/HerramientasADM/nettools > /dev/null 2>&1; chmod +x /etc/ger-frm/nettools
+fun_bar "chmod -R 777 /etc/ger-frm/nettools"
+chmod -R 777 /etc/ger-frm/nettools > /dev/null 2>&1
+echo -e "$barra"
+echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
+
 msg -ama "$(fun_trans "TOOLS DOWNLOAD MANAGER") ${cor[4]}[NEW-ADM]"
 echo -e "$barra"
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "GERADOR DE BIN")"
@@ -121,6 +130,7 @@ echo -ne "\033[1;32m [5] > " && msg -azu "$(fun_trans "USUARIO TEMPORAL")"
 echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "PROTECAO SQUID PASS") $ddos"
 echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "PAINEL DE UPLOAD DE EHI") $ddos"
 echo -ne "\033[1;32m [8] > " && msg -azu "$(fun_trans "VNC SERVER") $ddos"
+echo -ne "\033[1;32m [9] > " && msg -azu "$(fun_trans "NET TOOLS TARGET") $ddos"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 echo -e "$barra"
 while [[ ${arquivoonlineadm} != @(0|[1-9]) ]]; do
@@ -137,5 +147,6 @@ case $arquivoonlineadm in
 6)squidpass;;
 7)insta_painel;;
 8)vnc;;
+9)nettools;;
 esac
 msg -bar
