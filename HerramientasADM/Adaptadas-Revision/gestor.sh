@@ -93,26 +93,12 @@ echo -e "$barra"
 return
 }
 
-act_hora () {
-echo -ne " \033[1;31m[ ! ] timedatectl"
-timedatectl > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
-echo -ne " \033[1;31m[ ! ] timedatectl list-timezones"
-timedatectl list-timezones > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
-echo -ne " \033[1;31m[ ! ] timedatectl list-timezones  | grep Santiago"
-timedatectl list-timezones  | grep Santiago > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
-echo -ne " \033[1;31m[ ! ] timedatectl set-timezone America/Santiago"
-timedatectl set-timezone America/Santiago > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
-echo -e "$barra"
-return
-}
-
 cambiopass () {
 echo -e "${cor[3]} $(fun_trans "Esta herramienta cambia la contraseña de su servidor vps")"
 echo -e "${cor[3]} $(fun_trans "Esta contraseña es utilizada como usuario") root"
 echo -e "$barra"
-echo -e " $(fun_trans "Desea Seguir?")"
-read -p " [S/N]: " -e -i n PROS
-[[ $PROS = @(s|S|y|Y) ]] || return 1
+echo -ne " $(fun_trans "Desea Seguir?") [S/N]: "; read x
+[[ $x = @(n|N) ]] && echo -e "$barra" && return
 echo -e "$barra"
 #Inicia Procedimentos
 echo -e "${cor[0]} $(fun_trans "Escriba su nueva contraseña")"
@@ -133,9 +119,8 @@ echo -e "${cor[3]} $(fun_trans "Googlecloud y Amazon esta configuracion solo")"
 echo -e "${cor[3]} $(fun_trans "funcionan en Googlecloud y Amazon Puede causar")"
 echo -e "${cor[3]} $(fun_trans "error en otras VPS agenas a Googlecloud y Amazon ")"
 echo -e "$barra"
-echo -e " $(fun_trans "Desea Seguir?")"
-read -p " [S/N]: " -e -i n PROS
-[[ $PROS = @(s|S|y|Y) ]] || return 1
+echo -ne " $(fun_trans "Desea Seguir?") [S/N]: "; read x
+[[ $x = @(n|N) ]] && echo -e "$barra" && return
 echo -e "$barra"
 #Inicia Procedimentos
 echo -e "${cor[0]} $(fun_trans "Aplicando Configuracoes")"
@@ -158,6 +143,19 @@ echo -e "$barra"
 return
 }
 
+act_hora () {
+echo -ne " \033[1;31m[ ! ] timedatectl"
+timedatectl > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
+echo -ne " \033[1;31m[ ! ] timedatectl list-timezones"
+timedatectl list-timezones > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
+echo -ne " \033[1;31m[ ! ] timedatectl list-timezones  | grep Santiago"
+timedatectl list-timezones  | grep Santiago > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
+echo -ne " \033[1;31m[ ! ] timedatectl set-timezone America/Santiago"
+timedatectl set-timezone America/Santiago > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
+echo -e "$barra"
+return
+}
+
 cleanreg () {
 echo -ne " \033[1;31m[ ! ] Registro del limitador eliminado"
 sudo rm -rf /etc/newadm/ger-user/Limiter.log > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
@@ -173,11 +171,10 @@ echo -e "${cor[4]} [1] > \033[1;36m$(fun_trans "Atualizar pacotes")"
 echo -e "${cor[4]} [2] > \033[1;36m$(fun_trans "Reiniciar os serviço")"
 echo -e "${cor[4]} [3] > \033[1;36m$(fun_trans "Reiniciar VPS")"
 echo -e "${cor[4]} [4] > \033[1;36m$(fun_trans "Alterar o nome do VPS")"
-echo -e "${cor[4]} [5] > \033[1;36m$(fun_trans "Atualizar hora America-Santiago")"
-echo -e "${cor[4]} [6] > \033[1;36m$(fun_trans "Cambiar contraseña ROOT del VPS")"
-echo -e "${cor[4]} [7] > \033[1;36m$(fun_trans "Serviço ROOT para Googlecloud e Amazon")"
+echo -e "${cor[4]} [5] > \033[1;36m$(fun_trans "Cambiar contraseña ROOT del VPS")"
+echo -e "${cor[4]} [6] > \033[1;36m$(fun_trans "Serviço ROOT para Googlecloud e Amazon")"
+echo -e "${cor[4]} [7] > \033[1;36m$(fun_trans "Atualizar hora America-Santiago")"
 echo -e "${cor[4]} [8] > \033[1;36m$(fun_trans "Eliminar Registro del Limitador")"
-
 echo -e "${cor[4]} [0] > ${cor[0]}$(fun_trans "VOLTAR")\n${barra}"
 while [[ ${opx} != @(0|[1-8]) ]]; do
 echo -ne "${cor[0]}$(fun_trans "Selecione a Opcao"): \033[1;37m" && read opx
@@ -199,13 +196,13 @@ case $opx in
 	host_name
 	break;;
 	5)
-	act_hora
-	break;;
-	6)
 	cambiopass
 	break;;
-	7)
+	6)
 	rootpass
+	break;;
+	7)
+	act_hora
 	break;;
 	8)
 	cleanreg
