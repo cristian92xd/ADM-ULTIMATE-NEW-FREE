@@ -130,7 +130,8 @@ sed -i "s;PermitRootLogin prohibit-password;PermitRootLogin yes;g" /etc/ssh/sshd
 sed -i "s;PermitRootLogin without-password;PermitRootLogin yes;g" /etc/ssh/sshd_config
 sed -i "s;PasswordAuthentication no;PasswordAuthentication yes;g" /etc/ssh/sshd_config
 echo -e "$barra"
-echo -e "${cor[0]} $(fun_trans "Escriba su nueva contraseña") root"
+echo -e "${cor[0]} $(fun_trans "Escriba su contraseña root actual")"
+echo -e "${cor[0]} $(fun_trans "si lo decea puede cambiarla")"
 echo -e "$barra"
 read  -p " Nuevo passwd: " pass
 (echo $pass; echo $pass)|passwd 2>/dev/null
