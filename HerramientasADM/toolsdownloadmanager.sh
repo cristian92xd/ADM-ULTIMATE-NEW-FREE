@@ -139,7 +139,6 @@ echo -ne "\033[1;32m [5] > " && msg -azu "$(fun_trans "USUARIO TEMPORAL")"
 echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "PROTECAO SQUID PASS")"
 echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "PAINEL DE UPLOAD DE EHI")"
 echo -ne "\033[1;32m [8] > " && msg -azu "$(fun_trans "VNC SERVER") $ddos"
-echo -ne "\033[1;32m [9] > " && msg -azu "$(fun_trans "MAS") $ddos"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 echo -e "$barra"
 while [[ ${arquivoonlineadm} != @(0|[1-9]) ]]; do
@@ -156,6 +155,5 @@ case $arquivoonlineadm in
 6)squidpass;;
 7)insta_painel;;
 8)vnc;;
-9)toolsdownloadmanager2;;
 esac
 msg -bar
