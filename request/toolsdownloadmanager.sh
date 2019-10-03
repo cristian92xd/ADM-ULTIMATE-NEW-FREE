@@ -120,15 +120,6 @@ echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
-toolsdownloadmanager2 () {
-wget -O /etc/ger-tools/proxy_manager.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/HerramientasADM/proxy_manager.sh > /dev/null 2>&1; chmod +x /etc/ger-tools/proxy_manager.sh
-fun_bar "chmod -R 777 /etc/ger-tools/proxy_manager.sh"
-chmod -R 777 /etc/ger-tools/proxy_manager.sh > /dev/null 2>&1
-echo -e "$barra"
-echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
-return
-}
-
 msg -ama "$(fun_trans "TOOLS DOWNLOAD MANAGER") ${cor[4]}[NEW-ADM]"
 echo -e "$barra"
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "GERADOR DE BIN")"
