@@ -111,15 +111,6 @@ echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
-nettools () {
-wget -O /etc/ger-frm/nettools https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/HerramientasADM/nettools > /dev/null 2>&1; chmod +x /etc/ger-frm/nettools
-fun_bar "chmod -R 777 /etc/ger-frm/nettools"
-chmod -R 777 /etc/ger-frm/nettools > /dev/null 2>&1
-echo -e "$barra"
-echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
-return
-}
-
 msg -ama "$(fun_trans "TOOLS DOWNLOAD MANAGER") ${cor[4]}[NEW-ADM]"
 echo -e "$barra"
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "GERADOR DE BIN")"
