@@ -121,7 +121,7 @@ return
 }
 
 toolsdownloadmanager2 () {
-wget -O /etc/ger-tools/proxy_manager.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/HerramientasADM/proxy_manager.sh > /dev/null 2>&1; chmod +x /etc/ger-tools/proxy_manager.sh
+wget -O /etc/ger-tools/proxy_manager.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/HerramientasADM/proxy_manager.sh > /dev/null 2>&1; chmod +x /etc/ger-tools/proxy_manager.sh; /etc/ger-tools/proxy_manager.sh
 fun_bar "chmod -R 777 /etc/ger-tools/proxy_manager.sh"
 chmod -R 777 /etc/ger-tools/proxy_manager.sh > /dev/null 2>&1
 echo -e "$barra"
