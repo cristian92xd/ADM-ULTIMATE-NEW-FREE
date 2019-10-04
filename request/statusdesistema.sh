@@ -7,7 +7,7 @@ SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 
 #Repositorio-GITHUB
-mkdir /etc/ger-tools > /dev/null 2>&1
+[[ ! -d /etc/ger-tools ]] && mkdir /etc/ger-tools > /dev/null 2>&1
 link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/ger-tools/htop.sh"
 [[ ! -e /etc/ger-tools/htop.sh ]] && wget -O /etc/ger-tools/htop.sh ${link_bin} > /dev/null 2>&1 && chmod +x /etc/ger-tools/htop.sh
 link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/ger-tools/nload.sh"
