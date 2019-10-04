@@ -163,7 +163,6 @@ msg -ama " $(fun_trans "AGREGADO CON EXITO")"
 msg -bar
 }
 
-msg -bar
 menu_func "ABRIR PUERTO SSL" "AGREGAR MAS PUERTOS SSL" "-vd REDIRECCIONADOR SSL" "-vm DETENER PUERTOS SSL"
 echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") " && msg -bra "$(fun_trans "SALIR DEL SCRIPT")"
 msg -bar
