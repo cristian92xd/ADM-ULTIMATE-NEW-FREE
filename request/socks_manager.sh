@@ -90,7 +90,8 @@ msg -bar
 }
 
 gestor_fun () {
-echo -e " ${cor[3]} $(fun_trans "ADMINISTRADOR BETA-TESTER") ${cor[4]}[NEW-ADM]"
+echo -e " ${cor[3]} $(fun_trans "PROXY MANAGER 2 BETA-TESTER") ${cor[4]}[NEW-ADM]"
+echo -e " ${cor[3]} $(fun_trans "herramienta en modo de prueba")"
 echo -e "$barra"
 while true; do
 echo -e "${cor[4]} [1] > \033[1;36m$(fun_trans "SSL Manager")"
@@ -99,10 +100,11 @@ echo -e "${cor[4]} [3] > \033[1;36m$(fun_trans "ACTUALIZAR ZONA HORARIO")"
 echo -e "${cor[4]} [4] > \033[1;36m$(fun_trans "MENU SSHPLUS CONECCION")"
 echo -e "$barra"
 echo -e "${cor[4]} [5] > \033[1;36m$(fun_trans "LIBERAR VPS VURTL PARA CREAR USUARIOS")"
-echo -e "${cor[4]} [6] > \033[1;36m$(fun_trans "XXXXXXXXXXXXXXXXXXXXXXXX")"
+echo -e "${cor[4]} [6] > \033[1;36m$(fun_trans "NO DISPONIBLE")"
 echo -e "$barra"
 echo -e "${cor[4]} [7] > \033[1;36m$(fun_trans "Eliminar Registro del Limitador")"
 echo -e "${cor[4]} [8] > \033[1;36m$(fun_trans "Eliminar todos los usuarios del VPS")"
+echo -e "$barra"
 echo -e "${cor[4]} [9] > \033[1;36m$(fun_trans "Multi portos SSL")"
 echo -e "${cor[4]} [0] > ${cor[0]}$(fun_trans "VOLTAR")\n${barra}"
 while [[ ${opx} != @(0|[1-9]) ]]; do
