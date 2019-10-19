@@ -48,3 +48,5 @@ realizar cambios al scripts o borrar algun archivo.**
 
 ☆ https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ ☆
 ```
+
+**By: [ FULL SCRIPTS ⃘⃤꙰✰ ] VPS**
