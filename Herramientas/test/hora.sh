@@ -48,7 +48,7 @@ menu
 }
 
 shadowe_fun () {
-echo -e "${cor[3]}$(fun_trans "ZONA HORARIO")"
+echo -e " \033[1;36m $(fun_trans "ZONA HORARIO")"
 echo -e "$barra"
 while true; do
 echo -e "${cor[4]} [1] > ${cor[5]}$(fun_trans "ACTUALIZAR HORARIO  CHICHUAHUA")"

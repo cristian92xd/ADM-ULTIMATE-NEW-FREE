@@ -1,14 +1,10 @@
 #!/bin/bash
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
+
 BARRA1="\e[1;30m➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖\e[0m"
 BARRA="\e[0;31m--------------------------------------------------------------------\e[0m"
-SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit 1
-SCPusr="${SCPdir}/ger-user" && [[ ! -d ${SCPusr} ]] && mkdir ${SCPusr}
-SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && mkdir ${SCPfrm}
-SCPinst="/etc/ger-inst" && [[ ! -d ${SCPfrm} ]] && mkdir ${SCPfrm}
-SCPidioma="${SCPdir}/idioma"
-#
+
 # Auto install shadowsocks/shadowsocks-libev Server
 #
 # Copyright (C) 2017-2018 QUNIU <https://github.com/quniu>
