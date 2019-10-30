@@ -115,10 +115,10 @@ case $opx in
 	0)
 	return;;
 	1)
-	wget -O /bin/ssld.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/ssld.sh > /dev/null 2>&1; chmod +x /bin/ssld.sh; ssld.sh 
+	wget -O /bin/ssld.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/test/ssld.sh > /dev/null 2>&1; chmod +x /bin/ssld.sh; ssld.sh 
 	break;;
 	2)
-	wget -O /bin/sslmanager.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/sslmanager.sh > /dev/null 2>&1; chmod +x /bin/sslmanager.sh; sslmanager.sh
+	wget -O /bin/sslmanager.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/test/sslmanager.sh > /dev/null 2>&1; chmod +x /bin/sslmanager.sh; sslmanager.sh
 	break;;
 	3)
 	wget -O /bin/hora.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/test/hora.sh > /dev/null 2>&1; chmod +x /bin/hora.sh; hora.sh
