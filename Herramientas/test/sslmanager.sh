@@ -3,7 +3,6 @@
 SCPdir="/etc/newadm"
 SCPusr="${SCPdir}/ger-user"
 SCPfrm="/etc/ger-frm"
-SCPfrm3="/etc/adm-lite"
 SCPinst="/etc/ger-inst"
 SCPidioma="${SCPdir}/idioma"
 
