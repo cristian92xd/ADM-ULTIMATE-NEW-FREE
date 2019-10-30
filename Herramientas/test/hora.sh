@@ -1,6 +1,7 @@
 #!/bin/bash
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;35m" [3]="\033[1;32m" [4]="\033[1;31m" [5]="\033[1;33m" [6]="\E[44;1;37m" [7]="\E[41;1;37m" )
 barra="\033[0m\e[31m======================================================\033[1;37m"
+
 fun_bar () {
 comando="$1"
  _=$(
@@ -21,6 +22,7 @@ done
 echo -e " \033[1;33m[\033[1;31m####################\033[1;33m] - \033[1;32m100%\033[0m"
 sleep 1s
 }
+
 act_hora () {
 echo "America/Chihuahua" > /etc/timezone
 ln -fs /usr/share/zoneinfo/America/Chihuahua /etc/localtime > /dev/null 2>&1
@@ -28,6 +30,7 @@ dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1 && echo -e "\
 echo -e "$barra"
 menu
 }
+
 act_hora1 () {
 echo "America/Mexico_City" > /etc/timezone
 ln -fs /usr/share/zoneinfo/America/Mexico_City /etc/localtime > /dev/null 2>&1
@@ -35,6 +38,7 @@ dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1 && echo -e "\
 echo -e "$barra"
 menu
 }
+
 act_hora2 () {
 echo "America/Hermosillo" > /etc/timezone
 ln -fs /usr/share/zoneinfo/America/Hermosillo /etc/localtime > /dev/null 2>&1
@@ -42,8 +46,9 @@ dpkg-reconfigure --frontend noninteractive tzdata > /dev/null 2>&1 && echo -e "\
 echo -e "$barra"
 menu
 }
+
 shadowe_fun () {
-echo -e " ${cor[7]} $(fun_trans "ZONA HORARIO") ${cor[6]}[@ALEX_DROID9_0_MX]\033[0m"
+echo -e "${cor[3]}$(fun_trans "ZONA HORARIO")"
 echo -e "$barra"
 while true; do
 echo -e "${cor[4]} [1] > ${cor[5]}$(fun_trans "ACTUALIZAR HORARIO  CHICHUAHUA")"

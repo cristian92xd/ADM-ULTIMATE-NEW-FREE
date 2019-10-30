@@ -1,12 +1,5 @@
 #!/bin/bash
 
-SCPdir="/etc/newadm"
-SCPusr="${SCPdir}/ger-user"
-SCPfrm="/etc/ger-frm"
-SCPfrm3="/etc/adm-lite"
-SCPinst="/etc/ger-inst"
-SCPidioma="${SCPdir}/idioma"
-
 # Auto install Shadowsocks Server (all version)
 #
 # Copyright (C) 2016-2019 Teddysun <i@teddysun.com>

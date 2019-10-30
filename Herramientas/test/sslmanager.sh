@@ -1,12 +1,4 @@
 #!/bin/bash
-
-SCPdir="/etc/newadm"
-SCPusr="${SCPdir}/ger-user"
-SCPfrm="/etc/ger-frm"
-SCPfrm3="/etc/adm-lite"
-SCPinst="/etc/ger-inst"
-SCPidioma="${SCPdir}/idioma"
-
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;35m" [3]="\033[1;32m" [4]="\033[1;31m" [5]="\033[1;33m" [6]="\E[44;1;37m" [7]="\E[41;1;37m" )
 barra="\033[0m\e[31m======================================================\033[1;37m"
 SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit 1

@@ -30,7 +30,7 @@ echo -e "${cor[5]}LISTO YA PUEDES CREAR USUARIOS"
 }
 
 shadow_fun () {
-echo -e " ${cor[7]}PERMISO ROOT VURTL ${cor[6]}[NEWADM]\033[0m"
+echo -e " ${cor[7]}PERMISO ROOT VURTL\033[0m"
 echo -e "$barra"
 while true; do
 echo -e "${cor[4]} [1] > ${cor[5]}DESBLOQUEAR VURTL PARA CREAR USUARIOS"

