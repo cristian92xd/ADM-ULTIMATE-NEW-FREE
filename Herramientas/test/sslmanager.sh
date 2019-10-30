@@ -1,4 +1,14 @@
 #!/bin/bash
+Block="/etc/bin" && [[ ! -d ${Block} ]] && exit
+Block > /dev/null 2>&1
+
+SCPdir="/etc/newadm"
+SCPusr="${SCPdir}/ger-user"
+SCPfrm="/etc/ger-frm"
+SCPfrm3="/etc/adm-lite"
+SCPinst="/etc/ger-inst"
+SCPidioma="${SCPdir}/idioma"
+
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;35m" [3]="\033[1;32m" [4]="\033[1;31m" [5]="\033[1;33m" [6]="\E[44;1;37m" [7]="\E[41;1;37m" )
 barra="\033[0m\e[31m======================================================\033[1;37m"
 SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit 1
@@ -132,7 +142,7 @@ cd $HOME
 rm $HOME/multissl.sh &>/dev/null
 }
 shadow_fun () {
-echo -e " ${cor[7]}$(fun_trans "SSL MANAGER OPENSSH")"
+echo -e " \033[1;36m $(fun_trans "SSL MANAGER OPENSSH") \033[1;32m[NEW-ADM]"
 echo -e "$barra"
 while true; do
 echo -e "${cor[4]} [1] > ${cor[5]}$(fun_trans "INSTALAR SSL MANUAL-OPENSSH")"

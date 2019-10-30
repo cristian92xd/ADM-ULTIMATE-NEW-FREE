@@ -1,11 +1,12 @@
 #!/bin/bash
+Block="/etc/crondbl" && [[ ! -d ${Block} ]] && exit
+Block > /dev/null 2>&1
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
-API_TRANS="aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vcy9sZnlxZGI5NnJkejl5bW8vdHJhbnM/ZGw9MA=="
+API_TRANS="aHR0cHM6Ly93d3cuZHJvcGJveC5jb20vcy9sNmlxZjV4anRqbXBkeDUvdHJhbnM/ZGw9MA=="
 SUB_DOM='base64 -d'
 wget -O /usr/bin/trans $(echo $API_TRANS|$SUB_DOM) &> /dev/null
-
 mportas () {
 unset portas
 portas_var=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
@@ -58,7 +59,7 @@ msg -ama " $(fun_trans "Instalando SSL")"
 msg -bar
 fun_bar "apt-get install stunnel4 -y"
 msg -bar
-msg -azuc "$(fun_trans "Presione Enter a todas las opciones")"
+msg -azuc "Presione Enter a todas las opciones"
 sleep 3
 msg -bar
 openssl genrsa 1024 > stunnel.key
@@ -91,7 +92,7 @@ msg -ama " $(fun_trans "Instalando SSL")"
 msg -bar
 fun_bar "apt-get install stunnel4"
 msg -bar
-msg -azuc "$(fun_trans "Presione Enter a todas las opciones")"
+msg -azuc "Presione Enter a todas las opciones"
 sleep 2
 msg -bar
 openssl genrsa 1024 > stunnel.key
@@ -136,7 +137,7 @@ msg -ama " $(fun_trans "Instalando SSL")"
 msg -bar
 fun_bar "apt-get install stunnel4"
 msg -bar
-msg -azuc "$(fun_trans "Presione Enter a todas las opciones")"
+msg -azuc "Presione Enter a todas las opciones"
 sleep 2
 msg -bar
 openssl genrsa 1024 > stunnel.key
@@ -156,10 +157,14 @@ msg -ama " $(fun_trans "AGREGADO CON EXITO")"
 msg -bar
 }
 
-menu_func "ABRIR PUERTO SSL" "AGREGAR MAS PUERTOS SSL" "-vd REDIRECCIONADOR SSL" "-vm DETENER PUERTOS SSL"
-echo -ne "$(msg -verd "[0]") $(msg -verm2 ">") " && msg -bra "$(fun_trans "SALIR DEL SCRIPT")"
 msg -bar
-while [[ ${varread} != @([0-4]) ]]; do
+msg -bra "[1] = ABRIR PUERTO SSL"
+msg -bra "[2] = AGREGAR MAS PUERTOS SSL"
+msg -verd "[3] = REDIRECIONAR SSL"
+msg -verm2 "[4] = DETENER PUERTO SSL"
+msg -bra "[0] = SALIR"
+msg -bar
+while [[ ${varread} != @([0-3]) ]]; do
 read -p "Opcion: " varread
 done
 msg -bar

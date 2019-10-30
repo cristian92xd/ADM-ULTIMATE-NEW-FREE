@@ -1,5 +1,12 @@
 #!/bin/bash
 
+SCPdir="/etc/newadm"
+SCPusr="${SCPdir}/ger-user"
+SCPfrm="/etc/ger-frm"
+SCPfrm3="/etc/adm-lite"
+SCPinst="/etc/ger-inst"
+SCPidioma="${SCPdir}/idioma"
+
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 meu_ip () {

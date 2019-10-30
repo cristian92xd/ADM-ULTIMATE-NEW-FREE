@@ -1,5 +1,13 @@
 #!/bin/bash
 
+SCPdir="/etc/newadm"
+SCPusr="${SCPdir}/ger-user"
+SCPfrm="/etc/ger-frm"
+SCPfrm3="/etc/adm-lite"
+SCPinst="/etc/ger-inst"
+SCPidioma="${SCPdir}/idioma"
+
+
 BARRA1="\e[1;36m=-=-=-=-=-=-=-==-=-=-=--=-==-=-=-=-=-=-=-==-=-=-=--=-==-=-=-=-=-=-=-=\e[0m"
 BARRA="\e[0;31m--------------------------------------------------------------------\e[0m"
 
