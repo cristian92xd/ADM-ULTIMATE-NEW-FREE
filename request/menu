@@ -677,7 +677,7 @@ msg -ne "$(fun_trans "ENDERECO IP*"): " && msg -bra "$(meu_ip)"
 [[ -e ${SCPdir}/USRexpired ]] && msg -ne "$(fun_trans "USUARIOS EXPIRADOS*"): " && msg -bra "$(cat ${SCPdir}/USRexpired) $(fun_trans "Usuarios")"
 [[ -e ${SCPdir}/message.txt ]] && msg -bar && msg -bra "MESSAGE: $(cat ${SCPdir}/message.txt)"
 [[ -e ${SCPdir}/noticia.txt ]] && msg -bar && msg -bra "NOTICIAS: $(cat ${SCPdir}/noticia.txt)"
-[[ -e ${SCPdir}/key.txt ]] && msg -bar && msg -bra "USER-KEY: $(cat ${SCPdir}/key.txt)"
+# [[ -e ${SCPdir}/key.txt ]] && msg -bar && msg -bra "USER-KEY: $(cat ${SCPdir}/key.txt)"
 # NOVO SISTEMA DE MENUS
 msg -bar
 # SISTEMA DE HORA 
