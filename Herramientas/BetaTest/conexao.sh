@@ -6,11 +6,12 @@ ram2=$(free -h | grep -i mem | awk {'print $4'})
 ram3=$(free -h | grep -i mem | awk {'print $3'})
 uso=$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')
 system=$(cat /etc/MEUIPADM)
-echo "0" > /etc/SSHPlus/Exp
 
 [[ ! -d /etc/SSHPlus ]] && mkdir /etc/SSHPlus > /dev/null 2>&1
 link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/test/proxy.py"
 [[ ! -e /etc/SSHPlus/proxy.py ]] && wget -O /etc/SSHPlus/proxy.py ${link_bin} > /dev/null 2>&1 && chmod +x /etc/SSHPlus/proxy.py
+
+echo "0" > /etc/SSHPlus/Exp
 
 fun_ip () {
 if [[ -e /etc/MEUIPADM ]]; then
