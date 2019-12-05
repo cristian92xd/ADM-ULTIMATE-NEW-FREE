@@ -61,7 +61,6 @@ echo "" >> /etc/stunnel/stunnel.conf
 echo "[${namer}]" >> /etc/stunnel/stunnel.conf
 echo "connect = 127.0.0.1:${portd}" >> /etc/stunnel/stunnel.conf
 echo "accept = ${SSLPORTr}" >> /etc/stunnel/stunnel.conf
-echo "client = no" >> /etc/stunnel/stunnel.conf
 
 service stunnel4 restart > /dev/null 2>&1
 msg -bar
