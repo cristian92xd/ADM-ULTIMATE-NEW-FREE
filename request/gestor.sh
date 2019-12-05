@@ -169,10 +169,14 @@ echo -e "${cor[3]} $(fun_trans "Liberar passwd para VURTL")"
 echo -e "$barra"
 echo -ne " $(fun_trans "Desea Seguir?") [S/N]: "; read x
 [[ $x = @(n|N) ]] && echo -e "$barra" && return
+echo -e ""
 fun_bar "service ssh restart"
 sed -i 's/.*pam_cracklib.so.*/password sufficient pam_unix.so sha512 shadow nullok try_first_pass #use_authtok/' /etc/pam.d/common-password
 fun_bar "service ssh restart"
-echo -e "\033[1;33m $(fun_trans "Configuraciones VURTL aplicadas") \033[1;32m[ ! ]"
+echo -e ""
+echo -e " \033[1;31m[ ! ]\033[1;33m $(fun_trans "Configuraciones VURTL aplicadas")"
+echo -e "$barra"
+return
 }
 
 gestor_fun () {

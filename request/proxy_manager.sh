@@ -9,16 +9,16 @@ SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 #LIPIAR SCRIPTS
 rm -rf /bin/insta_plusconeccion.sh > /dev/null 2>&1
 rm -rf /bin/hora.sh > /dev/null 2>&1
-rm -rf /bin/shadown.sh
-rm -rf /bin/shadowsocks.sh
-rm -rf /bin/shadowsock.sh
-rm -rf /bin/ssrrmu.sh
-rm -rf /bin/v2ray.sh
-rm -rf /bin/vdoray.sh
+rm -rf /bin/shadown.sh > /dev/null 2>&1
+rm -rf /bin/shadowsocks.sh > /dev/null 2>&1
+rm -rf /bin/shadowsock.sh > /dev/null 2>&1
+rm -rf /bin/ssrrmu.sh > /dev/null 2>&1
+rm -rf /bin/v2ray.sh > /dev/null 2>&1
+rm -rf /bin/vdoray.sh > /dev/null 2>&1
 #PAPELERA DE RESICLAJE
-rm -rf /bin/tcp-client.py
-rm -rf /bin/Proxy-Publico.py
-rm -rf /bin/Proxy-Privado.py
+rm -rf /bin/tcp-client.py > /dev/null 2>&1
+rm -rf /bin/Proxy-Publico.py > /dev/null 2>&1
+rm -rf /bin/Proxy-Privado.py > /dev/null 2>&1
 rm -rf /bin/ssld.sh > /dev/null 2>&1
 rm -rf /bin/sslmanager.sh > /dev/null 2>&1
 rm -rf /bin/pan_cracklib.sh > /dev/null 2>&1
