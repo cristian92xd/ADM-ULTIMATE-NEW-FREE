@@ -1592,7 +1592,6 @@ x="ok"
 fun_conexao () {
 while true $x != "ok"
 do
-[[ ! -e '/home/sshplus' ]] && exit 0
 clear
 echo -e "\E[44;1;37m                MODO DE CONEXAO                 \E[0m\n"
 echo -e "\033[1;32mSERVICO: \033[1;33mOPENSSH \033[1;32mPORTA: \033[1;37m$(grep 'Port' /etc/ssh/sshd_config|cut -d' ' -f2 |grep -v 'no' |xargs)" && sts6="\033[1;32m◉ "
