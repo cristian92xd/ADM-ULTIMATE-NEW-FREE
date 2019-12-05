@@ -164,6 +164,17 @@ echo -e "$barra"
 return
 }
 
+pamcrack () {
+echo -e "${cor[3]} $(fun_trans "Liberar passwd para VURTL")"
+echo -e "$barra"
+echo -ne " $(fun_trans "Desea Seguir?") [S/N]: "; read x
+[[ $x = @(n|N) ]] && echo -e "$barra" && return
+fun_bar "service ssh restart"
+sed -i 's/.*pam_cracklib.so.*/password sufficient pam_unix.so sha512 shadow nullok try_first_pass #use_authtok/' /etc/pam.d/common-password
+fun_bar "service ssh restart"
+echo -e "\033[1;33m $(fun_trans "Configuraciones VURTL aplicadas") \033[1;32m[ ! ]"
+}
+
 gestor_fun () {
 echo -e " ${cor[3]} $(fun_trans "ADMINISTRADOR VPS") ${cor[4]}[NEW-ADM]"
 echo -e "$barra"
@@ -176,8 +187,9 @@ echo -e "${cor[4]} [5] > \033[1;36m$(fun_trans "Cambiar contraseña ROOT del VPS
 echo -e "${cor[4]} [6] > \033[1;36m$(fun_trans "Serviço ROOT para Googlecloud e Amazon")"
 echo -e "${cor[4]} [7] > \033[1;36m$(fun_trans "Atualizar hora America-Santiago")"
 echo -e "${cor[4]} [8] > \033[1;36m$(fun_trans "Eliminar Registro del Limitador")"
+echo -e "${cor[4]} [9] > \033[1;36m$(fun_trans "Desbloquear VURTL para crear usuarios")"
 echo -e "${cor[4]} [0] > ${cor[0]}$(fun_trans "VOLTAR")\n${barra}"
-while [[ ${opx} != @(0|[1-8]) ]]; do
+while [[ ${opx} != @(0|[1-9]) ]]; do
 echo -ne "${cor[0]}$(fun_trans "Selecione a Opcao"): \033[1;37m" && read opx
 tput cuu1 && tput dl1
 done
@@ -207,6 +219,9 @@ case $opx in
 	break;;
 	8)
 	cleanreg
+	break;;
+        9)
+	pamcrack
 	break;;
 esac
 done

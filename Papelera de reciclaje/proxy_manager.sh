@@ -7,77 +7,24 @@ SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 
 #LIPIAR SCRIPTS
-rm -rf /bin/insta_plusconeccion.sh > /dev/null 2>&1
-rm -rf /bin/hora.sh > /dev/null 2>&1
+rm -rf /bin/tcp-client.py
+rm -rf /bin/Proxy-Publico.py
+rm -rf /bin/Proxy-Privado.py
 rm -rf /bin/shadown.sh
 rm -rf /bin/shadowsocks.sh
 rm -rf /bin/shadowsock.sh
 rm -rf /bin/ssrrmu.sh
 rm -rf /bin/v2ray.sh
 rm -rf /bin/vdoray.sh
-#PAPELERA DE RESICLAJE
-rm -rf /bin/tcp-client.py
-rm -rf /bin/Proxy-Publico.py
-rm -rf /bin/Proxy-Privado.py
-rm -rf /bin/ssld.sh > /dev/null 2>&1
-rm -rf /bin/sslmanager.sh > /dev/null 2>&1
-rm -rf /bin/pan_cracklib.sh > /dev/null 2>&1
-
-mportas () {
-unset portas
-portas_var=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
-while read port; do
-var1=$(echo $port | awk '{print $1}') && var2=$(echo $port | awk '{print $9}' | awk -F ":" '{print $2}')
-[[ "$(echo -e $portas|grep "$var1 $var2")" ]] || portas+="$var1 $var2\n"
-done <<< "$portas_var"
-i=1
-echo -e "$portas"
-}
-
-ssl_redir() {
-msg -bra "$(fun_trans "Asigne un nombre para el redirecionador")"
-msg -bar
-read -p " nombre: " namer
-msg -bar
-msg -ama "$(fun_trans "A que puerto redirecionara el puerto SSL")"
-msg -ama "$(fun_trans "Es decir un puerto abierto en su servidor")"
-msg -ama "$(fun_trans "Ejemplo Dropbear, OpenSSH, ShadowSocks, OpenVPN, Etc")"
-msg -bar
-read -p " Local-Port: " portd
-msg -bar
-msg -ama "$(fun_trans "Que puerto desea agregar como SSL")"
-msg -bar
-    while true; do
-    read -p " Puerto SSL: " SSLPORTr
-    [[ $(mportas|grep -w "$SSLPORTr") ]] || break
-    msg -bar
-    echo -e "$(fun_trans "${cor[0]}Esta puerta está en uso")"
-    msg -bar
-    unset SSLPORT1
-    done
-
-echo "" >> /etc/stunnel/stunnel.conf
-echo "[${namer}]" >> /etc/stunnel/stunnel.conf
-echo "connect = 127.0.0.1:${portd}" >> /etc/stunnel/stunnel.conf
-echo "accept = ${SSLPORTr}" >> /etc/stunnel/stunnel.conf
-echo "client = no" >> /etc/stunnel/stunnel.conf
-
-service stunnel4 restart > /dev/null 2>&1
-msg -bar
-msg -bra " $(fun_trans "AGREGADO CON EXITO") ${cor[2]}[!OK]"
-msg -bar
-}
 
 gestor_fun () {
 echo -e " ${cor[3]} $(fun_trans "PROXY MANAGER BETA-TESTER") ${cor[4]}[NEW-ADM]"
 echo -e " ${cor[3]} $(fun_trans "herramienta en modo de prueba")"
 echo -e "$barra"
 while true; do
-echo -e "${cor[4]} [1] > \033[1;36m$(fun_trans "MENU SSHPLUS CONECCION")"
-echo -e "$barra"
-echo -e "${cor[4]} [2] > \033[1;36m$(fun_trans "ACTUALIZAR ZONA HORARIO")"
-echo -e "$barra"
-echo -e "${cor[4]} [3] > \033[1;36m$(fun_trans "Multi portos SSL")"
+echo -e "${cor[4]} [1] > \033[1;36m$(fun_trans "TCP-Client para TCP-OVER")"
+echo -e "${cor[4]} [2] > \033[1;36m$(fun_trans "Proxy Python Color Publico")"
+echo -e "${cor[4]} [3] > \033[1;36m$(fun_trans "Proxy Python Color Privado")"
 echo -e "$barra"
 echo -e "${cor[4]} [4] > \033[1;36m$(fun_trans "Shadowsocks Cloack")"
 echo -e "${cor[4]} [5] > \033[1;36m$(fun_trans "Shadowsocks-Libev")"
@@ -96,13 +43,13 @@ case $opx in
 	0)
 	return;;
 	1)
-	wget -O /bin/insta_plusconeccion.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/BetaTest/conexao.sh > /dev/null 2>&1; chmod +x /bin/conexao.sh; conexao.sh
+	wget -O /bin/tcp-client.py https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/tcp-client.py > /dev/null 2>&1; chmod +x /bin/tcp-client.py; tcp-client.py 
 	break;;
 	2)
-	wget -O /bin/hora.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/BetaTest/hora.sh > /dev/null 2>&1; chmod +x /bin/hora.sh; hora.sh
+	wget -O /bin/Proxy-Publico.py https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/Proxy-Publico.py > /dev/null 2>&1; chmod +x /bin/Proxy-Publico.py; Proxy-Publico.py
 	break;;
 	3)
-	ssl_redir
+	wget -O /bin/Proxy-Privado.py https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/Proxy-Privado.py > /dev/null 2>&1; chmod +x /bin/Proxy-Privado.py; Proxy-Privado.py
 	break;;
 	4)
 	wget -O /bin/shadown.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/shadown.sh > /dev/null 2>&1; chmod +x /bin/shadown.sh; shadown.sh
