@@ -15,6 +15,7 @@ rm -rf /bin/shadowsock.sh > /dev/null 2>&1
 rm -rf /bin/ssrrmu.sh > /dev/null 2>&1
 rm -rf /bin/v2ray.sh > /dev/null 2>&1
 rm -rf /bin/vdoray.sh > /dev/null 2>&1
+
 #PAPELERA DE RESICLAJE
 rm -rf /bin/tcp-client.py > /dev/null 2>&1
 rm -rf /bin/Proxy-Publico.py > /dev/null 2>&1
@@ -96,7 +97,7 @@ case $opx in
 	0)
 	return;;
 	1)
-	wget -O /bin/insta_plusconeccion.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/BetaTest/conexao.sh > /dev/null 2>&1; chmod +x /bin/conexao.sh; conexao.sh
+	wget -O /bin/conexao.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/BetaTest/conexao.sh > /dev/null 2>&1; chmod +x /bin/conexao.sh; conexao.sh
 	break;;
 	2)
 	wget -O /bin/hora.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/BetaTest/hora.sh > /dev/null 2>&1; chmod +x /bin/hora.sh; hora.sh
