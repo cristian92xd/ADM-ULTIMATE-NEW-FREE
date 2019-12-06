@@ -462,7 +462,7 @@ echo -e "\033[1;36mPANEL SSHPLUS ELIMINADO CON EXITO \033[1;32m[!OK]"
 echo -e "$barra"
 }
 
-gestor_fun () {
+Panelweb_fun () {
 echo -e "$barra"
 echo -e " ${cor[3]} INSTALAR PANEL SSH/DROP/SSL"
 echo -e "$barra"

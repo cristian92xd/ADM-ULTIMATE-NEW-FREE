@@ -461,7 +461,7 @@ echo -e "\033[1;36mPANEL SSHPLUS ELIMINADO CON EXITO \033[1;32m[!OK]"
 echo -e "$barra"
 }
 
-gestor_fun () {
+Panelweb_fun () {
 echo -e " ${cor[3]} $(fun_trans "PANEL DE VENTAS SSHPLUS") ${cor[2]}[NEW-ADM]"
 echo -e "$barra"
 while true; do
