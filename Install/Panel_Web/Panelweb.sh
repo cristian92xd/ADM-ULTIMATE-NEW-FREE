@@ -24,13 +24,6 @@ echo -e " \033[1;33m[\033[1;31m####################\033[1;33m] - \033[1;32m100%\
 sleep 1s
 }
 
-clear
-echo -e "$barra"
-echo -e " ${cor[5]}ACTUALIZANDO PAQUETES ${cor[2]}[FULL SCRIPTS VPS]"
-echo -e "$barra"
-fun_bar "sudo apt-get update -y"
-fun_bar "sudo apt-get upgrade -y"
-
 panel_v10 () {
 clear
 IP=$(wget -qO- ipv4.icanhazip.com)
@@ -463,8 +456,14 @@ echo -e "$barra"
 }
 
 Panelweb_fun () {
+clear
 echo -e "$barra"
-echo -e " ${cor[3]} INSTALAR PANEL SSH/DROP/SSL"
+echo -e " ${cor[5]}ACTUALIZANDO PAQUETES ${cor[2]}[FULL SCRIPTS]"
+echo -e "$barra"
+fun_bar "sudo apt-get update -y"
+fun_bar "sudo apt-get upgrade -y"
+echo -e "$barra"
+echo -e " ${cor[3]} INSTALAR PANEL SSH-DROP-SSL"
 echo -e "$barra"
 while true; do
 echo -e "${cor[2]} [1] > ${cor[3]}PANEL SSHPLUS WEB V10"
