@@ -1,5 +1,5 @@
 #!/bin/bash
-rm -rf $HOME/Panelweb.sh
+rm -rf $HOME/install_panelweb.sh
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;32m" [3]="\033[1;36m" [4]="\033[1;31m" [5]="\033[1;33m" )
 barra="\033[0m\e[34m======================================================\033[1;37m"
 
@@ -151,8 +151,8 @@ sleep 1
 clear
 echo -e "\033[1;32mPANEL INSTALADO CON EXITO!"
 echo ""
-echo -e "\033[1;36mLINK AREA DE ADMIN:\033[1;37m $IP:81/admin\033[0m"
-echo -e "\033[1;36mLINK AREA DE REVENDEDOR: \033[1;37m $IP:81\033[0m"
+echo -e "\033[1;36mLINK AREA DE ADMIN:\033[1;37m $IP:81/html/admin\033[0m"
+echo -e "\033[1;36mLINK AREA DE REVENDEDOR: \033[1;37m $IP:81/html\033[0m"
 echo -e "\033[1;36mUSUARIO\033[1;37m admin\033[0m"
 echo -e "\033[1;36mCONTRASENA\033[1;37m admin\033[0m"
 echo ""
@@ -316,7 +316,7 @@ echo -e "\033[1;36mPANEL SSHPLUS ELIMINADO CON EXITO \033[1;32m[!OK]"
 echo -e "$barra"
 }
 
-Panelweb_fun () {
+gestor_fun () {
 echo -e "$barra"
 echo -e " ${cor[3]} INSTALAR PANEL SSH/DROP/SSL"
 echo -e "$barra"
@@ -344,4 +344,4 @@ case $opx in
 esac
 done
 }
-Panelweb_fun
+gestor_fun
