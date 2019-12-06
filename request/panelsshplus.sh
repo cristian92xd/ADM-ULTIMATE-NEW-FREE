@@ -462,7 +462,7 @@ echo -e "$barra"
 }
 
 Panelweb_fun () {
-echo -e " ${cor[3]} $(fun_trans "PANEL DE VENTAS SSHPLUS") ${cor[2]}[NEW-ADM]"
+echo -e " ${cor[3]} $(fun_trans "INSTALAR O PAINEL SSH/DROP/SSL") ${cor[2]}[NEW-ADM]"
 echo -e "$barra"
 while true; do
 echo -e "${cor[2]} [1] > ${cor[3]}PANEL SSHPLUS WEB V10"
