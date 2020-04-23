@@ -12,7 +12,6 @@ shadowsocks.sh
 sockspy.sh
 squid.sh
 ssl.sh
-webmin.sh
 ADMbot.sh
 apacheon.sh
 ports.sh
