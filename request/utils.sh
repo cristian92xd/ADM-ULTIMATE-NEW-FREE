@@ -180,7 +180,7 @@ iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
 iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP' >> ./torrent-adm
 ./torrent-adm && rm ./torrent-adm
-echo "#TORRENT-ADM" > /etc/torrent-adm
+echo "#TORRENT-ADMON" > /etc/torrent-admon
 msg -bar
 echo -e " $(fun_trans "Aplicado!")"
 }
@@ -191,7 +191,7 @@ if [ -e /etc/squid/squid.conf ]; then
 [[ `grep -c "^#CACHE DO SQUID" /etc/squid/squid.conf` -gt 0 ]] && squid=$on || squid=$off
 elif [ -e /etc/squid3/squid.conf ]; then
 [[ `grep -c "^#CACHE DO SQUID" /etc/squid3/squid.conf` -gt 0 ]] && squid=$on || squid=$off
-[[ -e /etc/torrent-adm ]] && torrent=$(echo -e "\033[1;32mon ") || torrent=$(echo -e "\033[1;31moff ")
+[[ -e /etc/torrent-admon ]] && torrent=$(echo -e "\033[1;32mon ") || torrent=$(echo -e "\033[1;31moff ")
 fi
 msg -ama "$(fun_trans "MENU DE UTILITARIOS")"
 msg -bar
