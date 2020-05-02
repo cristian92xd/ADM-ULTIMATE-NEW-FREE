@@ -22,11 +22,11 @@ echo -e "]" >&2
 starts_test=$(python ${SCPfrm}/speedtest.py --share) && touch /tmp/pyend
 sleep 0.6s
 tput cuu1 && tput dl1
-down_load=$(echo "$starts_test" | grep "Download" | awk '{print $2,$3}')
 up_load=$(echo "$starts_test" | grep "Upload" | awk '{print $2,$3}')
+down_load=$(echo "$starts_test" | grep "Download" | awk '{print $2,$3}')
 re_sult=$(echo "$starts_test" | grep "result" | awk '{print $3}')
-msg -ama " $(fun_trans "Latencia"): $ping"
-msg -ama " $(fun_trans "Upload"): $up_load"
-msg -ama " $(fun_trans "Download"): $down_load"
-msg -ama " $(fun_trans "Result"): $re_sult"
+msg -ama " \033[1;32m$(fun_trans "Latencia"): \033[1;37m$ping"
+msg -ama " \033[1;32m$(fun_trans "Upload"): \033[1;37m$up_load"
+msg -ama " \033[1;32m$(fun_trans "Download"): \033[1;37m$down_load"
+msg -ama " \033[1;32m$(fun_trans "Result"): \033[1;33m$re_sult"
 msg -bar 
