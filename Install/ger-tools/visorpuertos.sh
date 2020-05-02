@@ -9,10 +9,13 @@ echo -e "${cor[3]} $(fun_trans "Informacion de tu sistema en general como")"
 echo -e "${cor[3]} $(fun_trans "sistema operativo, hora, ip, ram, cpu y puertos")"
 echo -e "$barra"
 
-#HORA SISTEMA
+#HORA Y DATA SISTEMA
 _hora=$(printf '%(%H:%M:%S)T')
+_hoje=$(date +'%d/%m/%Y')
 
-echo -e "\033[1;31mHORA SISTEMA: \033[1;37m$_hora          \033[1;31mIP: \033[1;37m$(meu_ip)"
+echo -e "\033[1;31mHORA SISTEMA: \033[1;37m$_hora          \033[1;31mDATA: \033[1;37m$_hoje"
+echo -e "$barra"
+echo -e "\033[1;31m\033[1;31mIP: \033[1;37m$(meu_ip)"
 echo -e "$barra"
 
 #SISTEMA OPERATIVO
