@@ -1,12 +1,11 @@
 #!/bin/bash
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
 barra="\033[0m\e[34m======================================================\033[1;37m"
-SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit
-SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
-SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 
-echo -e "${cor[3]} $(fun_trans "Informacion de tu sistema en general como")"
-echo -e "${cor[3]} $(fun_trans "sistema operativo, hora, ip, ram, cpu y puertos")"
+clear
+echo -e "$barra"
+echo -e "${cor[3]} "Informacion de tu sistema en general como")"
+echo -e "${cor[3]} "sistema operativo, hora, ip, ram, cpu y puertos")"
 echo -e "$barra"
 
 #HORA Y DATA SISTEMA
@@ -21,6 +20,9 @@ system=$(cat /etc/issue.net)
 if [ "$system" ]
 then
 
+#MEUIPADM
+IP=$(cat /etc/MEUIPADM)
+
 #PROCESSADOR
 _core=$(printf '%-1s' "$(grep -c cpu[0-9] /proc/stat)")
 _usop=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
@@ -33,7 +35,7 @@ ram3=$(free -h | grep -i mem | awk {'print $3'})
 #_ram=$(printf ' %-9s' "$(free -h | grep -i mem | awk {'print $2'})")
 _usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
 
-echo -e "\033[1;31mSISTEMA: \033[1;37m$system     \033[1;31m\033[1;31mIP: \033[1;37m$(meu_ip)"
+echo -e "\033[1;31mSISTEMA: \033[1;37m$system     \033[1;31m\033[1;31mIP: \033[1;37m$IP"
 else
 echo -e "\033[1;32mSISTEMA: \033[1;33m[\033[1;37mNo Disponible\033[1;33m]"
 fi
@@ -93,3 +95,5 @@ done
 }
 
 mine_port
+
+echo -e "$barra"
