@@ -12,8 +12,6 @@ elif [[ -e /etc/bash.bashrc ]]; then AutoRun="\033[1;31m[off]"
 fi
 # Funcoes menssage
 wget -O /etc/newadm/message.txt https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Mensaje/message.txt &> /dev/null
-# Funcoes trans actualiza
-wget -O /usr/bin/trans https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/trans &> /dev/null
 # Funcoes Globais
 msg () {
 local colors="/etc/new-adm-color"
@@ -113,13 +111,13 @@ msg -verm "$(fun_trans "Perfeito Iniciando Procedimento"): "
 [[ -e $HOME/instalar.sh ]] && rm $HOME/instalar.sh
 [[ -e $HOME/lista-arq ]] && rm $HOME/lista-arq
 [[ -e $HOME/versao ]] && rm $HOME/versao
-rm -rf /etc/ger-tools &>/dev/null
-rm -rf /etc/ger-frm &>/dev/null
 wget -O $HOME/instalar.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/instalar.sh &>/dev/null
 chmod +x $HOME/instalar.s*
 local LINGUAGE=$(cat ${SCPidioma})
 [[ -d ${SCPdir} ]] && rm -rf ${SCPdir}
 [[ -d ${SCPinst} ]] && rm -rf ${SCPinst}
+[[ -d /etc/ger-frm ]] && rm -rf /etc/ger-frm
+[[ -d /etc/ger-tools ]] && rm -rf /etc/ger-tools
 $HOME/instalar.sh "${LINGUAGE}"
 else
 msg -verm "$(fun_trans "Procedimento Cancelado"): "
