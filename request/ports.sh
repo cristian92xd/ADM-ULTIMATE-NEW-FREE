@@ -3,6 +3,58 @@ SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit 1
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
+mine_port () {
+local portasVAR=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
+local NOREPEAT
+local reQ
+local Port
+while read port; do
+reQ=$(echo ${port}|awk '{print $1}')
+Port=$(echo {$port} | awk '{print $9}' | awk -F ":" '{print $2}')
+[[ $(echo -e $NOREPEAT|grep -w "$Port") ]] && continue
+NOREPEAT+="$Port\n"
+case ${reQ} in
+squid|squid3)
+[[ -z $SQD ]] && local SQD="\033[1;32m SERVICO\033[1;31m SQUID\033[1;32m PORTA \033[1;37m"
+SQD+="$Port ";;
+apache|apache2)
+[[ -z $APC ]] && local APC="\033[1;32m SERVICO\033[1;31m APACHE\033[1;32m PORTA \033[1;37m"
+APC+="$Port ";;
+ssh|sshd)
+[[ -z $SSH ]] && local SSH="\033[1;32m SERVICO\033[1;31m SSH\033[1;32m PORTA \033[1;37m"
+SSH+="$Port ";;
+dropbear)
+[[ -z $DPB ]] && local DPB="\033[1;32m SERVICO\033[1;31m DROPBEAR\033[1;32m PORTA \033[1;37m"
+DPB+="$Port ";;
+ssserver)
+[[ -z $SSV ]] && local SSV="\033[1;32m SERVICO\033[1;31m SHADOWSOCKS\033[1;32m PORTA \033[1;37m"
+SSV+="$Port ";;
+openvpn)
+[[ -z $OVPN ]] && local OVPN="\033[1;32m SERVICO\033[1;31m OPENVPN\033[1;32m PORTA \033[1;37m"
+OVPN+="$Port ";;
+stunnel4|stunnel)
+[[ -z $SSL ]] && local SSL="\033[1;32m SERVICO\033[1;31m SSL\033[1;32m PORTA \033[1;37m"
+SSL+="$Port ";;
+python|python3)
+[[ -z $PY3 ]] && local PY3="\033[1;32m SERVICO\033[1;31m SOCKS\033[1;32m PORTA \033[1;37m"
+PY3+="$Port ";;
+esac
+done <<< "${portasVAR}"
+[[ ! -z $SQD ]] && echo -e $SQD
+[[ ! -z $APC ]] && echo -e $APC
+[[ ! -z $SSH ]] && echo -e $SSH
+[[ ! -z $DPB ]] && echo -e $DPB
+[[ ! -z $OVPN ]] && echo -e $OVPN
+[[ ! -z $PY3 ]] && echo -e $PY3
+[[ ! -z $SSL ]] && echo -e $SSL
+[[ ! -z $SSV ]] && echo -e $SSV
+}
+
+echo -e "\033[1;33m $(fun_trans "Portas") \033[1;32m[NEW-ADM]"
+msg -bar
+mine_port
+msg -bar
+
 port () {
 local portas
 local portas_var=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
