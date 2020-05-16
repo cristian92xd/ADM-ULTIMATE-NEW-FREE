@@ -1,120 +1,24 @@
-#!/bin/bash
-declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;32m" [3]="\033[1;36m" [4]="\033[1;31m" [5]="\033[1;33m" )
-barra="\033[0m\e[34m======================================================\033[1;37m"
-SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit 1
-SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
-SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
-SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
-
-fun_bar () {
-comando="$1"
- _=$(
-$comando > /dev/null 2>&1
-) & > /dev/null
-pid=$!
-while [[ -d /proc/$pid ]]; do
-echo -ne " \033[1;33m["
-   for((i=0; i<10; i++)); do
-   echo -ne "\033[1;31m##"
-   sleep 0.2
-   done
-echo -ne "\033[1;33m]"
-sleep 1s
-echo
-tput cuu1 && tput dl1
-done
-echo -e " \033[1;33m[\033[1;31m####################\033[1;33m] - \033[1;32m100%\033[0m"
-sleep 1s
-}
-
-echo -e "${cor[5]} $(fun_trans "Esta herramienta le cambia y da color al status de")"
-echo -e "${cor[5]} $(fun_trans "Conexion y agrega una contraseña a los payload ")"
-echo -e "${cor[5]} $(fun_trans "Para estabilidad y seguridad")"
-
-echo -e "$barra"
-if [[ ! -e /usr/bin/python ]]; then
-echo -e "${cor[5]} $(fun_trans "Introduca Estos Comandos En La Terminal")"
-echo -e "apt-get install python -y"
-echo -e "apt-get install python pip -y"
-exit
-fi
-echo -e "${cor[0]} $(fun_trans "INICIANDO PROXY PYTHON COLOR")"
-echo -e "$barra"
-echo -ne "${cor[0]} $(fun_trans "Introduzca puerto"): "
-read port
-echo -e "$barra"
-echo -e "${cor[5]} $(fun_trans "Para Utilizar Este Proxy Es Necesario")"
-echo -e "${cor[5]} $(fun_trans "Agregar una linea a los Payload")"
-echo -e "$barra"
-echo -ne "${cor[0]} $(fun_trans "Escriba Una contraseña Para El Proxy"): "
-read ipdns
-if [[ ! -z $ipdns ]]; then
-echo -e "$barra"
-
-echo -e "\033[1;31m$(fun_trans "AGREGUE ESTA LINEA AL INICIO DE SU PAYLOAD"):\n\033[1;36m[crlf]X-Pass: $ipdns[crlf]\n\033[0m"
-echo -e "\033[1;31m$(fun_trans "EJEMPLO"):\n\033[1;33m\033[1;36m[crlf]X-Pass: $ipdns[crlf]GET http://tuhost.com/ HTTP/1.0 [cr|f]\033[0m"
-
-fi
-while [[ -z $FMSG || $FMSG = @(s|S|y|Y) ]]; do
-echo -e "$barra"
-echo -ne "\033[1;37m $(fun_trans "Introduzca Un Mensaje De Conexion"): "
-read mensage
-echo -e "$barra"
-echo -e "\033[1;37m $(fun_trans "Seleccione El Color De Mensaje"): "
-echo -e " "
-cat << Eof
-[ 1 ]  -- #ff183f -- Rojo
-[ 2 ]  -- #3fff18 -- Verde
-[ 3 ]  -- #6518ff -- Morado
-[ 4 ]  -- #ff6518 -- Naranja
-[ 5 ]  -- #18ffd9 -- Cyan
-[ 6 ]  -- #ffd700 -- Amarillo
-[ 7 ]  -- #1e90ff -- Azul
-[ 8 ]  -- #000000 -- Negro
-[ 9 ]  -- #00ff7f -- Agua marina
-[ 10 ] -- #8b4513 -- Cafe
-Eof
-echo -e " "
-read -p "Opcion: " cor
-case $cor in
-"1")corx="<span style='color: #ff183f;'>${mensage}</span>";;
-"2")corx="<span style='color: #3fff18;'>${mensage}</span>";;
-"3")corx="<span style='color: #6518ff;'>${mensage}</span>";;
-"4")corx="<span style='color: #ff6518;'>${mensage}</span>";;
-"5")corx="<span style='color: #18ffd9;'>${mensage}</span>";;
-"6")corx="<span style='color: #ffd700;'>${mensage}</span>";;
-"7")corx="<span style='color: #1e90ff;'>${mensage}</span>";;
-"8")corx="<span style='color: #000000;'>${mensage}</span>";;
-"9")corx="<span style='color: #00ff7f;'>${mensage}</span>";;
-"10")corx="<span style='color: #8b4513;'>${mensage}</span>";;
-*)corx="<span style='color: #ff183f;'>${mensage}</span>";;
-esac
-if [[ ! -z ${RETORNO} ]]; then
-RETORNO="${RETORNO} ${corx}"
-else
-RETORNO="${corx}"
-fi
-echo -e "$barra"
-echo -ne "${cor[5]} $(fun_trans "Adicionar Mensagem Secundaria")? [S/N]: "
-read FMSG
-done
-echo -e "$barra"
-read -p "Enter para confirmar..."
-# Inicializando o Proxy
-(
-/usr/bin/python -x << PYTHON
-# -*- coding: utf-8 -*-
-import socket, threading, thread, select, signal, sys, time, getopt
-
-LISTENING_ADDR = '0.0.0.0'
-LISTENING_PORT = int("$port")
-PASS = str("$ipdns")
-BUFLEN = 4096 * 4
+#!/usr/bin/env python3
+# encoding: utf-8
+# SSHPLUS By @Crazy_vpn
+import socket, threading, thread, select, signal, sys, time
+from os import system
+system("clear")
+#conexao
+IP = '0.0.0.0'
+try:
+   PORT = int(sys.argv[1])
+except:
+   PORT = 80
+PASS = ''
+BUFLEN = 8196 * 8
 TIMEOUT = 60
-DEFAULT_HOST = '127.0.0.1:22'
-msg = "HTTP/1.1 200 <strong>($RETORNO)</strong>\r\nContent-length: 0\r\n\r\nHTTP/1.1 200 !!!conexion exitosa!!!\r\n\r\n"
-RESPONSE = str(msg)
-
+MSG = 'SSHPLUS'
+COR = '<font color="null">'
+FTAG = '</font>'
+DEFAULT_HOST = '0.0.0.0:22'
+RESPONSE = "HTTP/1.1 200 " + str(COR) + str(MSG) + str(FTAG) + "\r\n\r\n"
+ 
 class Server(threading.Thread):
     def __init__(self, host, port):
         threading.Thread.__init__(self)
@@ -122,8 +26,8 @@ class Server(threading.Thread):
         self.host = host
         self.port = port
         self.threads = []
-        self.threadsLock = threading.Lock()
-        self.logLock = threading.Lock()
+	self.threadsLock = threading.Lock()
+	self.logLock = threading.Lock()
 
     def run(self):
         self.soc = socket.socket(socket.AF_INET)
@@ -133,26 +37,26 @@ class Server(threading.Thread):
         self.soc.listen(0)
         self.running = True
 
-        try:
+        try:                    
             while self.running:
                 try:
                     c, addr = self.soc.accept()
                     c.setblocking(1)
                 except socket.timeout:
                     continue
-
+                
                 conn = ConnectionHandler(c, self, addr)
-                conn.start()
+                conn.start();
                 self.addConn(conn)
         finally:
             self.running = False
             self.soc.close()
-
+            
     def printLog(self, log):
         self.logLock.acquire()
         print log
         self.logLock.release()
-
+	
     def addConn(self, conn):
         try:
             self.threadsLock.acquire()
@@ -160,25 +64,25 @@ class Server(threading.Thread):
                 self.threads.append(conn)
         finally:
             self.threadsLock.release()
-
+                    
     def removeConn(self, conn):
         try:
             self.threadsLock.acquire()
             self.threads.remove(conn)
         finally:
             self.threadsLock.release()
-
+                
     def close(self):
         try:
             self.running = False
             self.threadsLock.acquire()
-
+            
             threads = list(self.threads)
             for c in threads:
                 c.close()
         finally:
             self.threadsLock.release()
-
+			
 
 class ConnectionHandler(threading.Thread):
     def __init__(self, socClient, server, addr):
@@ -188,7 +92,7 @@ class ConnectionHandler(threading.Thread):
         self.client = socClient
         self.client_buffer = ''
         self.server = server
-        self.log = 'Connection: ' + str(addr)
+        self.log = 'Conexao: ' + str(addr)
 
     def close(self):
         try:
@@ -199,7 +103,7 @@ class ConnectionHandler(threading.Thread):
             pass
         finally:
             self.clientClosed = True
-
+            
         try:
             if not self.targetClosed:
                 self.target.shutdown(socket.SHUT_RDWR)
@@ -212,9 +116,9 @@ class ConnectionHandler(threading.Thread):
     def run(self):
         try:
             self.client_buffer = self.client.recv(BUFLEN)
-
+        
             hostPort = self.findHeader(self.client_buffer, 'X-Real-Host')
-
+            
             if hostPort == '':
                 hostPort = DEFAULT_HOST
 
@@ -222,7 +126,7 @@ class ConnectionHandler(threading.Thread):
 
             if split != '':
                 self.client.recv(BUFLEN)
-
+            
             if hostPort != '':
                 passwd = self.findHeader(self.client_buffer, 'X-Pass')
 				
@@ -230,10 +134,10 @@ class ConnectionHandler(threading.Thread):
                     self.method_CONNECT(hostPort)
                 elif len(PASS) != 0 and passwd != PASS:
                     self.client.send('HTTP/1.1 400 WrongPass!\r\n\r\n')
-                elif hostPort.startswith('127.0.0.1') or hostPort.startswith('localhost'):
+                if hostPort.startswith(IP):
                     self.method_CONNECT(hostPort)
                 else:
-                    self.client.send('HTTP/1.1 403 Forbidden!\r\n\r\n')
+                   self.client.send('HTTP/1.1 403 Forbidden!\r\n\r\n')
             else:
                 print '- No X-Real-Host!'
                 self.client.send('HTTP/1.1 400 NoXRealHost!\r\n\r\n')
@@ -248,7 +152,7 @@ class ConnectionHandler(threading.Thread):
 
     def findHeader(self, head, header):
         aux = head.find(header + ': ')
-
+    
         if aux == -1:
             return ''
 
@@ -270,10 +174,7 @@ class ConnectionHandler(threading.Thread):
             if self.method=='CONNECT':
                 port = 443
             else:
-                port = 80
-                port = 8080
-                port = 8799
-                port = 3128
+                port = 22
 
         (soc_family, soc_type, proto, _, address) = socket.getaddrinfo(host, port)[0]
 
@@ -282,15 +183,13 @@ class ConnectionHandler(threading.Thread):
         self.target.connect(address)
 
     def method_CONNECT(self, path):
-        self.log += ' - CONNECT ' + path
-
+    	self.log += ' - CONNECT ' + path
         self.connect_target(path)
         self.client.sendall(RESPONSE)
         self.client_buffer = ''
-
         self.server.printLog(self.log)
         self.doCONNECT()
-
+                    
     def doCONNECT(self):
         socs = [self.client, self.target]
         count = 0
@@ -324,33 +223,21 @@ class ConnectionHandler(threading.Thread):
             if error:
                 break
 
-def main(host=LISTENING_ADDR, port=LISTENING_PORT):
 
-    print "\n:-------PythonProxy-------:\n"
-    print "Listening addr: " + LISTENING_ADDR
-    print "Listening port: " + str(LISTENING_PORT) + "\n"
-    print ":-------------------------:\n"
 
-    server = Server(LISTENING_ADDR, LISTENING_PORT)
+def main(host=IP, port=PORT):
+    print "\033[0;34m━"*8,"\033[1;32m PROXY SOCKS","\033[0;34m━"*8,"\n"
+    print "\033[1;33mIP:\033[1;32m " + IP
+    print "\033[1;33mPORTA:\033[1;32m " + str(PORT) + "\n"
+    print "\033[0;34m━"*10,"\033[1;32m SSHPLUS","\033[0;34m━\033[1;37m"*11,"\n"
+    server = Server(IP, PORT)
     server.start()
-
     while True:
         try:
             time.sleep(2)
         except KeyboardInterrupt:
-            print 'Stopping...'
+            print '\nParando...'
             server.close()
             break
-
 if __name__ == '__main__':
     main()
-PYTHON
-) > $HOME/proxy.log &
-echo -e "$barra"
-echo -e "${cor[2]} $(fun_trans "INSTALANDO RECURSO")"
-echo ""
-fun_bar "sudo apt-get install python -y"
-fun_bar "sudo apt-get install python3 -y"
-echo ""
-echo -e "\033[1;37m$(fun_trans "Proxy Iniciado Con Exito")${cor[2]} [OK!]"
-echo -e "$barra"
