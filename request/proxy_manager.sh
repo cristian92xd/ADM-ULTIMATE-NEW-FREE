@@ -73,9 +73,9 @@ echo -e " ${cor[3]} $(fun_trans "PROXY MANAGER BETA-TESTER") ${cor[4]}[NEW-ADM]"
 echo -e " ${cor[3]} $(fun_trans "herramienta en modo de prueba")"
 echo -e "$barra"
 while true; do
-echo -e "${cor[4]} [1] > \033[1;36m$(fun_trans "Poxysocks")"
+echo -e "${cor[4]} [1] > \033[1;36m$(fun_trans "Menu SSHPlus Conecion ")"
 echo -e "$barra"
-echo -e "${cor[4]} [2] > \033[1;36m$(fun_trans "ACTUALIZAR ZONA HORARIO")"
+echo -e "${cor[4]} [2] > \033[1;36m$(fun_trans "TEST")"
 echo -e "$barra"
 echo -e "${cor[4]} [3] > \033[1;36m$(fun_trans "Multi portos SSL")"
 echo -e "$barra"
@@ -99,8 +99,7 @@ case $opx in
 	wget -O /bin/conexao.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/conexao.sh > /dev/null 2>&1; chmod +x /bin/conexao.sh; conexao.sh
 	break;;
 	2)
-	wget -O /bin/hora.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/BetaTest/hora.sh > /dev/null 2>&1; chmod +x /bin/hora.sh; hora.sh
-	break;;
+	return;;
 	3)
 	ssl_redir
 	break;;
