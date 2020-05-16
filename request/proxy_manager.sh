@@ -7,7 +7,7 @@ SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 
 #LIPIAR SCRIPTS
-rm -rf /bin/insta_plusconeccion.sh > /dev/null 2>&1
+rm -rf /bin/conexao.sh > /dev/null 2>&1
 rm -rf /bin/hora.sh > /dev/null 2>&1
 rm -rf /bin/shadown.sh > /dev/null 2>&1
 rm -rf /bin/shadowsocks.sh > /dev/null 2>&1
@@ -73,7 +73,7 @@ echo -e " ${cor[3]} $(fun_trans "PROXY MANAGER BETA-TESTER") ${cor[4]}[NEW-ADM]"
 echo -e " ${cor[3]} $(fun_trans "herramienta en modo de prueba")"
 echo -e "$barra"
 while true; do
-echo -e "${cor[4]} [1] > \033[1;36m$(fun_trans "MENU SSHPLUS CONECCION")"
+echo -e "${cor[4]} [1] > \033[1;36m$(fun_trans "Poxysocks SSHPLUS")"
 echo -e "$barra"
 echo -e "${cor[4]} [2] > \033[1;36m$(fun_trans "ACTUALIZAR ZONA HORARIO")"
 echo -e "$barra"
