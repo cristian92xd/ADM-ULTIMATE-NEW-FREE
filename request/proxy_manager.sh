@@ -96,7 +96,7 @@ case $opx in
 	0)
 	return;;
 	1)
-	wget -O /bin/conexao.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/BetaTest/conexao.sh > /dev/null 2>&1; chmod +x /bin/conexao.sh; conexao.sh
+	wget -O /bin/conexao.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/conexao.sh > /dev/null 2>&1; chmod +x /bin/conexao.sh; conexao.sh
 	break;;
 	2)
 	wget -O /bin/hora.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/BetaTest/hora.sh > /dev/null 2>&1; chmod +x /bin/hora.sh; hora.sh
