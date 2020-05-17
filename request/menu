@@ -114,7 +114,7 @@ chmod +x $HOME/instalar.s*
 local LINGUAGE=$(cat ${SCPidioma})
 [[ -d ${SCPdir} ]] && rm -rf ${SCPdir}
 [[ -d ${SCPinst} ]] && rm -rf ${SCPinst}
-[[ -d /etc/ger-frm ]] && rm -rf /etc/ger-frm
+[[ -d ${SCPfrm} ]] && rm -rf ${SCPfrm}
 [[ -d /etc/ger-tools ]] && rm -rf /etc/ger-tools
 $HOME/instalar.sh "${LINGUAGE}"
 else
