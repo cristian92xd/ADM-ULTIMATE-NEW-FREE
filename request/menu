@@ -10,8 +10,6 @@ SCPidioma="${SCPdir}/idioma"
 if [[ -e /etc/bash.bashrc-bakup ]]; then AutoRun="\033[1;32m[on]"
 elif [[ -e /etc/bash.bashrc ]]; then AutoRun="\033[1;31m[off]"
 fi
-# Funcoes menssage
-wget -O /etc/newadm/message.txt https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Mensaje/message.txt &> /dev/null
 # Funcoes Globais
 msg () {
 local colors="/etc/new-adm-color"
