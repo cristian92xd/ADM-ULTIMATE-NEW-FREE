@@ -187,6 +187,7 @@ echo -e " $(fun_trans "Aplicado!")"
 on="\033[1;32mon" && off="\033[1;31moff"
 [[ $(ps x | grep badvpn | grep -v grep | awk '{print $1}') ]] && badvpn=$on || badvpn=$off
 [[ `grep -c "^#ADM" /etc/sysctl.conf` -eq 0 ]] && tcp=$off || tcp=$on
+[[ -e /etc/torrent-admon ]] && torrent=$(echo -e "\033[1;32mon ") || torrent=$(echo -e "\033[1;31moff ")
 if [ -e /etc/squid/squid.conf ]; then
 [[ `grep -c "^#CACHE DO SQUID" /etc/squid/squid.conf` -gt 0 ]] && squid=$on || squid=$off
 elif [ -e /etc/squid3/squid.conf ]; then
