@@ -7,15 +7,16 @@ O EJECUTAR EL COMANDO SIGUIENTE: echo "pt" > /etc/newadm/idioma && chmod +x /etc
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/blob/master/Imagenes/ADM_ULTIMATE_NEW_FREE.jpg)
 
-**Manager Script Repositorio**
+**Manager Script**
 
 
 ## :heavy_exclamation_mark: Requerimientos
 
-* Un sistema operativo basado en Linux. Recomendamos Ubuntu 14.04
+* Un sistema operativo basado en Linux (Ubuntu o Debian). 
+* Recomendamos Ubuntu 14.04
+* Se recomienda usar una distro nueva o formatiada
 * Soporta Ubuntu 16 y 18 pero su mejor estabilidad es Ubuntu 14.04
-* Soporta Debian 7 - 8 y 9 pero su mejor estabilidad es Debian 7
-* Se recomienda usar una distro nueva o formatiada.
+* Soporta Debian 7 - 8 y 9 pero su mejor estabilidad es Debian 7.
 
 ## Installation
 ```
