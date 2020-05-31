@@ -22,13 +22,12 @@ O EJECUTAR EL COMANDO SIGUIENTE:
 * Soporta Ubuntu 16 y 18 pero su mejor estabilidad es Ubuntu 14.04
 
 ## Installation
-```
-**NEW-ULTIMATE (las dependencias faltantes se instalarán automáticamente)**
-```
-
 
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/instalar.sh; chmod 777 instalar.sh* && ./instalar.sh*
 
+```
+**NEW-ULTIMATE (las dependencias faltantes se instalarán automáticamente)**
+```
 -------------------------------------------------------------------------------
 
 ## :scroll: Registro de cambios
