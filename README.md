@@ -26,15 +26,15 @@ O EJECUTAR EL COMANDO SIGUIENTE:
 apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/instalar.sh; chmod 777 instalar.sh* && ./instalar.sh*
 
 ```
-**NEW-ULTIMATE (las dependencias faltantes se instalarán automáticamente)**
+NEW-ULTIMATE (las dependencias faltantes se instalarán automáticamente)
 ```
 -------------------------------------------------------------------------------
 
 ## :scroll: Registro de cambios
 ```
-**NEW-ULTIMATE Recibe actualizaciones periodicamente con nuevas características, mejoras 
+NEW-ULTIMATE Recibe actualizaciones periodicamente con nuevas características, mejoras 
 y correcciones de errores. Asegúrese de no 
-realizar cambios al scripts o borrar algun archivo.**
+realizar cambios al scripts o borrar algun archivo.
 
 ```
 
