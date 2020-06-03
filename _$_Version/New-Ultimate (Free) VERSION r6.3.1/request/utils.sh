@@ -192,7 +192,6 @@ if [ -e /etc/squid/squid.conf ]; then
 [[ `grep -c "^#CACHE DO SQUID" /etc/squid/squid.conf` -gt 0 ]] && squid=$on || squid=$off
 elif [ -e /etc/squid3/squid.conf ]; then
 [[ `grep -c "^#CACHE DO SQUID" /etc/squid3/squid.conf` -gt 0 ]] && squid=$on || squid=$off
-[[ -e /etc/torrent-admon ]] && torrent=$(echo -e "\033[1;32mon ") || torrent=$(echo -e "\033[1;31moff ")
 fi
 msg -ama "$(fun_trans "MENU DE UTILITARIOS")"
 msg -bar
