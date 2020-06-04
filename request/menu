@@ -679,6 +679,7 @@ msg -ne "$(fun_trans "IP*"): " && msg -bra "$(meu_ip)"
 msg -bar
 # SISTEMA DE HORA 
 _hora=$(printf '%(%H:%M:%S)T')
+_hoje=$(date +'%d/%m/%Y')
 _total=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort | wc -l)
 msg -ama "$(fun_trans "GERENCIADOR*") \033[1;31m[\033[1;32m NEW-ULTIMATE \033[1;31m] \033[1;31mHORA: \033[1;37m$_hora \033[1;31mTOTAL: \033[1;37m$_total"
 msg -bar
