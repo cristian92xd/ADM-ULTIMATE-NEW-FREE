@@ -188,10 +188,11 @@ echo -e "${cor[4]} [2] > \033[1;36m$(fun_trans "Reiniciar os serviço")"
 echo -e "${cor[4]} [3] > \033[1;36m$(fun_trans "Reiniciar Sistema")"
 echo -e "${cor[4]} [4] > \033[1;36m$(fun_trans "Alterar o nome do Sistema")"
 echo -e "${cor[4]} [5] > \033[1;36m$(fun_trans "Cambiar contraseña ROOT del Sistema")"
-echo -e "${cor[4]} [6] > \033[1;36m$(fun_trans "Serviço ROOT para Googlecloud e Amazon") \033[1;33m(\033[1;37mBETA\033[1;33m)"
-echo -e "${cor[4]} [7] > \033[1;36m$(fun_trans "Atualizar hora America-Santiago")"
-echo -e "${cor[4]} [8] > \033[1;36m$(fun_trans "Eliminar Registro del Limitador")"
-echo -e "${cor[4]} [9] > \033[1;36m$(fun_trans "Desbloquear VURTL para crear usuarios") \033[1;33m(\033[1;37mBETA\033[1;33m)"
+
+echo -e "${cor[4]} [6] > \033[1;36m$(fun_trans "Atualizar hora America-Santiago")"
+echo -e "${cor[4]} [7] > \033[1;36m$(fun_trans "Eliminar Registro del Limitador")"
+echo -e "${cor[4]} [8] > \033[1;36m$(fun_trans "Desbloquear VURTL para crear usuarios") \033[1;33m(\033[1;37mBETA\033[1;33m)"
+echo -e "${cor[4]} [9] > \033[1;36m$(fun_trans "Serviço ROOT para Googlecloud e Amazon") \033[1;33m(\033[1;37mBETA\033[1;33m)"
 echo -e "${cor[4]} [0] > ${cor[0]}$(fun_trans "VOLTAR")\n${barra}"
 while [[ ${opx} != @(0|[1-9]) ]]; do
 echo -ne "${cor[0]}$(fun_trans "Selecione a Opcao"): \033[1;37m" && read opx
@@ -216,16 +217,16 @@ case $opx in
 	cambiopass
 	break;;
 	6)
-	rootpass
-	break;;
-	7)
 	act_hora
 	break;;
-	8)
+	7)
 	cleanreg
 	break;;
-        9)
+	8)
 	pamcrack
+	break;;
+        9)
+	rootpass
 	break;;
 esac
 done
