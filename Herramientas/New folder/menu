@@ -228,7 +228,6 @@ done <<< "${portasVAR}"
 [[ ! -z $SSL ]] && echo -e $SSL
 [[ ! -z $SSV ]] && echo -e $SSV
 }
-
 mine_port1 () {
 unset portas
 portas_var=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
@@ -321,7 +320,6 @@ texto="\033[1;31m${servico}: \033[1;32m${porta}"
 echo -e "${texto}"
 done
 }
-
 ofus () {
 unset txtofus
 number=$(expr length $1)
@@ -755,7 +753,7 @@ export -f meu_ip
 export -f fun_ip
 clear
 msg -bar
-# SISTEMA DE HORA 
+# SISTEMA DE DATA 
 _hora=$(printf '%(%H:%M:%S)T')
 _hoje=$(date +'%d/%m/%Y')
 _total=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort | wc -l)

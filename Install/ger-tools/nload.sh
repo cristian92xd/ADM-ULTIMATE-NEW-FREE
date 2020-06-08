@@ -31,8 +31,8 @@ echo -e "${cor[3]} $(fun_trans "Con nload puedes ver todos el trafico")"
 echo -e "${cor[3]} $(fun_trans "de red generado en tu sistema")"
 echo -e "${cor[0]} $(fun_trans "PARA SALIR DEL PANEL PRESIONE") ${cor[3]}CTLR+C"
 echo -e "$barra"
-fun_bar "apt-get install nload -y"
-fun_bar "apt-get install nload -y"
 sleep 1s
+fun_bar "apt-get install nload -y"
+sleep 2s
 
 nload

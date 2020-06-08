@@ -6,7 +6,6 @@ SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 
 echo -e "${cor[3]} $(fun_trans "Informacion de tu sistema en general como")"
-echo -e "${cor[3]} $(fun_trans "sistema operativo, hora, ip, ram, cpu y puertos")"
 echo -e "$barra"
 
 #HORA Y DATA SISTEMA
@@ -21,6 +20,12 @@ system=$(cat /etc/issue.net)
 if [ "$system" ]
 then
 
+echo -e "\033[1;31mSISTEMA: \033[1;37m$system     \033[1;31m\033[1;31mIP: \033[1;37m$(meu_ip)"
+else
+echo -e "\033[1;32mSISTEMA: \033[1;33m[\033[1;37mNo Disponible\033[1;33m]"
+fi
+echo -e "$barra"
+
 #PROCESSADOR
 _core=$(printf '%-1s' "$(grep -c cpu[0-9] /proc/stat)")
 _usop=$(printf '%-1s' "$(top -bn1 | awk '/Cpu/ { cpu = "" 100 - $8 "%" }; END { print cpu }')")
@@ -33,11 +38,6 @@ ram3=$(free -h | grep -i mem | awk {'print $3'})
 #_ram=$(printf ' %-9s' "$(free -h | grep -i mem | awk {'print $2'})")
 _usor=$(printf '%-8s' "$(free -m | awk 'NR==2{printf "%.2f%%", $3*100/$2 }')")
 
-echo -e "\033[1;31mSISTEMA: \033[1;37m$system     \033[1;31m\033[1;31mIP: \033[1;37m$(meu_ip)"
-else
-echo -e "\033[1;32mSISTEMA: \033[1;33m[\033[1;37mNo Disponible\033[1;33m]"
-fi
-echo -e "$barra"
 echo -e "\033[1;31mPROCESSADOR: \033[1;37mNUCLEOS: \033[1;32m$_core         \033[1;37mUSO DE CPU: \033[1;32m$_usop"
 echo -e "$barra"
 echo -e "\033[1;31mLA MEMORIA RAM SE ENCUENTRA TRABAJANDO AL: \033[1;32m$_usor"
@@ -91,5 +91,4 @@ texto="\033[1;31m${servico}: \033[1;32m${porta}"
 echo -e "${texto}"
 done
 }
-
 mine_port
