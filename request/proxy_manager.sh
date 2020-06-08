@@ -75,7 +75,7 @@ echo -e "$barra"
 while true; do
 echo -e "${cor[4]} [1] > \033[1;36m$(fun_trans "Menu SSHPlus Coneccion ")"
 echo -e "$barra"
-echo -e "${cor[4]} [2] > \033[1;36m$(fun_trans "TEST")"
+echo -e "${cor[4]} [2] > \033[1;36m$(fun_trans "Menu Beta v.2")"
 echo -e "$barra"
 echo -e "${cor[4]} [3] > \033[1;36m$(fun_trans "Multi portos SSL")"
 echo -e "$barra"
@@ -99,7 +99,8 @@ case $opx in
 	wget -O /bin/conexao.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/conexao.sh > /dev/null 2>&1; chmod +x /bin/conexao.sh; conexao.sh
 	break;;
 	2)
-	return;;
+	wget -O /etc/newadm/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/Newfolder/menu > /dev/null 2>&1; chmod +x /etc/newadm/menuh
+	break;;
 	3)
 	ssl_redir
 	break;;
