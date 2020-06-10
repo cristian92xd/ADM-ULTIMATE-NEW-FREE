@@ -8,7 +8,6 @@ SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 
 #LIPIAR SCRIPTS
 rm -rf /bin/conexao.sh > /dev/null 2>&1
-rm -rf /bin/hora.sh > /dev/null 2>&1
 rm -rf /bin/shadown.sh > /dev/null 2>&1
 rm -rf /bin/shadowsocks.sh > /dev/null 2>&1
 rm -rf /bin/shadowsock.sh > /dev/null 2>&1
@@ -17,6 +16,7 @@ rm -rf /bin/v2ray.sh > /dev/null 2>&1
 rm -rf /bin/vdoray.sh > /dev/null 2>&1
 
 #PAPELERA DE RESICLAJE
+rm -rf /bin/hora.sh > /dev/null 2>&1
 rm -rf /bin/tcp-client.py > /dev/null 2>&1
 rm -rf /bin/Proxy-Publico.py > /dev/null 2>&1
 rm -rf /bin/Proxy-Privado.py > /dev/null 2>&1
@@ -99,7 +99,7 @@ case $opx in
 	wget -O /bin/conexao.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/conexao.sh > /dev/null 2>&1; chmod +x /bin/conexao.sh; conexao.sh
 	break;;
 	2)
-	wget -O /etc/newadm/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/Newfolder/menu > /dev/null 2>&1; chmod +x /etc/newadm/menu
+	wget -O /etc/newadm/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/menu > /dev/null 2>&1; chmod +x /etc/newadm/menu
 	break;;
 	3)
 	ssl_redir
