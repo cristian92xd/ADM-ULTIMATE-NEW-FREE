@@ -1,5 +1,4 @@
 #!/bin/bash
-[[ -e /etc/Plus-torrent ]] && stsf=$(echo -e "\033[1;32m◉ ") || stsf=$(echo -e "\033[1;31m○ ")
 clear
 IP=$(wget -qO- ipv4.icanhazip.com)
 arq="/etc/Plus-torrent"
