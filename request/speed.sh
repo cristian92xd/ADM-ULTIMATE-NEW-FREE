@@ -29,4 +29,4 @@ msg -ama " \033[1;32m$(fun_trans "Latencia"): \033[1;37m$ping"
 msg -ama " \033[1;32m$(fun_trans "Upload"): \033[1;37m$up_load"
 msg -ama " \033[1;32m$(fun_trans "Download"): \033[1;37m$down_load"
 msg -ama " \033[1;32m$(fun_trans "Result"): \033[1;33m$re_sult"
-msg -bar 
+msg -bar

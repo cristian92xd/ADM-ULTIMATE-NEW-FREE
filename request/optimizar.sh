@@ -7,24 +7,30 @@ SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 
 fun_bar () {
-comando="$1"
- _=$(
-$comando > /dev/null 2>&1
-) & > /dev/null
-pid=$!
-while [[ -d /proc/$pid ]]; do
-echo -ne " \033[1;33m["
-   for((i=0; i<10; i++)); do
-   echo -ne "\033[1;31m##"
-   sleep 0.2
+comando[0]="$1"
+comando[1]="$2"
+ (
+[[ -e $HOME/fim ]] && rm $HOME/fim
+${comando[0]} -y > /dev/null 2>&1
+${comando[1]} -y > /dev/null 2>&1
+touch $HOME/fim
+ ) > /dev/null 2>&1 &
+ tput civis
+echo -ne "     \033[1;33mAGUARDE \033[1;37m- \033[1;33m["
+while true; do
+   for((i=0; i<18; i++)); do
+   echo -ne "\033[1;31m#"
+   sleep 0.1s
    done
-echo -ne "\033[1;33m]"
-sleep 1s
-echo
-tput cuu1 && tput dl1
+   [[ -e $HOME/fim ]] && rm $HOME/fim && break
+   echo -e "\033[1;33m]"
+   sleep 1s
+   tput cuu1
+   tput dl1
+   echo -ne "     \033[1;33mAGUARDE \033[1;37m- \033[1;33m["
 done
-echo -e " \033[1;33m[\033[1;31m####################\033[1;33m] - \033[1;32m100%\033[0m"
-sleep 1s
+echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
+tput cnorm
 }
 
 echo -e "${cor[3]} $(fun_trans "OPTIMIZAR SERVIDOR") ${cor[4]}[NEW-ADM]"
@@ -64,6 +70,7 @@ echo ""
 echo -e "\033[1;37mMemória \033[1;32mRAM \033[1;37mAntes de Otimizacion:\033[1;36m" $MEM1% 
 echo -e "$barra"
 sleep 3
+
 fun_limpram () {
 sync 
 echo 3 > /proc/sys/vm/drop_caches
@@ -75,8 +82,30 @@ swapon -a
 sleep 4
 }
 
+function aguarde {
+sleep 1
+helice ()
+{
+	fun_limpram > /dev/null 2>&1 & 
+	tput civis
+	while [ -d /proc/$! ]
+	do
+		for i in / - \\ \|
+		do
+			sleep .1
+			echo -ne "\e[1D$i"
+		done
+	done
+	tput cnorm
+}
+
 echo -e "\033[1;37m LIMPANDO MEMORIA \033[1;32mRAM \033[1;37me \033[1;32mSWAP"
 fun_bar 'service ssh restart' 'service squid3 restart'
+helice
+echo -e "\e[1DOk"
+}
+aguarde
+sleep 1.5s
 
 echo -e "$barra"
 MEM2=`free|awk '/Mem:/ {print int(100*$3/$2)}'`
