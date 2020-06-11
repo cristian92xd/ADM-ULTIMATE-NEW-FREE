@@ -15,15 +15,6 @@ rm -rf /bin/ssrrmu.sh > /dev/null 2>&1
 rm -rf /bin/v2ray.sh > /dev/null 2>&1
 rm -rf /bin/vdoray.sh > /dev/null 2>&1
 
-#PAPELERA DE RESICLAJE
-rm -rf /bin/hora.sh > /dev/null 2>&1
-rm -rf /bin/tcp-client.py > /dev/null 2>&1
-rm -rf /bin/Proxy-Publico.py > /dev/null 2>&1
-rm -rf /bin/Proxy-Privado.py > /dev/null 2>&1
-rm -rf /bin/ssld.sh > /dev/null 2>&1
-rm -rf /bin/sslmanager.sh > /dev/null 2>&1
-rm -rf /bin/pan_cracklib.sh > /dev/null 2>&1
-
 mportas () {
 unset portas
 portas_var=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
