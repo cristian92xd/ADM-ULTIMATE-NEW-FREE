@@ -1,4 +1,10 @@
 #!/bin/bash
+declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
+barra="\033[0m\e[34m======================================================\033[1;37m"
+SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit 1
+SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
+SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
+SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 
 link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/HERRAMIENTAS/master/Testador-Velocidad/speedtest"
 [[ ! -e /bin/speedtest ]] && wget -O /bin/speedtest ${link_bin} > /dev/null 2>&1 && chmod +x /bin/speedtest
@@ -38,19 +44,19 @@ fun_tst () {
 speedtest --share > speed
 }
 
-echo -e " \033[1;33mSpeed Test \033[1;32m[NEW-ADM] \033[0m"
-echo -e "\033[0;34m======================================================\033[0m"
+echo -e "${cor[3]} $(fun_trans "Speed Test") ${cor[4]}[NEW-ADM]"
+msg -bar
 aguarde 'fun_tst'
 png=$(cat speed | sed -n '5 p' |awk -F : {'print $NF'})
 down=$(cat speed | sed -n '7 p' |awk -F :  {'print $NF'})
 upl=$(cat speed | sed -n '9 p' |awk -F :  {'print $NF'})
 lnk=$(cat speed | sed -n '10 p' |awk {'print $NF'})
-echo -e "\033[0;34m======================================================\033[0m"
-echo -e "\033[1;32mLatencia:\033[1;37m$png"
-echo -e "\033[1;32mDownload:\033[1;37m$down"
-echo -e "\033[1;32mUpload:\033[1;37m$upl"
-echo -e "\033[1;32mResult: \033[1;36m$lnk\033[0m"
-echo -e "\033[0;34m======================================================\033[0m"
+msg -bar
+msg -ama " \033[1;32m$(fun_trans "Latencia"): \033[1;37m$png"
+msg -ama " \033[1;32m$(fun_trans "Upload"): \033[1;37m$upl"
+msg -ama " \033[1;32m$(fun_trans "Download"): \033[1;37m$down"
+msg -ama " \033[1;32m$(fun_trans "Result"): \033[1;33m$lnk"
+msg -bar
 rm -rf $HOME/speed
 }
 velocity
