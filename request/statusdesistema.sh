@@ -44,7 +44,7 @@ echo -e "$barra"
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "TRAFICO DE RED NLOAD")"
 echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "PROCESOS DEL SISTEMA HTOP")"
 echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "INFORMACION DE SISTEMAS Y PUERTOS") \033[1;33m(\033[1;37mBETA\033[1;33m)"
-echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "NET TOOLS TARGET")"
+echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "NET TOOLS TARGET") \033[1;33m(\033[1;37mBETA\033[1;33m)"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 echo -e "$barra"
 while [[ ${arquivoonlineadm} != @(0|[1-4]) ]]; do
