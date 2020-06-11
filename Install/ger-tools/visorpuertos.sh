@@ -5,7 +5,7 @@ SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 
-echo -e "${cor[3]} $(fun_trans "Informacion de tu sistema en general como")"
+echo -e "${cor[3]} $(fun_trans "Informacion de tu sistema en general")"
 echo -e "$barra"
 
 #HORA Y DATA SISTEMA
