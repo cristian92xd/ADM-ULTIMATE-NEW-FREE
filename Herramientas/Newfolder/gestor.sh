@@ -184,8 +184,6 @@ echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "Atualizar hora America-Sa
 echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "Eliminar Registro del Limitador")"
 echo -ne "\033[1;32m [8] > " && msg -azu "$(fun_trans "Desbloquear VURTL para crear usuarios") \033[1;33m(\033[1;37mBETA\033[1;33m)"
 echo -ne "\033[1;32m [9] > " && msg -azu "$(fun_trans "Serviço ROOT para Googlecloud e Amazon") \033[1;33m(\033[1;37mBETA\033[1;33m)"
-echo -ne "\033[1;32m [10] > " && msg -azu "$(fun_trans "Reiniciar Sistema")"
-echo -ne "\033[1;32m [11] > " && msg -azu "$(fun_trans "Reiniciar Sistema")"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "Voltar")"
 msg -bar
 while [[ ${arquivoonlineadm} != @(0|[1-9]) ]]; do
@@ -202,13 +200,6 @@ case $arquivoonlineadm in
 7)cleanreg;;
 8)pamcrack;;
 9)rootpass;;
-10)cleanreg;;
-11)cleanreg;;
-12)cleanreg;;
-13)cleanreg;;
-14)cleanreg;;
-15)cleanreg;;
-16)cleanreg;;
 0)exit;;
 esac
 msg -bar

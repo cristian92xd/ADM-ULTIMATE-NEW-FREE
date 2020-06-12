@@ -100,9 +100,9 @@ helice ()
 }
 
 echo -e "\033[1;37m LIMPANDO MEMORIA \033[1;32mRAM \033[1;37me \033[1;32mSWAP"
-fun_bar 'service ssh restart' 'service squid3 restart'
+fun_bar 'service ssh restart'
 helice
-echo -e "\e[1DOk"
+echo -e "\e[1D MEMORIA \033[1;32mRAM \033[1;37me \033[1;32mSWAP \033[1;37mLIMPIA"
 }
 aguarde
 sleep 1.5s
