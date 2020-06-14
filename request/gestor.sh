@@ -33,6 +33,7 @@ echo -ne " \033[1;31m[ ! ] apt-get update"
 apt-get update -y > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
 echo -ne " \033[1;31m[ ! ] apt-get upgrade"
 apt-get upgrade -y > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
+echo -e "$barra"
 return
 }
 
@@ -61,6 +62,7 @@ echo -ne " \033[1;31m[ ! ] Services fail2ban restart"
 [[ -e /etc/init.d/ssh ]] && /etc/init.d/ssh restart
 fail2ban-client -x stop && fail2ban-client -x start
 ) > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
+echo -e "$barra"
 return
 }
 
@@ -71,6 +73,7 @@ echo -e "\033[1;32m [OK]"
 (
 sudo reboot
 ) > /dev/null 2>&1
+echo -e "$barra"
 return
 }
 
@@ -86,6 +89,7 @@ echo -e "\033[1;33m $(fun_trans "Host alterado corretamente")!, $(fun_trans "rei
 else
 echo -e "\033[1;33m $(fun_trans "Host no modificado")!"
 fi
+echo -e "$barra"
 return
 }
 
@@ -94,7 +98,7 @@ echo -e "${cor[3]} $(fun_trans "Esta herramienta cambia la contraseña de su ser
 echo -e "${cor[3]} $(fun_trans "Esta contraseña es utilizada como usuario") root"
 echo -e "$barra"
 echo -ne " $(fun_trans "Desea Seguir?") [S/N]: "; read x
-[[ $x = @(n|N) ]] && return
+[[ $x = @(n|N) ]] && echo -e "$barra" && return
 echo -e "$barra"
 #Inicia Procedimentos
 echo -e "${cor[0]} $(fun_trans "Escriba su nueva contraseña")"
@@ -105,6 +109,42 @@ sleep 1s
 echo -e "$barra"
 echo -e "${cor[3]} $(fun_trans "Contraseña cambiada con exito!")"
 echo -e "${cor[2]} $(fun_trans "Su contraseña ahora es"): ${cor[4]}$pass"
+echo -e "$barra"
+return
+}
+
+act_hora () {
+echo -ne " \033[1;31m[ ! ] timedatectl"
+timedatectl > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
+echo -ne " \033[1;31m[ ! ] timedatectl list-timezones"
+timedatectl list-timezones > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
+echo -ne " \033[1;31m[ ! ] timedatectl list-timezones  | grep Santiago"
+timedatectl list-timezones  | grep Santiago > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
+echo -ne " \033[1;31m[ ! ] timedatectl set-timezone America/Santiago"
+timedatectl set-timezone America/Santiago > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
+echo -e "$barra"
+return
+}
+
+cleanreg () {
+echo -ne " \033[1;31m[ ! ] Registro del limitador eliminado"
+sudo rm -rf /etc/newadm/ger-user/Limiter.log > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
+echo -e "$barra"
+return
+}
+
+pamcrack () {
+echo -e "${cor[3]} $(fun_trans "Liberar passwd para VURTL")"
+echo -e "$barra"
+echo -ne " $(fun_trans "Desea Seguir?") [S/N]: "; read x
+[[ $x = @(n|N) ]] && echo -e "$barra" && return
+echo -e ""
+fun_bar "service ssh restart"
+sed -i 's/.*pam_cracklib.so.*/password sufficient pam_unix.so sha512 shadow nullok try_first_pass #use_authtok/' /etc/pam.d/common-password
+fun_bar "service ssh restart"
+echo -e ""
+echo -e " \033[1;31m[ ! ]\033[1;33m $(fun_trans "Configuraciones VURTL aplicadas")"
+echo -e "$barra"
 return
 }
 
@@ -115,7 +155,7 @@ echo -e "${cor[3]} $(fun_trans "funcionan en Googlecloud y Amazon Puede causar")
 echo -e "${cor[3]} $(fun_trans "error en otras VPS agenas a Googlecloud y Amazon ")"
 echo -e "$barra"
 echo -ne " $(fun_trans "Desea Seguir?") [S/N]: "; read x
-[[ $x = @(n|N) ]] && return
+[[ $x = @(n|N) ]] && echo -e "$barra" && return
 echo -e "$barra"
 #Inicia Procedimentos
 echo -e "${cor[0]} $(fun_trans "Aplicando Configuracoes")"
@@ -135,38 +175,7 @@ echo -e "$barra"
 echo -e "${cor[3]} $(fun_trans "Configuraciones aplicadas con exito!")"
 echo -e "${cor[2]} $(fun_trans "Su contraseña ahora es"): ${cor[4]}$pass"
 service ssh restart > /dev/null 2>&1
-return
-}
-
-act_hora () {
-echo -ne " \033[1;31m[ ! ] timedatectl"
-timedatectl > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
-echo -ne " \033[1;31m[ ! ] timedatectl list-timezones"
-timedatectl list-timezones > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
-echo -ne " \033[1;31m[ ! ] timedatectl list-timezones  | grep Santiago"
-timedatectl list-timezones  | grep Santiago > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
-echo -ne " \033[1;31m[ ! ] timedatectl set-timezone America/Santiago"
-timedatectl set-timezone America/Santiago > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
-return
-}
-
-cleanreg () {
-echo -ne " \033[1;31m[ ! ] Registro del limitador eliminado"
-sudo rm -rf /etc/newadm/ger-user/Limiter.log > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
-return
-}
-
-pamcrack () {
-echo -e "${cor[3]} $(fun_trans "Liberar passwd para VURTL")"
 echo -e "$barra"
-echo -ne " $(fun_trans "Desea Seguir?") [S/N]: "; read x
-[[ $x = @(n|N) ]] && return
-echo -e ""
-fun_bar "service ssh restart"
-sed -i 's/.*pam_cracklib.so.*/password sufficient pam_unix.so sha512 shadow nullok try_first_pass #use_authtok/' /etc/pam.d/common-password
-fun_bar "service ssh restart"
-echo -e ""
-echo -e " \033[1;31m[ ! ]\033[1;33m $(fun_trans "Configuraciones VURTL aplicadas")"
 return
 }
 
@@ -200,4 +209,3 @@ case $arquivoonlineadm in
 0)exit;;
 esac
 msg -bar
-#fim

@@ -8,12 +8,21 @@ SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 
 #LIPIAR SCRIPTS
 rm -rf /bin/conexao.sh > /dev/null 2>&1
+rm -rf /bin/hora.sh > /dev/null 2>&1
 rm -rf /bin/shadown.sh > /dev/null 2>&1
 rm -rf /bin/shadowsocks.sh > /dev/null 2>&1
 rm -rf /bin/shadowsock.sh > /dev/null 2>&1
 rm -rf /bin/ssrrmu.sh > /dev/null 2>&1
 rm -rf /bin/v2ray.sh > /dev/null 2>&1
 rm -rf /bin/vdoray.sh > /dev/null 2>&1
+
+#PAPELERA DE RESICLAJE
+rm -rf /bin/tcp-client.py > /dev/null 2>&1
+rm -rf /bin/Proxy-Publico.py > /dev/null 2>&1
+rm -rf /bin/Proxy-Privado.py > /dev/null 2>&1
+rm -rf /bin/ssld.sh > /dev/null 2>&1
+rm -rf /bin/sslmanager.sh > /dev/null 2>&1
+rm -rf /bin/pan_cracklib.sh > /dev/null 2>&1
 
 mportas () {
 unset portas
@@ -24,15 +33,6 @@ var1=$(echo $port | awk '{print $1}') && var2=$(echo $port | awk '{print $9}' | 
 done <<< "$portas_var"
 i=1
 echo -e "$portas"
-}
-
-menu () {
-echo -ne " \033[1;31m[ ! ] Instalando Menu Beta v.2"
-wget -O /etc/newadm/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/menu > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
-echo -ne " \033[1;31m[ ! ] Cocediendo Permisos"
-chmod +x /etc/newadm/menu > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
-/etc/newadm/menu
-echo -e "$barra"
 }
 
 ssl_redir() {
@@ -69,7 +69,7 @@ msg -bar
 }
 
 gestor_fun () {
-echo -e " ${cor[3]} $(fun_trans "PROXY MANAGER BETA") ${cor[4]}[NEW-ADM]"
+echo -e " ${cor[3]} $(fun_trans "PROXY MANAGER BETA-TESTER") ${cor[4]}[NEW-ADM]"
 echo -e " ${cor[3]} $(fun_trans "herramienta en modo de prueba")"
 echo -e "$barra"
 while true; do
@@ -88,11 +88,11 @@ echo -e "${cor[4]} [8] > \033[1;36m$(fun_trans "V2ray Panel")"
 echo -e "${cor[4]} [9] > \033[1;36m$(fun_trans "V2ray Manager")"
 echo -e "$barra"
 echo -e "${cor[4]} [0] > ${cor[0]}$(fun_trans "VOLTAR")\n${barra}"
-while [[ ${opx} != @(0|[1-9]) ]]; do
-echo -ne "${cor[0]}$(fun_trans "Digite a Opcao"): \033[1;37m" && read opx
+while [[ ${arquivoonlineadm} != @(0|[1-9]) ]]; do
+echo -ne "[0-9]: " && read opx
 tput cuu1 && tput dl1
 done
-case $opx in
+case $arquivoonlineadm in
 	0)
 	return;;
 	1)

@@ -32,7 +32,7 @@ GENERADOR_BIN () {
 wget -O /etc/ger-frm/GENERADOR_BIN.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/GENERADOR_BIN.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/GENERADOR_BIN.sh
 fun_bar "chmod -R 777 /etc/ger-frm/GENERADOR_BIN.sh"
 chmod -R 777 /etc/ger-frm/GENERADOR_BIN.sh > /dev/null 2>&1
-echo -e "$barra"
+msg -bar
 echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
@@ -41,7 +41,7 @@ MasterBin () {
 wget -O /etc/ger-frm/MasterBin.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/MasterBin.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/MasterBin.sh
 fun_bar "chmod -R 777 /etc/ger-frm/MasterBin.sh"
 chmod -R 777 /etc/ger-frm/MasterBin.sh > /dev/null 2>&1
-echo -e "$barra"
+msg -bar
 echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
@@ -50,7 +50,7 @@ real-host () {
 wget -O /etc/ger-frm/real-host.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/real-host.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/real-host.sh
 fun_bar "chmod -R 777 /etc/ger-frm/real-host.sh"
 chmod -R 777 /etc/ger-frm/real-host.sh > /dev/null 2>&1
-echo -e "$barra"
+msg -bar
 echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
@@ -59,7 +59,7 @@ dados () {
 wget -O /etc/ger-frm/dados.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/dados.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/dados.sh
 fun_bar "chmod -R 777 /etc/ger-frm/dados.sh"
 chmod -R 777 /etc/ger-frm/dados.sh > /dev/null 2>&1
-echo -e "$barra"
+msg -bar
 echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
@@ -68,7 +68,7 @@ Crear-Demo () {
 wget -O /etc/ger-frm/Crear-Demo.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/Crear-Demo.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/Crear-Demo.sh
 fun_bar "chmod -R 777 /etc/ger-frm/Crear-Demo.sh"
 chmod -R 777 /etc/ger-frm/Crear-Demo.sh > /dev/null 2>&1
-echo -e "$barra"
+msg -bar
 echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
@@ -77,7 +77,7 @@ squidpass () {
 wget -O /etc/ger-frm/squidpass.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/squidpass.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/squidpass.sh
 fun_bar "chmod -R 777 /etc/ger-frm/squidpass.sh"
 chmod -R 777 /etc/ger-frm/squidpass.sh > /dev/null 2>&1
-echo -e "$barra"
+msg -bar
 echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
@@ -86,7 +86,7 @@ insta_painel () {
 wget -O /etc/ger-frm/insta_painel https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/insta_painel > /dev/null 2>&1; chmod +x /etc/ger-frm/insta_painel
 fun_bar "chmod -R 777 /etc/ger-frm/insta_painel"
 chmod -R 777 /etc/ger-frm/insta_painel > /dev/null 2>&1
-echo -e "$barra"
+msg -bar
 echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
@@ -95,13 +95,13 @@ vnc () {
 wget -O /etc/ger-frm/vnc.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/vnc.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/vnc.sh
 fun_bar "chmod -R 777 /etc/ger-frm/vnc.sh"
 chmod -R 777 /etc/ger-frm/vnc.sh > /dev/null 2>&1
-echo -e "$barra"
+msg -bar
 echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
 msg -ama "$(fun_trans "TOOLS DOWNLOAD MANAGER") ${cor[4]}[NEW-ADM]"
-echo -e "$barra"
+msg -bar
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "GERADOR DE BIN")"
 echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "CONSULTAR UN BIN")"
 echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "HOST EXTRACTOR")"
@@ -111,13 +111,12 @@ echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "PROTECAO SQUID PASS")"
 echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "PAINEL DE UPLOAD DE EHI")"
 echo -ne "\033[1;32m [8] > " && msg -azu "$(fun_trans "VNC SERVER")"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
-echo -e "$barra"
+msg -bar
 while [[ ${arquivoonlineadm} != @(0|[1-9]) ]]; do
-read -p "Selecione a Opcao: " arquivoonlineadm
+read -p "[0-9]: " arquivoonlineadm
 tput cuu1 && tput dl1
 done
 case $arquivoonlineadm in
-0)exit;;
 1)GENERADOR_BIN;;
 2)MasterBin;;
 3)real-host;;
@@ -126,5 +125,6 @@ case $arquivoonlineadm in
 6)squidpass;;
 7)insta_painel;;
 8)vnc;;
+0)exit;;
 esac
 msg -bar
