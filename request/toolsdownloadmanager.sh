@@ -112,8 +112,8 @@ echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "PAINEL DE UPLOAD DE EHI")
 echo -ne "\033[1;32m [8] > " && msg -azu "$(fun_trans "VNC SERVER")"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 msg -bar
-while [[ ${arquivoonlineadm} != @(0|[1-9]) ]]; do
-read -p "[0-9]: " arquivoonlineadm
+while [[ ${arquivoonlineadm} != @(0|[1-8]) ]]; do
+read -p "[0-8]: " arquivoonlineadm
 tput cuu1 && tput dl1
 done
 case $arquivoonlineadm in
