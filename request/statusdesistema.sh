@@ -40,22 +40,22 @@ sleep 1s
 }
 
 msg -ama "$(fun_trans "STATUS DE SISTEMA") ${cor[4]}[NEW-ADM]"
-echo -e "$barra"
+msg -bar
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "TRAFICO DE RED NLOAD")"
 echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "PROCESOS DEL SISTEMA HTOP")"
 echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "INFORMACION DE SISTEMAS Y PUERTOS") \033[1;33m(\033[1;37mBETA\033[1;33m)"
 echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "NET TOOLS TARGET") \033[1;33m(\033[1;37mBETA\033[1;33m)"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
-echo -e "$barra"
+msg -bar
 while [[ ${arquivoonlineadm} != @(0|[1-4]) ]]; do
-read -p "Selecione a Opcao: " arquivoonlineadm
+read -p "[0-4]: " arquivoonlineadm
 tput cuu1 && tput dl1
 done
 case $arquivoonlineadm in
-0)exit;;
 1)/etc/ger-tools/nload.sh;;
 2)/etc/ger-tools/htop.sh;;
 3)/etc/ger-tools/visorpuertos.sh;;
 4)/etc/ger-tools/nettools;;
+0)exit;;
 esac
 msg -bar

@@ -170,9 +170,6 @@ echo -e " \033[1;31m[ ! ]\033[1;33m $(fun_trans "Configuraciones VURTL aplicadas
 return
 }
 
-on="\033[1;32mon" && off="\033[1;31moff"
-[[ -e /etc/torrent-admon ]] && torrent=$(echo -e "\033[1;32mon ") || torrent=$(echo -e "\033[1;31moff ")
-
 msg -ama " $(fun_trans "ADMINISTRADOR VPS")"
 msg -bar
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "Atualizar pacotes")"
