@@ -50,7 +50,7 @@ done <<< "${portasVAR}"
 [[ ! -z $SSV ]] && echo -e $SSV
 }
 
-echo -e "\033[1;33m $(fun_trans "Portas") \033[1;32m[NEW-ADM]"
+msg -ama " $(fun_trans "Portas")"
 msg -bar
 mine_port
 msg -bar
