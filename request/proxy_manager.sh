@@ -31,7 +31,6 @@ echo -ne " \033[1;31m[ ! ] Instalando Menu Beta v.2"
 wget -O /etc/newadm/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/menu > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
 echo -ne " \033[1;31m[ ! ] Cocediendo Permisos"
 chmod +x /etc/newadm/menu > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
-/etc/newadm/menu
 echo -e "$barra"
 }
 
@@ -99,7 +98,7 @@ case $opx in
 	wget -O /bin/conexao.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/conexao.sh > /dev/null 2>&1; chmod +x /bin/conexao.sh; conexao.sh
 	break;;
 	2)
-	wget -O /etc/newadm/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/menu > /dev/null 2>&1; chmod +x /etc/newadm/menu;
+	menu
 	break;;
 	3)
 	ssl_redir
