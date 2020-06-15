@@ -1,9 +1,14 @@
 #!/bin/bash
-clear
+declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
+barra="\033[0m\e[34m======================================================\033[1;37m"
+SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit 1
+SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
+SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
+SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
+
 IP=$(wget -qO- ipv4.icanhazip.com)
 arq="/etc/Plus-torrent"
-echo -e "\E[44;1;37m           FIREWALL BLOQUEIO TORRENT           \E[0m"
-echo ""
+
 if [[ -e "$arq" ]]; then
 	fun_fireoff () {
 		iptables -P INPUT ACCEPT
@@ -38,14 +43,15 @@ fun_spn1 () {
 	helice
 	echo -e "\e[1DOk"
 }
-read -p "$(echo -e "\033[1;32mDESEJA REMOVER REGRAS FIREWALL? \033[1;33m[s/n]:\033[1;37m") " -e -i n resp
+read -p "$(echo -e "\033[1;33mDESEJA REMOVER REGRAS FIREWALL \033[1;37m[s/n]:\033[1;37m") " -e -i n resp
 if [[ "$resp" = 's' ]]; then
 	echo ""	
 	fun_spn1
 	echo ""
-	echo -e "\033[1;33mTORRENT LIBERADO !\033[0m"
+	echo -e "\033[1;37mBLOQUEIO TORRENT \033[1;31mLIBERADO !\033[0m"
 	echo ""
-	echo -e "\033[1;32mFIREWALL REMOVIDO COM SUCESSO !"
+
+	echo -e "\033[1;33mFIREWALL REMOVIDO COM SUCESSO \033[1;32m[OK]"
 	echo ""
 	if [[ -e /etc/openvpn/openvpn-status.log ]]; then
 		echo -e "\033[1;31m[\033[1;33m!\033[1;31m]\033[1;33m REINICIE O SISTEMA PRA CONCLUIR"
@@ -63,15 +69,15 @@ if [[ "$resp" = 's' ]]; then
 		fi
 	fi
 	sleep 2
-	menu
+	service ssh restart
 else
 	sleep 1
 	menu
 fi
 else
-echo -e "\033[1;31m[\033[1;33m!\033[1;31m]\033[1;33m FUNCAO BETA ULTILIZE POR SUA CONTA EM RISCO"
-echo ""
-read -p "$(echo -ne "\033[1;32mDESEJA APLICAR REGRAS FIREWALL ? \033[1;33m[s/n]:\033[1;37m") " -e -i n resp
+echo -e "\033[1;37m FUNCAO BETA ULTILIZE POR SUA CONTA EM RISCO"
+echo -e "$barra"
+read -p "$(echo -ne "\033[1;33mDESEJA APLICAR REGRAS FIREWALL \033[1;37m[s/n]:\033[1;37m") " -e -i n resp
 if [[ "$resp" = 's' ]]; then
 echo ""
 echo -ne "\033[1;33mPARA CONTINUAR CONFIRME SEU IP: \033[1;37m"; read -e -i $IP IP
@@ -158,11 +164,12 @@ fun_spn2 () {
 }
 fun_spn2
 echo ""
-echo -e "\033[1;33mBLOQUEIO\033[1;37m TORRENT \033[1;33mAPLICADO !\033[0m"
+echo -e "\033[1;37mBLOQUEIO TORRENT \033[1;32mAPLICADO !\033[0m"
 echo ""
-echo -e "\033[1;32mFIREWALL APLICADO COM SUCESSO !"
+echo -e "\033[1;33mFIREWALL APLICADO COM SUCESSO \033[1;32m[OK]"
+echo ""
 sleep 3
-menu
+service ssh restart
 else
 	sleep 1
 	menu

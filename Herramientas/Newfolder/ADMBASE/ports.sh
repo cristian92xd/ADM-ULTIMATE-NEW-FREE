@@ -1,18 +1,6 @@
 #!/bin/bash
-SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit 1
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
-SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
-
-msg -ama " $(fun_trans "Portas")"
-msg -bar
-PT=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
-for porta in `echo -e "$PT" | cut -d: -f2 | cut -d' ' -f1 | uniq`; do
-    svcs=$(echo -e "$PT" | grep -w "$porta" | awk '{print $1}' | uniq)
-    echo -e "\033[1;32m Servico \033[1;31m$svcs \033[1;32mPorta \033[1;37m$porta"
-done
-msg -bar
-
 port () {
 local portas
 local portas_var=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
@@ -45,8 +33,7 @@ read -p "" newports
 for PTS in `echo ${newports}`; do
 verify_port squid "${PTS}" && echo -e "\033[1;33mPort $PTS \033[1;32mOK" || {
 echo -e "\033[1;33mPort $PTS \033[1;31mFAIL"
-msg -bar
-exit 1
+return 1
 }
 done
 rm ${CONF}
@@ -76,8 +63,7 @@ read -p "" newports
 for PTS in `echo ${newports}`; do
 verify_port apache "${PTS}" && echo -e "\033[1;33mPort $PTS \033[1;32mOK" || {
 echo -e "\033[1;33mPort $PTS \033[1;31mFAIL"
-msg -bar
-exit 1
+return 1
 }
 done
 rm ${CONF}
@@ -112,8 +98,7 @@ read -p "" newports
 for PTS in `echo ${newports}`; do
 verify_port openvpn "${PTS}" && echo -e "\033[1;33mPort $PTS \033[1;32mOK" || {
 echo -e "\033[1;33mPort $PTS \033[1;31mFAIL"
-msg -bar
-exit 1
+return 1
 }
 done
 rm ${CONF}
@@ -149,8 +134,7 @@ read -p "" newports
 for PTS in `echo ${newports}`; do
 verify_port dropbear "${PTS}" && echo -e "\033[1;33mPort $PTS \033[1;32mOK" || {
 echo -e "\033[1;33mPort $PTS \033[1;31mFAIL"
-msg -bar
-exit 1
+return 1
 }
 done
 rm ${CONF}
@@ -181,8 +165,7 @@ read -p "" newports
 for PTS in `echo ${newports}`; do
 verify_port sshd "${PTS}" && echo -e "\033[1;33mPort $PTS \033[1;32mOK" || {
 echo -e "\033[1;33mPort $PTS \033[1;31mFAIL"
-msg -bar
-exit 1
+return 1
 }
 done
 rm ${CONF}
@@ -220,7 +203,7 @@ for((a=1; a<=$i; a++)); do
 [[ $dropbear = $a ]] && echo -ne "\033[1;32m [$dropbear] > " && msg -azu "$(fun_trans "REDEFINIR PORTAS DROPBEAR")"
 [[ $ssh = $a ]] && echo -ne "\033[1;32m [$ssh] > " && msg -azu "$(fun_trans "REDEFINIR PORTAS SSH")"
 done
-echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
+echo -ne "\033[1;32m [0] > " && msg -azu "$(fun_trans "VOLTAR")"
 msg -bar
 while true; do
 echo -ne "\033[1;37m$(fun_trans "Selecione"): " && read selection

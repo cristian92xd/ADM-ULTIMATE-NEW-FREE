@@ -9,8 +9,9 @@ SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/HERRAMIENTAS/master/Testador-Velocidad/speedtest"
 [[ ! -e /bin/speedtest ]] && wget -O /bin/speedtest ${link_bin} > /dev/null 2>&1 && chmod +x /bin/speedtest
 
-apt-get install python-pip -y &>/dev/null
-apt-get install speedtest-cli -y &>/dev/null
+apt-get install python3 -y > /dev/null 2>&1
+apt-get install python-pip -y > /dev/null 2>&1
+pip install speedtest-cli > /dev/null 2>&1
 
 velocity () {
 aguarde () {
@@ -23,7 +24,7 @@ ${comando[1]} > /dev/null 2>&1
 touch $HOME/fim
  ) > /dev/null 2>&1 &
  tput civis
-echo -ne "  \033[1;33mAGUARDE \033[1;37m- \033[1;33m["
+echo -ne " \033[1;33m["
 while true; do
    for((i=0; i<18; i++)); do
    echo -ne "\033[1;31m."
@@ -34,7 +35,7 @@ while true; do
    sleep 1s
    tput cuu1
    tput dl1
-   echo -ne "  \033[1;33mAGUARDE \033[1;37m- \033[1;33m["
+   echo -ne "\033[1;33m["
 done
 echo -e "\033[1;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
 tput cnorm

@@ -6,6 +6,7 @@ SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 
+#Repositorio-GITHUB
 link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/Newfolder/blockt.sh"
 [[ ! -e /bin/blockt.sh ]] && wget -O /bin/blockt.sh ${link_bin} > /dev/null 2>&1 && chmod +x /bin/blockt.sh
 
@@ -17,7 +18,7 @@ echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "Plus-torrent") $torrent"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 echo -e "$barra"
 while [[ ${arquivoonlineadm} != @(0|[1-1]) ]]; do
-read -p "Selecione a Opcao: " arquivoonlineadm
+read -p "[0-1]: " arquivoonlineadm
 tput cuu1 && tput dl1
 done
 case $arquivoonlineadm in
