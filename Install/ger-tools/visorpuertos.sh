@@ -6,7 +6,7 @@ SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 
-echo -e "INFORMACION DE SISTEMAS"
+echo -e "\033[1;33m INFORMACION DE SISTEMAS"
 echo -e "$barra"
 
 # SISTEMA OPERACIONAL
@@ -87,4 +87,3 @@ for porta in `echo -e "$PT" | cut -d: -f2 | cut -d' ' -f1 | uniq`; do
     svcs=$(echo -e "$PT" | grep -w "$porta" | awk '{print $1}' | uniq)
     echo -e "\033[1;31mServico \033[1;31m$svcs: \033[1;32m$porta"
 done
-echo -e "$barra"
