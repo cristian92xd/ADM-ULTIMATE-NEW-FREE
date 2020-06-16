@@ -6,7 +6,7 @@ SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 
-echo -e "INFORMACION DE SISTEMAS")"
+echo -e "INFORMACION DE SISTEMAS"
 echo -e "$barra"
 
 # SISTEMA OPERACIONAL
