@@ -30,7 +30,11 @@ menu () {
 echo -ne " \033[1;31m[ ! ] Instalando Menu Beta v.2"
 wget -O /etc/newadm/menu https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/menu > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
 echo -ne " \033[1;31m[ ! ] Cocediendo Permisos"
-chmod +x /etc/newadm/menu > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
+chmod 777 /etc/newadm/menu > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
+echo -ne " \033[1;31m[ ! ] Accediendo al menu... \033[1;32m [OK]"
+sleep 3
+chmod 777 /etc/newadm/menu; /etc/newadm/menu
+
 echo -e "$barra"
 }
 
