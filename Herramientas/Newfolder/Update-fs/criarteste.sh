@@ -5,12 +5,18 @@ SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit
 SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
-
+[[ -e $HOME/usuarios.db ]] && touch $HOME/usuarios.db
 IP=$(cat /etc/MEUIPADM)
 
-if [ ! -d /etc/SSHPlus/userteste ]; then
+if [ ! -d /etc/SSHPlus ]; then
 mkdir /etc/SSHPlus
+fi
+
+if [ ! -d /etc/SSHPlus/senha ]; then
 mkdir /etc/SSHPlus/senha
+fi
+
+if [ ! -d /etc/SSHPlus/userteste ]; then
 mkdir /etc/SSHPlus/userteste
 fi
 
