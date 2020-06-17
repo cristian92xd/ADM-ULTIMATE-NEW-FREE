@@ -1,9 +1,23 @@
 #!/bin/bash
-IP=$(cat /etc/IP)
+declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
+barra="\033[0m\e[34m======================================================\033[1;37m"
+SCPdir="/etc/newadm" && [[ ! -d ${SCPdir} ]] && exit
+SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
+SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
+SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
+
+IP=$(cat /etc/MEUIPADM)
+
 if [ ! -d /etc/SSHPlus/userteste ]; then
+mkdir /etc/SSHPlus
+mkdir /etc/SSHPlus/senha
 mkdir /etc/SSHPlus/userteste
 fi
-tput setaf 7 ; tput setab 4 ; tput bold ; printf '%30s%s%-15s\n' "Criar usuario teste" ; tput sgr0
+
+[[ -e $HOME/usuarios.db ]] && touch $HOME/usuarios.db
+
+echo -e "\033[1;33m Criar usuario teste"
+echo -e "$barra"
 echo ""
 [ "$(ls -A /etc/SSHPlus/userteste)" ] && echo -e "\033[1;32mTeste Ativo!\033[1;37m" || echo -e "\033[1;31mNenhum test ativo!\033[0m"
 echo ""
@@ -60,7 +74,9 @@ exit" > /etc/SSHPlus/userteste/$nome.sh
 chmod +x /etc/SSHPlus/userteste/$nome.sh
 at -f /etc/SSHPlus/userteste/$nome.sh now + $u_temp min > /dev/null 2>&1
 clear
-echo -e "\E[44;1;37m     Usuario Teste Criado     \E[0m"
+echo -e "$barra"
+echo -e "\033[1;33m Usuario Teste Criado"
+echo -e "$barra"
 echo ""
 echo -e "\033[1;32mIP:\033[1;37m $IP"
 echo -e "\033[1;32mUsuario:\033[1;37m $nome"
@@ -70,4 +86,5 @@ echo -e "\033[1;32mValidade:\033[1;37m $u_temp Minutos"
 echo ""
 echo -e "\033[1;33mApos o tempo definido o usuario"
 echo -e "\033[1;32m$nome \033[1;33msera desconectado e deletado.\033[0m"
+echo -e "$barra"
 exit
