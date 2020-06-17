@@ -7,8 +7,8 @@ SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 
 #Repositorio-GITHUB
-link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/Newfolder/blockt.sh"
-[[ ! -e /bin/blockt.sh ]] && wget -O /bin/blockt.sh ${link_bin} > /dev/null 2>&1 && chmod +x /bin/blockt.sh
+link_bin="https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Herramientas/Newfolder/blockt"
+[[ ! -e /bin/blockt ]] && wget -O /bin/blockt ${link_bin} > /dev/null 2>&1 && chmod +x /bin/blockt
 
 [[ -e /etc/Plus-torrent ]] && torrent=$(echo -e "\033[1;32mon ") || torrent=$(echo -e "\033[1;31moff ")
 
@@ -23,6 +23,6 @@ tput cuu1 && tput dl1
 done
 case $arquivoonlineadm in
 0)exit;;
-1)/bin/blockt.sh;;
+1)/bin/blockt;;
 esac
 msg -bar
