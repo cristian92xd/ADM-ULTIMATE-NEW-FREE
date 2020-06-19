@@ -100,6 +100,15 @@ echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
+payySND () {
+wget -O /etc/ger-frm/payySND.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/payySND.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/payySND.sh
+fun_bar "chmod -R 777 /etc/ger-frm/payySND.sh"
+chmod -R 777 /etc/ger-frm/payySND.sh > /dev/null 2>&1
+msg -bar
+echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
+
 msg -ama "$(fun_trans "TOOLS DOWNLOAD MANAGER") ${cor[4]}[NEW-ADM]"
 msg -bar
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "GERADOR DE BIN")"
@@ -110,10 +119,11 @@ echo -ne "\033[1;32m [5] > " && msg -azu "$(fun_trans "USUARIO TEMPORAL")"
 echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "PROTECAO SQUID PASS")"
 echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "PAINEL DE UPLOAD DE EHI")"
 echo -ne "\033[1;32m [8] > " && msg -azu "$(fun_trans "VNC SERVER")"
+echo -ne "\033[1;32m [9] > " && msg -azu "$(fun_trans "PAYLOAD FORCA BRUTA PYTHON")"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 msg -bar
-while [[ ${arquivoonlineadm} != @(0|[1-8]) ]]; do
-read -p "[0-8]: " arquivoonlineadm
+while [[ ${arquivoonlineadm} != @(0|[1-9]) ]]; do
+read -p "[0-9]: " arquivoonlineadm
 tput cuu1 && tput dl1
 done
 case $arquivoonlineadm in
@@ -125,6 +135,7 @@ case $arquivoonlineadm in
 6)squidpass;;
 7)insta_painel;;
 8)vnc;;
+9)payySND;;
 0)exit;;
 esac
 msg -bar
