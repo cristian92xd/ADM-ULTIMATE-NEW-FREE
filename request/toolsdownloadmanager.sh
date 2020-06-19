@@ -100,7 +100,7 @@ echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
-payySND () {
+ddos () {
 wget -O /etc/ger-frm/ddos.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/ddos.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/ddos.sh
 fun_bar "chmod -R 777 /etc/ger-frm/ddos.sh"
 chmod -R 777 /etc/ger-frm/ddos.sh > /dev/null 2>&1
