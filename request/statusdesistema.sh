@@ -39,6 +39,22 @@ echo -e " \033[1;33m[\033[1;31m####################\033[1;33m] - \033[1;32m100%\
 sleep 1s
 }
 
+fun_nload () {
+/etc/ger-tools/nload.sh
+}
+
+fun_htop () {
+/etc/ger-tools/htop.sh
+}
+
+fun_visorpuertos () {
+/etc/ger-tools/visorpuertos.sh
+}
+
+fun_nettools () {
+/etc/ger-tools/nettools
+}
+
 msg -ama "$(fun_trans "STATUS DE SISTEMA") ${cor[4]}[NEW-ADM]"
 msg -bar
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "TRAFICO DE RED NLOAD")"
@@ -52,10 +68,10 @@ read -p "[0-4]: " arquivoonlineadm
 tput cuu1 && tput dl1
 done
 case $arquivoonlineadm in
-1)/etc/ger-tools/nload.sh;;
-2)/etc/ger-tools/htop.sh;;
-3)/etc/ger-tools/visorpuertos.sh;;
-4)/etc/ger-tools/nettools;;
+1)fun_nload;;
+2)fun_htop;;
+3)fun_visorpuertos;;
+4)fun_nettools;;
 0)exit;;
 esac
 msg -bar

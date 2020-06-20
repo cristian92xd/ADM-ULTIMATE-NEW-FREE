@@ -73,7 +73,7 @@ echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "PAYLOAD FORCA BRUTA PYTHO
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 msg -bar
 while [[ ${arquivoonlineadm} != @(0|[1-4]) ]]; do
-read -p "[0-9]: " arquivoonlineadm
+read -p "[0-4]: " arquivoonlineadm
 tput cuu1 && tput dl1
 done
 case $arquivoonlineadm in
