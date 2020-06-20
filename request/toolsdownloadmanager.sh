@@ -33,7 +33,7 @@ wget -O /etc/ger-frm/GENERADOR_BIN.sh https://raw.githubusercontent.com/AAAAAEXQ
 fun_bar "chmod -R 777 /etc/ger-frm/GENERADOR_BIN.sh"
 chmod -R 777 /etc/ger-frm/GENERADOR_BIN.sh > /dev/null 2>&1
 msg -bar
-echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
@@ -42,7 +42,7 @@ wget -O /etc/ger-frm/MasterBin.sh https://raw.githubusercontent.com/AAAAAEXQOSyI
 fun_bar "chmod -R 777 /etc/ger-frm/MasterBin.sh"
 chmod -R 777 /etc/ger-frm/MasterBin.sh > /dev/null 2>&1
 msg -bar
-echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
@@ -51,7 +51,7 @@ wget -O /etc/ger-frm/real-host.sh https://raw.githubusercontent.com/AAAAAEXQOSyI
 fun_bar "chmod -R 777 /etc/ger-frm/real-host.sh"
 chmod -R 777 /etc/ger-frm/real-host.sh > /dev/null 2>&1
 msg -bar
-echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
@@ -60,7 +60,7 @@ wget -O /etc/ger-frm/dados.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2J
 fun_bar "chmod -R 777 /etc/ger-frm/dados.sh"
 chmod -R 777 /etc/ger-frm/dados.sh > /dev/null 2>&1
 msg -bar
-echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
@@ -69,7 +69,7 @@ wget -O /etc/ger-frm/Crear-Demo.sh https://raw.githubusercontent.com/AAAAAEXQOSy
 fun_bar "chmod -R 777 /etc/ger-frm/Crear-Demo.sh"
 chmod -R 777 /etc/ger-frm/Crear-Demo.sh > /dev/null 2>&1
 msg -bar
-echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
@@ -78,7 +78,7 @@ wget -O /etc/ger-frm/squidpass.sh https://raw.githubusercontent.com/AAAAAEXQOSyI
 fun_bar "chmod -R 777 /etc/ger-frm/squidpass.sh"
 chmod -R 777 /etc/ger-frm/squidpass.sh > /dev/null 2>&1
 msg -bar
-echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
@@ -87,7 +87,7 @@ wget -O /etc/ger-frm/insta_painel https://raw.githubusercontent.com/AAAAAEXQOSyI
 fun_bar "chmod -R 777 /etc/ger-frm/insta_painel"
 chmod -R 777 /etc/ger-frm/insta_painel > /dev/null 2>&1
 msg -bar
-echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
@@ -96,7 +96,7 @@ wget -O /etc/ger-frm/vnc.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0
 fun_bar "chmod -R 777 /etc/ger-frm/vnc.sh"
 chmod -R 777 /etc/ger-frm/vnc.sh > /dev/null 2>&1
 msg -bar
-echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
@@ -105,7 +105,7 @@ wget -O /etc/ger-frm/ddos.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ
 fun_bar "chmod -R 777 /etc/ger-frm/ddos.sh"
 chmod -R 777 /etc/ger-frm/ddos.sh > /dev/null 2>&1
 msg -bar
-echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 

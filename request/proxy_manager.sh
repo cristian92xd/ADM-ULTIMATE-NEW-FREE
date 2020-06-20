@@ -72,7 +72,7 @@ msg -bar
 }
 
 gestor_fun () {
-echo -e " ${cor[3]} $(fun_trans "PROXY MANAGER BETA-TESTER") ${cor[4]}[NEW-ADM]"
+echo -e " ${cor[3]} $(fun_trans "PROXY MANAGER - BETA-TESTER") ${cor[4]}[NEW-ADM]"
 echo -e " ${cor[3]} $(fun_trans "herramienta en modo de prueba")"
 echo -e "$barra"
 while true; do
