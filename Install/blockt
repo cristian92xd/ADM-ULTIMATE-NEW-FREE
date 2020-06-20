@@ -49,6 +49,7 @@ if [[ "$resp" = 's' ]]; then
 	fun_spn1
 	echo ""
 	echo -e "\033[1;37mBLOQUEIO TORRENT \033[1;31mLIBERADO !\033[0m"
+        rm -rf /etc/torrent-admon
 	echo ""
 
 	echo -e "\033[1;33mFIREWALL REMOVIDO COM SUCESSO \033[1;32m[OK]"
@@ -165,6 +166,7 @@ fun_spn2 () {
 fun_spn2
 echo ""
 echo -e "\033[1;37mBLOQUEIO TORRENT \033[1;32mAPLICADO !\033[0m"
+echo "#TORRENT-PLUSON" > /etc/torrent-admon
 echo ""
 echo -e "\033[1;33mFIREWALL APLICADO COM SUCESSO \033[1;32m[OK]"
 echo ""

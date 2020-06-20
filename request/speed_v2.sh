@@ -45,7 +45,7 @@ fun_tst () {
 speedtest --share > speed
 }
 
-echo -e "${cor[3]} $(fun_trans "Speed Test") ${cor[4]}[NEW-ADM]"
+msg -ama " $(fun_trans "Speed Test") ${cor[4]}[NEW-ADM]"
 msg -bar
 aguarde 'fun_tst'
 png=$(cat speed | sed -n '5 p' |awk -F : {'print $NF'})

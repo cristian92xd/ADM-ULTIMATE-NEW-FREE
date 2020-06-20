@@ -5,7 +5,7 @@ SCPfrm="/etc/ger-frm" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="/etc/ger-inst" && [[ ! -d ${SCPinst} ]] && exit
 SCPidioma="${SCPdir}/idioma" && [[ ! -e ${SCPidioma} ]] && touch ${SCPidioma}
 
-msg -ama " $(fun_trans "Speed Test") \033[1;32m[NEW-ADM]"
+msg -ama " $(fun_trans "Speed Test") ${cor[4]}[NEW-ADM]"
 msg -bar
 ping=$(ping -c1 google.com |awk '{print $8 $9}' |grep -v loss |cut -d = -f2 |sed ':a;N;s/\n//g;ta')
 # PROGRESS - BAR
