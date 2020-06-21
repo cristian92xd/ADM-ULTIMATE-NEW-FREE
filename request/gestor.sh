@@ -33,7 +33,6 @@ echo -ne " \033[1;31m[ ! ] apt-get update"
 apt-get update -y > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
 echo -ne " \033[1;31m[ ! ] apt-get upgrade"
 apt-get upgrade -y > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
-echo -e "$barra"
 return
 }
 
@@ -62,7 +61,6 @@ echo -ne " \033[1;31m[ ! ] Services fail2ban restart"
 [[ -e /etc/init.d/ssh ]] && /etc/init.d/ssh restart
 fail2ban-client -x stop && fail2ban-client -x start
 ) > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
-echo -e "$barra"
 return
 }
 
@@ -73,7 +71,6 @@ echo -e "\033[1;32m [OK]"
 (
 sudo reboot
 ) > /dev/null 2>&1
-echo -e "$barra"
 return
 }
 
@@ -89,7 +86,6 @@ echo -e "\033[1;33m $(fun_trans "Host alterado corretamente")!, $(fun_trans "rei
 else
 echo -e "\033[1;33m $(fun_trans "Host no modificado")!"
 fi
-echo -e "$barra"
 return
 }
 
@@ -109,7 +105,6 @@ sleep 1s
 echo -e "$barra"
 echo -e "${cor[3]} $(fun_trans "Contraseña cambiada con exito!")"
 echo -e "${cor[2]} $(fun_trans "Su contraseña ahora es"): ${cor[4]}$pass"
-echo -e "$barra"
 return
 }
 
@@ -122,14 +117,12 @@ echo -ne " \033[1;31m[ ! ] timedatectl list-timezones  | grep Santiago"
 timedatectl list-timezones  | grep Santiago > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
 echo -ne " \033[1;31m[ ! ] timedatectl set-timezone America/Santiago"
 timedatectl set-timezone America/Santiago > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
-echo -e "$barra"
 return
 }
 
 cleanreg () {
 echo -ne " \033[1;31m[ ! ] Registro del limitador eliminado"
 sudo rm -rf /etc/newadm/ger-user/Limiter.log > /dev/null 2>&1 && echo -e "\033[1;32m [OK]" || echo -e "\033[1;31m [FAIL]"
-echo -e "$barra"
 return
 }
 
@@ -144,7 +137,6 @@ sed -i 's/.*pam_cracklib.so.*/password sufficient pam_unix.so sha512 shadow null
 fun_bar "service ssh restart"
 echo -e ""
 echo -e " \033[1;31m[ ! ]\033[1;33m $(fun_trans "Configuraciones VURTL aplicadas")"
-echo -e "$barra"
 return
 }
 
@@ -175,7 +167,6 @@ echo -e "$barra"
 echo -e "${cor[3]} $(fun_trans "Configuraciones aplicadas con exito!")"
 echo -e "${cor[2]} $(fun_trans "Su contraseña ahora es"): ${cor[4]}$pass"
 service ssh restart > /dev/null 2>&1
-echo -e "$barra"
 return
 }
 
@@ -183,13 +174,13 @@ msg -ama " $(fun_trans "ADMINISTRADOR VPS")"
 msg -bar
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "Atualizar pacotes")"
 echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "Reiniciar os serviço")"
-echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "Reiniciar Sistema")"
-echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "Alterar o nome do Sistema")"
-echo -ne "\033[1;32m [5] > " && msg -azu "$(fun_trans "Cambiar contraseña ROOT del Sistema")"
+echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "Reiniciar sistema")"
+echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "Alterar o nome do sistema")"
+echo -ne "\033[1;32m [5] > " && msg -azu "$(fun_trans "Cambiar contraseña root del sistema")"
 echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "Atualizar hora America-Santiago")"
-echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "Eliminar Registro del Limitador")"
+echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "Eliminar registro del limitador")"
 echo -ne "\033[1;32m [8] > " && msg -azu "$(fun_trans "Desbloquear VURTL para crear usuarios") \033[1;33m(\033[1;37mBETA\033[1;33m)"
-echo -ne "\033[1;32m [9] > " && msg -azu "$(fun_trans "Serviço ROOT para Googlecloud e Amazon") \033[1;33m(\033[1;37mBETA\033[1;33m)"
+echo -ne "\033[1;32m [9] > " && msg -azu "$(fun_trans "Serviço root para googlecloud e amazon") \033[1;33m(\033[1;37mBETA\033[1;33m)"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "Voltar")"
 msg -bar
 while [[ ${arquivoonlineadm} != @(0|[1-9]) ]]; do

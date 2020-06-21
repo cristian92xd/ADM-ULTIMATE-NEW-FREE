@@ -100,6 +100,44 @@ msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
+#MENU 2 HERRAMIENTAS
+mas_tools () {
+fai2ban () {
+wget -O /etc/ger-frm/MasterBin.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/fai2ban.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/fai2ban.sh
+fun_bar "chmod -R 777 /etc/ger-frm/fai2ban.sh"
+chmod -R 777 /etc/ger-frm/fai2ban.sh > /dev/null 2>&1
+msg -bar
+echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
+
+panelsshplus () {
+wget -O /etc/ger-frm/real-host.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/panelsshplus.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/panelsshplus.sh
+fun_bar "chmod -R 777 /etc/ger-frm/panelsshplus.sh"
+chmod -R 777 /etc/ger-frm/panelsshplus.sh > /dev/null 2>&1
+msg -bar
+echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
+
+paysnd () {
+wget -O /etc/ger-frm/dados.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/paysnd.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/paysnd.sh
+fun_bar "chmod -R 777 /etc/ger-frm/paysnd.sh"
+chmod -R 777 /etc/ger-frm/paysnd.sh > /dev/null 2>&1
+msg -bar
+echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
+
+payySND () {
+wget -O /etc/ger-frm/Crear-Demo.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/payySND.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/payySND.sh
+fun_bar "chmod -R 777 /etc/ger-frm/payySND.sh"
+chmod -R 777 /etc/ger-frm/payySND.sh > /dev/null 2>&1
+msg -bar
+echo -e "${cor[3]} DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
+
 ddos () {
 wget -O /etc/ger-frm/ddos.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/ddos.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/ddos.sh
 fun_bar "chmod -R 777 /etc/ger-frm/ddos.sh"
@@ -107,6 +145,33 @@ chmod -R 777 /etc/ger-frm/ddos.sh > /dev/null 2>&1
 msg -bar
 msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
+}
+
+msg -ama "$(fun_trans "TOOLS DOWNLOAD MANAGER 2") ${cor[4]}[NEW-ADM]"
+msg -bar
+echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "FAIL2BAN PROTECAO")"
+echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "PANEL DE VENTAS SSHPLUS")"
+echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "PAYLOAD FORCA BRUTA BASH")"
+echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "PAYLOAD FORCA BRUTA PYTHON")"
+echo -ne "\033[1;32m [5] > " && msg -azu "$(fun_trans "ANTI DDOS")"
+echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
+msg -bar
+while [[ ${arquivoonlineadm} != @(0|[1-5]) ]]; do
+read -p "[0-5]: " arquivoonlineadm
+tput cuu1 && tput dl1
+done
+case $arquivoonlineadm in
+1)fai2ban;;
+2)panelsshplus;;
+3)paysnd;;
+4)payySND;;
+5)ddos;;
+6)exit;;
+7)exit;;
+8)exit;;
+9)exit;;
+0)exit;;
+esac
 }
 
 msg -ama "$(fun_trans "TOOLS DOWNLOAD MANAGER") ${cor[4]}[NEW-ADM]"
@@ -119,7 +184,7 @@ echo -ne "\033[1;32m [5] > " && msg -azu "$(fun_trans "USUARIO TEMPORAL")"
 echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "PROTECAO SQUID PASS")"
 echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "PAINEL DE UPLOAD DE EHI")"
 echo -ne "\033[1;32m [8] > " && msg -azu "$(fun_trans "VNC SERVER")"
-echo -ne "\033[1;32m [9] > " && msg -azu "$(fun_trans "ANTI DDOS")"
+echo -ne "\033[1;32m [9] > " && msg -azu "$(fun_trans "MAS HERRAMIENTAS")"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 msg -bar
 while [[ ${arquivoonlineadm} != @(0|[1-9]) ]]; do
@@ -135,7 +200,7 @@ case $arquivoonlineadm in
 6)squidpass;;
 7)insta_painel;;
 8)vnc;;
-9)ddos;;
+9)mas_tools;;
 0)exit;;
 esac
 msg -bar
