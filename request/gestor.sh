@@ -94,10 +94,10 @@ echo -e "${cor[3]} $(fun_trans "Esta herramienta cambia la contraseña de su ser
 echo -e "${cor[3]} $(fun_trans "Esta contraseña es utilizada como usuario") root"
 echo -e "$barra"
 echo -ne " $(fun_trans "Desea Seguir?") [S/N]: "; read x
-[[ $x = @(n|N) ]] && echo -e "$barra" && return
-echo -e "$barra"
+[[ $x = @(n|N) ]] && return
 #Inicia Procedimentos
-echo -e "${cor[0]} $(fun_trans "Escriba su nueva contraseña")"
+echo -e "$barra"
+echo -e "\033[1;37m $(fun_trans "Escriba su nueva contraseña")"
 echo -e "$barra"
 read  -p " Nuevo passwd: " pass
 (echo $pass; echo $pass)|passwd 2>/dev/null
