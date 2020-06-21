@@ -147,6 +147,15 @@ msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
+criar_pay () {
+wget -O /etc/ger-frm/criar_pay.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/criar_pay.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/criar_pay.shh
+fun_bar "chmod -R 777 /etc/ger-frm/criar_pay.sh"
+chmod -R 777 /etc/ger-frm/criar_pay.sh > /dev/null 2>&1
+msg -bar
+msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
+
 msg -ama "$(fun_trans "TOOLS DOWNLOAD MANAGER 2") ${cor[4]}[NEW-ADM]"
 msg -bar
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "FAIL2BAN PROTECAO")"
@@ -154,10 +163,11 @@ echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "PANEL DE VENTAS SSHPLUS")
 echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "PAYLOAD FORCA BRUTA BASH")"
 echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "PAYLOAD FORCA BRUTA PYTHON")"
 echo -ne "\033[1;32m [5] > " && msg -azu "$(fun_trans "ANTI DDOS")"
+echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "GERADOR DE PAYLOAD")"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 msg -bar
-while [[ ${arquivoonlineadm} != @(0|[1-5]) ]]; do
-read -p "[0-5]: " arquivoonlineadm
+while [[ ${arquivoonlineadm} != @(0|[1-6]) ]]; do
+read -p "[0-6]: " arquivoonlineadm
 tput cuu1 && tput dl1
 done
 case $arquivoonlineadm in
@@ -166,7 +176,7 @@ case $arquivoonlineadm in
 3)paysnd;;
 4)payySND;;
 5)ddos;;
-6)exit;;
+6)criar_pay;;
 7)exit;;
 8)exit;;
 9)exit;;
