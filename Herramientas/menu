@@ -664,6 +664,7 @@ export -f fun_ip
 clear
 msg -bar
 # SISTEMA DE DATA 
+rm /etc/new-adm-color
 _hora=$(printf '%(%H:%M:%S)T')
 _hoje=$(date +'%d/%m/%Y')
 _total=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort | wc -l)
@@ -678,7 +679,7 @@ done
 msg -bar
 msg -ne "$(fun_trans "SISTEMA*"): " && echo -ne "\033[1;32m$(os_system)  "
 msg -ne "$(fun_trans "IP*"): " && echo -e "\033[1;32m$(meu_ip)"
-[[ -e ${SCPdir}/USRonlines ]] && msg -ne "ONLINE*: " && echo -ne "\033[1;32m$(cat ${SCPdir}/USRonlines) "
+[[ -e ${SCPdir}/USRonlines ]] && msg -bar && msg -ne "ONLINE*: " && echo -ne "\033[1;32m$(cat ${SCPdir}/USRonlines) "
 [[ -e ${SCPdir}/USRexpired ]] && msg -ne "EXPIRADOS*: " && echo -e "\033[1;32m$(cat ${SCPdir}/USRexpired) \033[1;31mUSER: \033[1;32m$_total \033[1;31mBLOCK: \033[1;32m$limiter"
 [[ -e ${SCPdir}/message.txt ]] && msg -bar && msg -bra "MESSAGE: $(cat ${SCPdir}/message.txt)"
 # NOVO SISTEMA DE MENUS
