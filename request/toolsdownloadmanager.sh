@@ -156,6 +156,15 @@ msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
+ultrahost () {
+wget -O /etc/ger-frm/ultrahost https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/ultrahost > /dev/null 2>&1; chmod +x /etc/ger-frm/ultrahost
+fun_bar "chmod -R 777 /etc/ger-frm/ultrahost"
+chmod -R 777 /etc/ger-frm/ultrahost > /dev/null 2>&1
+msg -bar
+msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
+
 msg -ama "$(fun_trans "TOOLS DOWNLOAD MANAGER 2") ${cor[4]}[NEW-ADM]"
 msg -bar
 echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "FAIL2BAN PROTECAO")"
@@ -164,6 +173,7 @@ echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "PAYLOAD FORCA BRUTA BASH"
 echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "PAYLOAD FORCA BRUTA PYTHON")"
 echo -ne "\033[1;32m [5] > " && msg -azu "$(fun_trans "ANTI DDOS")"
 echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "GERADOR DE PAYLOAD")"
+echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "SCANNER DE SUBDOMINIO")"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 msg -bar
 while [[ ${arquivoonlineadm} != @(0|[1-6]) ]]; do
@@ -177,7 +187,7 @@ case $arquivoonlineadm in
 4)payySND;;
 5)ddos;;
 6)criar_pay;;
-7)exit;;
+7)ultrahost;;
 8)exit;;
 9)exit;;
 0)exit;;
