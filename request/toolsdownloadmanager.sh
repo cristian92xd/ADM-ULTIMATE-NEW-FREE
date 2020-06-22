@@ -148,7 +148,7 @@ return
 }
 
 criar_pay () {
-wget -O /etc/ger-frm/criar_pay.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/criar_pay.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/criar_pay.shh
+wget -O /etc/ger-frm/criar_pay.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/criar_pay.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/criar_pay.sh
 fun_bar "chmod -R 777 /etc/ger-frm/criar_pay.sh"
 chmod -R 777 /etc/ger-frm/criar_pay.sh > /dev/null 2>&1
 msg -bar
