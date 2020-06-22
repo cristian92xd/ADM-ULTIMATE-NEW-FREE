@@ -27,7 +27,7 @@ kill -9 $(ps aux |grep -v grep |grep -w "ADMbot.sh"|grep dmS|awk '{print $2}') &
 echo -e '\e[34m}======================================================'
 exit 0
 fi
-LINE='=============================='
+LINE='================================='
 USRdatabase="/etc/ADMuser"
 #IMPORTANDO API
 source ShellBot.sh
@@ -879,12 +879,17 @@ fi
 teste_fun () {
 local bot_retorno="$LINE\n"
           bot_retorno+="$(fun_trans "USUARIO"): ${chatuser}\n"
-          bot_retorno+="$(fun_trans "ARGUMENTOS"): ${comando[@]:1}\n"
+          bot_retorno+="$(fun_trans "ARGUMENTOS"): ${comando[@]}\n"
           bot_retorno+="$LINE\n"
 	      ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
 							--text "_$(echo -e $bot_retorno)_" \
 							--parse_mode markdown
-return 0
+#local bot_retorno="$LINE\n"
+#          bot_retorno+="$(fun_trans "ESSE USUARIO"): ${chatuser}\n"
+#          bot_retorno+="$(fun_trans "ESSES ARGUMENTOS"): ${comando[@]}\n"
+#          bot_retorno+="$LINE\n"
+#          ShellBot.editMessageText --chat_id ${message_chat_id[$id]} --message_id ${reply_to_message_message_id[$id]} --text "$(echo -e $bot_retorno)" --parse_mode markdown
+#return 0
 }
 
 # LOOP ESCUTANDO O TELEGRAN

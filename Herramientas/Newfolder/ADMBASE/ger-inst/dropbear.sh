@@ -126,12 +126,12 @@ echo -e "${cor[2]} $(fun_trans "Instalando dropbear")"
 echo -e "$barra"
 fun_bar "apt-get install dropbear -y"
 echo -e "$barra"
-touch /etc/bannerssh
+touch /etc/dropbear/banner
 echo -e "${cor[2]} $(fun_trans "Configurando dropbear")"
 cat <<EOF > /etc/default/dropbear
 NO_START=0
 DROPBEAR_EXTRA_ARGS="VAR"
-DROPBEAR_BANNER="/etc/bannerssh"
+DROPBEAR_BANNER="/etc/dropbear/banner"
 DROPBEAR_RECEIVE_WINDOW=65536
 EOF
 for dpts in $(echo $PORT); do
@@ -168,13 +168,13 @@ UsePAM yes" > /etc/ssh/sshd_config
 echo -e "${cor[2]} $(fun_trans "Instalando dropbear")"
 echo -e "$barra"
 fun_bar "apt-get install dropbear -y"
-touch /etc/bannerssh
+touch /etc/dropbear/banner
 echo -e "$barra"
 echo -e "${cor[2]} $(fun_trans "Configurando dropbear")"
 cat <<EOF > /etc/default/dropbear
 NO_START=0
 DROPBEAR_EXTRA_ARGS="VAR"
-DROPBEAR_BANNER="/etc/bannerssh"
+DROPBEAR_BANNER="/etc/dropbear/banner"
 DROPBEAR_RECEIVE_WINDOW=65536
 EOF
 for dpts in $(echo $PORT); do

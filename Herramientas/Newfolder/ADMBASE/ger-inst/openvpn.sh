@@ -415,7 +415,7 @@ echo -e "\033[1;32m [2] >\033[1;36m $(fun_trans "Editar Cliente Openvpn") \033[1
 echo -e "\033[1;32m [3] >\033[1;36m $(fun_trans "Trocar Hosts do Openvpn")"
 echo -e "\033[1;32m [4] >\033[1;36m $(fun_trans "Liga ou Para OPENVPN") $OPENBAR"
 msg -bar
-while [[ $xption != @([1-4]) ]]; do
+while [[ $xption != @([1|2|3|4]) ]]; do
 echo -ne "\033[1;33m $(fun_trans "Opcao"): " && read xption
 tput cuu1 && tput dl1
 done

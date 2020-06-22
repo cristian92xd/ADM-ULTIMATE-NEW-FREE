@@ -78,7 +78,7 @@ pidproxy3=$(ps x | grep -w  "PDirect.py" | grep -v "grep" | awk -F "pts" '{print
 pidproxy4=$(ps x | grep -w  "POpen.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy4 ]] && P4="\033[1;32mon" || P4="\033[1;31moff"
 pidproxy5=$(ps x | grep "PGet.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy5 ]] && P5="\033[1;32mon" || P5="\033[1;31moff"
 pidproxy6=$(ps x | grep "scktcheck" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy6 ]] && P6="\033[1;32mon" || P6="\033[1;31moff"
-echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "Socks Python SIMPLES") $P1"
+echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "Socks Python SIMPLES)") $P1"
 echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "Socks Python SEGURO") $P2"
 echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "Socks Python DIRETO") $P3"
 echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "Socks Python OPENVPN") $P4"
