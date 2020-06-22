@@ -176,8 +176,8 @@ echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "GERADOR DE PAYLOAD")"
 echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "SCANNER DE SUBDOMINIO")"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 msg -bar
-while [[ ${arquivoonlineadm} != @(0|[1-6]) ]]; do
-read -p "[0-6]: " arquivoonlineadm
+while [[ ${arquivoonlineadm} != @(0|[1-7]) ]]; do
+read -p "[0-7]: " arquivoonlineadm
 tput cuu1 && tput dl1
 done
 case $arquivoonlineadm in
