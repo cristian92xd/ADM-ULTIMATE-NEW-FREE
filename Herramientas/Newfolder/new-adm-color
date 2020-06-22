@@ -8,3 +8,4 @@
 #barra
 #MESSAGE:
 #inde menu 
+#echo "3 1 3 2 2 1 4" > /etc/new-adm-color
