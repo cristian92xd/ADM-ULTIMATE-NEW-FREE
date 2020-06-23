@@ -664,7 +664,6 @@ export -f fun_ip
 clear
 msg -bar
 # SISTEMA DE DATA 
-rm /etc/new-adm-color
 _hora=$(printf '%(%H:%M:%S)T')
 _hoje=$(date +'%d/%m/%Y')
 _total=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort | wc -l)
