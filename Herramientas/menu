@@ -668,7 +668,7 @@ _hora=$(printf '%(%H:%M:%S)T')
 _hoje=$(date +'%d/%m/%Y')
 _total=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort | wc -l)
 [[ -e /etc/newadm/ger-user/Limiter.log ]] && limiter=$(echo -e "\033[1;32mRevisar ") || limiter=$(echo -e "\033[1;32m0 ")
-msg -ama "     PUERTOS E INFORMACION \033[1;31mDATA: \033[1;37m$_hora \033[1;37m$_hoje"
+msg -ama "     PUERTOS E INFORMACION \033[1;37m$_hora \033[1;37m$_hoje"
 msg -bar
 PT=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
 for porta in `echo -e "$PT" | cut -d: -f2 | cut -d' ' -f1 | uniq`; do

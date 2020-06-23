@@ -79,17 +79,23 @@ echo -e "\033[1;32m $(fun_trans "INSTALADOR DROPBEAR*")ADM-ULTIMATE\n$barra"
 echo -e "\033[1;31m $(fun_trans "Selecione Portas Validas em Ordem Sequencial:")\033[1;32m 22 80 81 82 85 90\033[1;37m"
 echo -e "$barra"
 
-
 msg -ama " $(fun_trans "Parando Stunnel")"
 msg -bar
 fun_bar "apt-get purge stunnel4 -y"
 
-
-
 echo -e "${cor[3]} $(fun_trans "Seu dropbear foi configurado com sucesso")\n$barra"
-
+echo -ne "\033[1;32m [1] > " && msg -azu "Socks Python SIMPLES $P1"
+msg -bar
 
 echo -ne "\033[1;32m [1] > " && msg -azu "Socks Python SIMPLES $P1"
+echo -ne "\033[1;32m [2] > " && msg -azu "Socks Python SEGURO $P2"
+
+msg -azu " $(fun_trans "CONFIGURAÇÃO DE SQUID*")"
+msg -bar
+echo -ne "\033[1;32m [1] > " && msg -azu "$(fun_trans "Lugar um Host no Squid")"
+echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "Remover Host do Squid")"
+echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "Desinstalar o Squid")"
+echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "Voltar")"
 msg -bar
 
 
