@@ -662,6 +662,7 @@ export -f  menu_func
 export -f meu_ip
 export -f fun_ip
 clear
+[[ -e /etc/new-adm-color ]] && rm /etc/new-adm-color
 msg -bar
 # SISTEMA DE DATA 
 _hora=$(printf '%(%H:%M:%S)T')
@@ -676,11 +677,11 @@ for porta in `echo -e "$PT" | cut -d: -f2 | cut -d' ' -f1 | uniq`; do
     echo -e "\033[1;31m$svcs: \033[1;32m$porta"
 done
 msg -bar
-msg -ne "$(fun_trans "SISTEMA*"): " && echo -ne "\033[1;32m$(os_system)  "
-msg -ne "$(fun_trans "IP*"): " && echo -e "\033[1;32m$(meu_ip)"
+# msg -ne "$(fun_trans "SISTEMA*"): " && echo -ne "\033[1;32m$(os_system)  "
+# msg -ne "$(fun_trans "IP*"): " && echo -e "\033[1;32m$(meu_ip)"
 [[ -e ${SCPdir}/USRonlines ]] && msg -bar && msg -ne "ONLINE*: " && echo -ne "\033[1;32m$(cat ${SCPdir}/USRonlines) "
 [[ -e ${SCPdir}/USRexpired ]] && msg -ne "EXPIRADOS*: " && echo -e "\033[1;32m$(cat ${SCPdir}/USRexpired) \033[1;31mUSER: \033[1;32m$_total \033[1;31mBLOCK: \033[1;32m$limiter"
-[[ -e ${SCPdir}/message.txt ]] && msg -bar && msg -bra "MESSAGE: $(cat ${SCPdir}/message.txt)"
+# [[ -e ${SCPdir}/message.txt ]] && msg -bar && msg -bra "MESSAGE: $(cat ${SCPdir}/message.txt)"
 # NOVO SISTEMA DE MENUS
 msg -bar
 msg -ama "$(fun_trans "GERENCIADOR*") \033[1;31m[\033[1;32m NEW-ULTIMATE \033[1;31m] \033[1;31m[\033[1;32m ADM-LITE \033[1;31m]"

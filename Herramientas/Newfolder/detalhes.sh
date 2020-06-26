@@ -49,8 +49,8 @@ echo -e "\033[1;36m SISTEMA OPERACIONAL"
 echo ""
 echo -e "\033[1;33mNome: \033[1;31m$system"
 fi
-
 echo -e ""
+
 # PROCESSADOR
 if [ -f /proc/cpuinfo ]
 then
@@ -70,8 +70,8 @@ echo -e "\033[1;36m PROCESSADOR"
 echo ""
 echo "Não foi possivel obter informações"
 fi
-
 echo ""
+
 # MEMORIA RAM
 if free 1>/dev/null 2>/dev/null
 then
@@ -90,8 +90,8 @@ echo -e "\033[1;36mMEMORIA RAM"
 echo ""
 echo "Não foi possivel obter informações"
 fi
-
 echo ""
+
 # SERVICOS EM EXECUCAO
 echo -e "\033[1;36m SERVICOS EM EXECUCAO"
 echo ""
