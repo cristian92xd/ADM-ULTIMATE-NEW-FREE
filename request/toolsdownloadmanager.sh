@@ -29,7 +29,7 @@ sleep 1s
 }
 
 GENERADOR_BIN () {
-wget -O /etc/ger-frm/GENERADOR_BIN.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/GENERADOR_BIN.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/GENERADOR_BIN.sh
+wget -O /etc/ger-frm/GENERADOR_BIN.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/GENERADOR_BIN.sh > /dev/null 2>&1
 fun_bar "chmod -R 777 /etc/ger-frm/GENERADOR_BIN.sh"
 chmod -R 777 /etc/ger-frm/GENERADOR_BIN.sh > /dev/null 2>&1
 msg -bar
@@ -38,7 +38,7 @@ return
 }
 
 MasterBin () {
-wget -O /etc/ger-frm/MasterBin.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/MasterBin.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/MasterBin.sh
+wget -O /etc/ger-frm/MasterBin.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/MasterBin.sh > /dev/null 2>&1
 fun_bar "chmod -R 777 /etc/ger-frm/MasterBin.sh"
 chmod -R 777 /etc/ger-frm/MasterBin.sh > /dev/null 2>&1
 msg -bar
@@ -47,7 +47,7 @@ return
 }
 
 real-host () {
-wget -O /etc/ger-frm/real-host.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/real-host.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/real-host.sh
+wget -O /etc/ger-frm/real-host.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/real-host.sh > /dev/null 2>&1
 fun_bar "chmod -R 777 /etc/ger-frm/real-host.sh"
 chmod -R 777 /etc/ger-frm/real-host.sh > /dev/null 2>&1
 msg -bar
@@ -56,7 +56,7 @@ return
 }
 
 dados () {
-wget -O /etc/ger-frm/dados.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/dados.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/dados.sh
+wget -O /etc/ger-frm/dados.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/dados.sh > /dev/null 2>&1
 fun_bar "chmod -R 777 /etc/ger-frm/dados.sh"
 chmod -R 777 /etc/ger-frm/dados.sh > /dev/null 2>&1
 msg -bar
@@ -65,7 +65,7 @@ return
 }
 
 Crear-Demo () {
-wget -O /etc/ger-frm/Crear-Demo.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/Crear-Demo.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/Crear-Demo.sh
+wget -O /etc/ger-frm/Crear-Demo.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/Crear-Demo.sh > /dev/null 2>&1
 fun_bar "chmod -R 777 /etc/ger-frm/Crear-Demo.sh"
 chmod -R 777 /etc/ger-frm/Crear-Demo.sh > /dev/null 2>&1
 msg -bar
@@ -74,7 +74,7 @@ return
 }
 
 squidpass () {
-wget -O /etc/ger-frm/squidpass.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/squidpass.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/squidpass.sh
+wget -O /etc/ger-frm/squidpass.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/squidpass.sh > /dev/null 2>&1
 fun_bar "chmod -R 777 /etc/ger-frm/squidpass.sh"
 chmod -R 777 /etc/ger-frm/squidpass.sh > /dev/null 2>&1
 msg -bar
@@ -83,7 +83,7 @@ return
 }
 
 insta_painel () {
-wget -O /etc/ger-frm/insta_painel https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/insta_painel > /dev/null 2>&1; chmod +x /etc/ger-frm/insta_painel
+wget -O /etc/ger-frm/insta_painel https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/insta_painel > /dev/null 2>&1
 fun_bar "chmod -R 777 /etc/ger-frm/insta_painel"
 chmod -R 777 /etc/ger-frm/insta_painel > /dev/null 2>&1
 msg -bar
@@ -92,7 +92,7 @@ return
 }
 
 vnc () {
-wget -O /etc/ger-frm/vnc.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/vnc.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/vnc.sh
+wget -O /etc/ger-frm/vnc.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/vnc.sh > /dev/null 2>&1
 fun_bar "chmod -R 777 /etc/ger-frm/vnc.sh"
 chmod -R 777 /etc/ger-frm/vnc.sh > /dev/null 2>&1
 msg -bar
@@ -103,7 +103,7 @@ return
 #MENU 2 HERRAMIENTAS
 mas_tools () {
 fai2ban () {
-wget -O /etc/ger-frm/MasterBin.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/fai2ban.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/fai2ban.sh
+wget -O /etc/ger-frm/MasterBin.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/fai2ban.sh > /dev/null 2>&1
 fun_bar "chmod -R 777 /etc/ger-frm/fai2ban.sh"
 chmod -R 777 /etc/ger-frm/fai2ban.sh > /dev/null 2>&1
 msg -bar
@@ -112,7 +112,7 @@ return
 }
 
 panelsshplus () {
-wget -O /etc/ger-frm/real-host.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/panelsshplus.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/panelsshplus.sh
+wget -O /etc/ger-frm/real-host.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/panelsshplus.sh > /dev/null 2>&1
 fun_bar "chmod -R 777 /etc/ger-frm/panelsshplus.sh"
 chmod -R 777 /etc/ger-frm/panelsshplus.sh > /dev/null 2>&1
 msg -bar
@@ -121,7 +121,7 @@ return
 }
 
 paysnd () {
-wget -O /etc/ger-frm/dados.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/paysnd.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/paysnd.sh
+wget -O /etc/ger-frm/dados.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/paysnd.sh > /dev/null 2>&1
 fun_bar "chmod -R 777 /etc/ger-frm/paysnd.sh"
 chmod -R 777 /etc/ger-frm/paysnd.sh > /dev/null 2>&1
 msg -bar
@@ -130,7 +130,7 @@ return
 }
 
 payySND () {
-wget -O /etc/ger-frm/Crear-Demo.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/payySND.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/payySND.sh
+wget -O /etc/ger-frm/Crear-Demo.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/payySND.sh > /dev/null 2>&1
 fun_bar "chmod -R 777 /etc/ger-frm/payySND.sh"
 chmod -R 777 /etc/ger-frm/payySND.sh > /dev/null 2>&1
 msg -bar
@@ -139,7 +139,7 @@ return
 }
 
 ddos () {
-wget -O /etc/ger-frm/ddos.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/ddos.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/ddos.sh
+wget -O /etc/ger-frm/ddos.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/ddos.sh > /dev/null 2>&1
 fun_bar "chmod -R 777 /etc/ger-frm/ddos.sh"
 chmod -R 777 /etc/ger-frm/ddos.sh > /dev/null 2>&1
 msg -bar
@@ -148,7 +148,7 @@ return
 }
 
 criar_pay () {
-wget -O /etc/ger-frm/criar_pay.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/criar_pay.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/criar_pay.sh
+wget -O /etc/ger-frm/criar_pay.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/criar_pay.sh > /dev/null 2>&1
 fun_bar "chmod -R 777 /etc/ger-frm/criar_pay.sh"
 chmod -R 777 /etc/ger-frm/criar_pay.sh > /dev/null 2>&1
 msg -bar
@@ -157,9 +157,27 @@ return
 }
 
 ultrahost () {
-wget -O /etc/ger-frm/ultrahost https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/ultrahost > /dev/null 2>&1; chmod +x /etc/ger-frm/ultrahost
+wget -O /etc/ger-frm/ultrahost https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/ultrahost > /dev/null 2>&1
 fun_bar "chmod -R 777 /etc/ger-frm/ultrahost"
 chmod -R 777 /etc/ger-frm/ultrahost > /dev/null 2>&1
+msg -bar
+msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
+
+speed_v2 () {
+wget -O /etc/ger-frm/speed_v2.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/speed_v2.sh > /dev/null 2>&1
+fun_bar "chmod -R 777 /etc/ger-frm/speed_v2.sh"
+chmod -R 777 /etc/ger-frm/speed_v2.sh > /dev/null 2>&1
+msg -bar
+msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
+return
+}
+
+torrent () {
+wget -O /etc/ger-frm/torrent https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/torrent > /dev/null 2>&1
+fun_bar "chmod -R 777 /etc/ger-frm/torrent"
+chmod -R 777 /etc/ger-frm/torrent > /dev/null 2>&1
 msg -bar
 msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
@@ -174,10 +192,12 @@ echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "PAYLOAD FORCA BRUTA PYTHO
 echo -ne "\033[1;32m [5] > " && msg -azu "$(fun_trans "ANTI DDOS")"
 echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "GERADOR DE PAYLOAD")"
 echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "SCANNER DE SUBDOMINIO")"
+echo -ne "\033[1;32m [8] > " && msg -azu "$(fun_trans "TESTE DE VELOCIDADE")"
+echo -ne "\033[1;32m [9] > " && msg -azu "$(fun_trans "FIREWALL BLOQUEIO TORRENT")"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 msg -bar
-while [[ ${arquivoonlineadm} != @(0|[1-7]) ]]; do
-read -p "[0-7]: " arquivoonlineadm
+while [[ ${arquivoonlineadm} != @(0|[1-9]) ]]; do
+read -p "[0-9]: " arquivoonlineadm
 tput cuu1 && tput dl1
 done
 case $arquivoonlineadm in
@@ -188,8 +208,8 @@ case $arquivoonlineadm in
 5)ddos;;
 6)criar_pay;;
 7)ultrahost;;
-8)exit;;
-9)exit;;
+8)speed_v2;;
+9)torrent;;
 0)exit;;
 esac
 }
