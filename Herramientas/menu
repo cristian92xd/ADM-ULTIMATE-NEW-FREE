@@ -668,7 +668,7 @@ msg -bar
 _hora=$(printf '%(%H:%M:%S)T')
 _hoje=$(date +'%d/%m/%Y')
 _total=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort | wc -l)
-[[ -e /etc/newadm/ger-user/Limiter.log ]] && limiter=$(echo -e "\033[1;32mRevisar ") || limiter=$(echo -e "\033[1;32m0 ")
+[[ -e /etc/newadm/ger-user/Limiter.log ]] && limiter=$(echo -e "\033[1;32mRevisar ") || limiter=$(echo -e "\033[1;37m0 ")
 msg -ama "     PUERTOS E INFORMACION \033[1;37m$_hora \033[1;37m$_hoje"
 msg -bar
 PT=$(lsof -V -i tcp -P -n | grep -v "ESTABLISHED" |grep -v "COMMAND" | grep "LISTEN")
@@ -679,7 +679,7 @@ done
 # msg -ne "$(fun_trans "SISTEMA*"): " && echo -ne "\033[1;32m$(os_system)  "
 # msg -ne "$(fun_trans "IP*"): " && echo -e "\033[1;32m$(meu_ip)"
 [[ -e ${SCPdir}/USRonlines ]] && msg -bar && msg -ne "ONLINE*: " && echo -ne "\033[1;37m$(cat ${SCPdir}/USRonlines) "
-[[ -e ${SCPdir}/USRexpired ]] && msg -ne "EXPIRADOS*: " && echo -e "\033[1;37m$(cat ${SCPdir}/USRexpired) \033[1;31mUSER: \033[1;37m$_total \033[1;31mBLOCK: \033[1;37m$limiter"
+[[ -e ${SCPdir}/USRexpired ]] && msg -ne "EXPIRADOS*: " && echo -e "\033[1;37m$(cat ${SCPdir}/USRexpired) \033[1;31mUSER*: \033[1;37m$_total \033[1;31mBLOCK*: $limiter"
 # [[ -e ${SCPdir}/message.txt ]] && msg -bar && msg -bra "MESSAGE: $(cat ${SCPdir}/message.txt)"
 # NOVO SISTEMA DE MENUS
 msg -bar
