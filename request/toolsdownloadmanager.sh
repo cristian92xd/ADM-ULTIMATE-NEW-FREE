@@ -185,9 +185,9 @@ case $arquivoonlineadm in
 2)panelsshplus;;
 3)paysnd;;
 4)payySND;;
-5)speed_v2;;
-6)torrent;;
-7)exit;;
+5)ddos;;
+6)speed_v2;;
+7)torrent;;
 8)exit;;
 9)exit;;
 0)exit;;
