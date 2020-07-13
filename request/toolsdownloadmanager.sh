@@ -147,19 +147,19 @@ msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
-criar_pay () {
-wget -O /etc/ger-frm/criar_pay.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/criar_pay.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/criar_pay.sh
-fun_bar "chmod -R 777 /etc/ger-frm/criar_pay.sh"
-chmod -R 777 /etc/ger-frm/criar_pay.sh > /dev/null 2>&1
+speed_v2 () {
+wget -O /etc/ger-frm/speed_v2.sh https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/speed_v2.sh > /dev/null 2>&1; chmod +x /etc/ger-frm/speed_v2.sh
+fun_bar "chmod -R 777 /etc/ger-frm/speed_v2.sh"
+chmod -R 777 /etc/ger-frm/speed_v2.sh > /dev/null 2>&1
 msg -bar
 msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
 }
 
-ultrahost () {
-wget -O /etc/ger-frm/ultrahost https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/ultrahost > /dev/null 2>&1; chmod +x /etc/ger-frm/ultrahost
-fun_bar "chmod -R 777 /etc/ger-frm/ultrahost"
-chmod -R 777 /etc/ger-frm/ultrahost > /dev/null 2>&1
+torrent () {
+wget -O /etc/ger-frm/torrent https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/master/Install/HerramientasADM/torrent > /dev/null 2>&1; chmod +x /etc/ger-frm/torrent
+fun_bar "chmod -R 777 /etc/ger-frm/torrent"
+chmod -R 777 /etc/ger-frm/torrent > /dev/null 2>&1
 msg -bar
 msg -ama "DESCARGADO CON SUCCESO EN: ${cor[2]}Menu de herramientas"
 return
@@ -172,8 +172,8 @@ echo -ne "\033[1;32m [2] > " && msg -azu "$(fun_trans "PANEL DE VENTAS SSHPLUS")
 echo -ne "\033[1;32m [3] > " && msg -azu "$(fun_trans "PAYLOAD FORCA BRUTA BASH")"
 echo -ne "\033[1;32m [4] > " && msg -azu "$(fun_trans "PAYLOAD FORCA BRUTA PYTHON")"
 echo -ne "\033[1;32m [5] > " && msg -azu "$(fun_trans "ANTI DDOS")"
-echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "GERADOR DE PAYLOAD")"
-echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "SCANNER DE SUBDOMINIO")"
+echo -ne "\033[1;32m [6] > " && msg -azu "$(fun_trans "TESTE DE VELOCIDADE*")"
+echo -ne "\033[1;32m [7] > " && msg -azu "$(fun_trans "FIREWALL BLOQUEIO TORRENT")"
 echo -ne "\033[1;32m [0] > " && msg -bra "$(fun_trans "VOLTAR")"
 msg -bar
 while [[ ${arquivoonlineadm} != @(0|[1-7]) ]]; do
@@ -185,9 +185,9 @@ case $arquivoonlineadm in
 2)panelsshplus;;
 3)paysnd;;
 4)payySND;;
-5)ddos;;
-6)criar_pay;;
-7)ultrahost;;
+5)speed_v2;;
+6)torrent;;
+7)exit;;
 8)exit;;
 9)exit;;
 0)exit;;
