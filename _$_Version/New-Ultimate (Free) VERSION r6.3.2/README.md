@@ -1,14 +1,13 @@
 ﻿# NEW-ULTIMATE (ADM-FREE)
 
+![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/blob/master/Imagenes/ADM_ULTIMATE_NEW_FREE.jpg)
+
 ```
 SI TIENES PROBLEMAS DE TRADUCCION DEBES CAMBIAR A IDIOMA PORTUGUES MENU 7 OPCION 6
 O EJECUTAR EL COMANDO SIGUIENTE: 
 
                 echo "pt" > /etc/newadm/idioma && chmod +x /etc/newadm/idioma
 ```
-
-![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-ULTIMATE-NEW-FREE/blob/master/Imagenes/ADM_ULTIMATE_NEW_FREE.jpg)
-
 -------------------------------------------------------------------------------
 
 **Manager Script**
@@ -49,7 +48,6 @@ realizar cambios al scripts o borrar algun archivo.
 ```
 ☆ https://t.me/admmanagerfree ☆
 
-☆ https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ ☆
 ```
 
-**By: [ FULL SCRIPTS ⃘⃤꙰✰ ]**
+**By: [ ILLUMINATI CORP ⃘⃤꙰✰ ]**

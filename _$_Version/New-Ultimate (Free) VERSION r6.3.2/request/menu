@@ -471,22 +471,23 @@ clock=$(lscpu | grep "CPU MHz" | awk '{print $3}')
 based=$(cat /etc/*release | grep ID_LIKE | awk -F "=" '{print $2}')
 processor=$(cat /proc/cpuinfo | grep "model name" | uniq | awk -F ":" '{print $2}')
 cpus=$(cat /proc/cpuinfo | grep processor | wc -l)
+msg -verd " $(fun_trans "SISTEMA OPERACIONAL")"
 msg -ama "$(fun_trans "Nome Da Maquina"): ${null}$(hostname)"
 [[ "$system" ]] && msg -ama "$(fun_trans "Sistema"): ${null}$system" || msg -ama "$(fun_trans "Sistema"): ${null}???"
 msg -ama "$(fun_trans "Endereco Da Maquina"): ${null}$(ip addr | grep inet | grep -v inet6 | grep -v "host lo" | awk '{print $2}' | awk -F "/" '{print $1}')"
 msg -ama "$(fun_trans "Versao do Kernel"): ${null}$(uname -r)"
 [[ "$based" ]] && msg -ama "$(fun_trans "Baseado"): ${null}$based" || msg -ama "$(fun_trans "Baseado"): ${null}???"
-msg -bar
+msg -verd " $(fun_trans "PROCESSADOR")"
 [[ "$processor" ]] && msg -ama "$(fun_trans "Processador"): ${null}$processor x$cpus" || msg -ama "$(fun_trans "Processador"): ${null}???"
 [[ "$clock" ]] && msg -ama "$(fun_trans "Frequecia de Operacao"): ${null}$clock MHz" || msg -ama "$(fun_trans "Frequecia de Operacao"): ${null}???"
 msg -ama "$(fun_trans "Arquitetura"): ${null}$(uname -m)"
 msg -ama "$(fun_trans "Uso do Processador"): ${null}$(ps aux  | awk 'BEGIN { sum = 0 }  { sum += sprintf("%f",$3) }; END { printf " " "%.2f" "%%", sum}')"
-msg -bar
+msg -verd " $(fun_trans "MEMORIA RAM")"
 msg -ama "$(fun_trans "Memoria Virtual Total"): ${null}$(($totalram / 1024))"
 msg -ama "$(fun_trans "Memoria Virtual Em Uso"): ${null}$(($usedram / 1024))"
 msg -ama "$(fun_trans "Memoria Virtual Livre"): ${null}$(($freeram / 1024))"
 msg -ama "$(fun_trans "Memoria Virtual Swap"): ${null}$(($swapram / 1024))MB"
-msg -bar
+msg -verd " $(fun_trans "SISTEMA ONLINE")"
 msg -ama "$(fun_trans "Tempo Online"): ${null}$(uptime)"
 msg -bar
 return 0
@@ -511,8 +512,6 @@ case $1 in
 "criar_pay.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "GERADOR DE PAYLOAD*") $dev";;
 "optimizar.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "OPTIMIZAR SERVIDOR*") $dev";;
 "gestor.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "ADMINISTRADOR VPS*") $dev";;
-"speed_v2.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "TESTE DE VELOCIDADE*") \033[1;33m(\033[1;37mBETA\033[1;33m) $dev";;
-"torrent")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "FIREWALL BLOQUEIO TORRENT*") \033[1;33m(\033[1;37mBETA\033[1;33m) $dev";;
 "proxy_manager.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "PROXY MANAGER*") \033[1;33m(\033[1;37mBETA\033[1;33m) $dev";;
 "toolsdownloadmanager.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "TOOLS DOWNLOAD MANAGER*") $dev";;
 # Menu Instalação Ger-tools DEV
@@ -528,6 +527,8 @@ case $1 in
 "squidpass.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "PROTECAO SQUID PASS*") \033[1;33m(\033[1;37mBETA\033[1;33m) $dev";;
 "real-host.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "HOST EXTRACTOR*") \033[1;33m(\033[1;37mBETA\033[1;33m) $dev";;
 "mega.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "MEGA DOWNLOAD*") \033[1;33m(\033[1;37mBETA\033[1;33m) $dev";;
+"speed_v2.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "TESTE DE VELOCIDADE*") \033[1;33m(\033[1;37mBETA\033[1;33m) $dev";;
+"torrent")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "FIREWALL BLOQUEIO TORRENT*") \033[1;33m(\033[1;37mBETA\033[1;33m) $dev";;
 # Menu Instalação Ger-tools DEV
 "nload.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "TRAFICO DE RED NLOAD*") $dev";;
 "htop.sh")echo -ne "$(msg -verd "[$2]") $(msg -verm2 ">") " && msg -azu "$(fun_trans "PROCESOS DEL SISTEMA HTOP*") $dev";;
@@ -663,7 +664,7 @@ export -f meu_ip
 export -f fun_ip
 clear
 msg -bar
-msg -ama "     PUERTOS ACTIVOS E INFORMACION DEL SERVIDOR"
+msg -ama "PORTAS ATIVAS E INFORMACOES DO SERVIDOR "
 msg -bar
 mine_port
 # BADVPN-UDPGW 7300
@@ -673,13 +674,13 @@ echo -e "\e[1;31mBADVPN:\e[0m" "$badvpn"
 msg -bar
 msg -ne "$(fun_trans "SISTEMA*"): " && msg -bra "$(os_system)  "
 msg -ne "$(fun_trans "IP*"): " && msg -bra "$(meu_ip)"
-[[ -e ${SCPdir}/USRonlines ]] && msg -bar && msg -ne "$(fun_trans "ONLINE*"): " && msg -bra "$(cat ${SCPdir}/USRonlines) $(fun_trans "Usuarios")"
+[[ -e ${SCPdir}/USRonlines ]] && msg -ne "$(fun_trans "ONLINE*"): " && msg -bra "$(cat ${SCPdir}/USRonlines) $(fun_trans "Usuarios")"
 [[ -e ${SCPdir}/USRexpired ]] && msg -ne "$(fun_trans "EXPIRADOS*"): " && msg -bra "$(cat ${SCPdir}/USRexpired) $(fun_trans "Usuarios")"
 [[ -e ${SCPdir}/message.txt ]] && msg -bar && msg -bra "MESSAGE: $(cat ${SCPdir}/message.txt)"
 # [[ -e ${SCPdir}/key.txt ]] && msg -bar && msg -bra "USER-KEY: $(cat ${SCPdir}/key.txt)"
 # NOVO SISTEMA DE MENUS
 msg -bar
-# SISTEMA DE HORA 
+# SISTEMA DE DATA 
 _hora=$(printf '%(%H:%M:%S)T')
 _hoje=$(date +'%d/%m/%Y')
 _total=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort | wc -l)

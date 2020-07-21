@@ -21,6 +21,7 @@ utils.sh
 gestor.sh
 optimizar.sh
 proxy_manager.sh
-speed_v2.sh
+criar_pay.sh
+ultrahost
 statusdesistema.sh
 toolsdownloadmanager.sh
