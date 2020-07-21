@@ -664,7 +664,7 @@ export -f meu_ip
 export -f fun_ip
 clear
 msg -bar
-msg -ama "     PUERTOS ACTIVOS E INFORMACION DEL SERVIDOR"
+msg -ama "PORTAS ATIVAS E INFORMACOES DO SERVIDOR "
 msg -bar
 mine_port
 # BADVPN-UDPGW 7300
