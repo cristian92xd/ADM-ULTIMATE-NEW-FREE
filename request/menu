@@ -686,12 +686,12 @@ msg -ne "$(fun_trans "IP*"): " && echo -e "\033[1;37m$(meu_ip)"
 [[ -e ${SCPdir}/USRexpired ]] && msg -ne "$(fun_trans "EXPIRED*"): " && echo -e "\033[1;37m$(cat ${SCPdir}/USRexpired) $(fun_trans "Usuarios")"
 [[ -e ${SCPdir}/message.txt ]] && msg -bar && msg -bra "MESSAGE: $(cat ${SCPdir}/message.txt)"
 # [[ -e ${SCPdir}/key.txt ]] && msg -bar && msg -bra "USER-KEY: $(cat ${SCPdir}/key.txt)"
+# SISTEMA DE DATA 
+#_hoje=$(date +'%d/%m/%Y')
+_hora=$(printf '%(%H:%M:%S)T')
+_total=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort | wc -l)
 # NOVO SISTEMA DE MENUS
 msg -bar
-# SISTEMA DE DATA 
-_hora=$(printf '%(%H:%M:%S)T')
-_hoje=$(date +'%d/%m/%Y')
-_total=$(awk  -F : '$3 >= 500 {print  $1}'  /etc/passwd | grep -v "nobody" | sort | wc -l)
 msg -ama "$(fun_trans "GERENCIADOR*") \033[1;31m[\033[1;32m NEW-ULTIMATE \033[1;31m] \033[1;31mHORA: \033[1;37m$_hora \033[1;31mUSER: \033[1;37m$_total"
 msg -bar
 menu_func "GERENCIAR USUARIOS*" "FERRAMENTAS*" "MENU DE INSTALACOES*" "-vd ATUALIZAR*" "-vm DESINSTALAR*" "-fi $AutoRun AUTO INICIALIZACAO*" "TROCAR LINGUA*" "TROCAR CORES*"
